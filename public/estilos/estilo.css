@@ -300,6 +300,19 @@ aside .card-custom {
     }
 }
 
+@media(max-width:768px){
+    .productosMasVendidos-card{
+        width: 48%; /* 2 por fila */
+        margin-bottom: 10px;
+    }
+}
+
+@media(max-width:480px){
+    .productosMasVendidos-card{
+        width: 100%; /* 1 por fila */
+    }
+}
+
 /* BUSCADOR NAVBAR */
 .search-container {
     padding-top: 5px;
@@ -434,3 +447,36 @@ aside .card-custom {
 .container-fluid {
     position: relative;
 }
+
+/* CONTENEDOR OFERTAS */
+.productosMasVendidos-card {
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 10px;
+    width: 23%; /* 🔥 4 por fila */
+    text-align: center;
+    transition: 0.3s;
+}
+
+.productosMasVendidos-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+}
+
+.productosMasVendidos-card p {
+    font-size: 14px;
+    margin: 10px 0 5px;
+}
+
+.productosMasVendidos-card strong {
+    color: #000;
+}
+
+/* HOVER */
+.productosMasVendidos-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255,122,24,0.6);
+}
+
