@@ -1,7 +1,4 @@
 <x-layout title="Nexcell.">
-<body>
-
-<main class="container mt-4">
 
     <!-- CONTENIDO -->
     <div class="row">
@@ -167,8 +164,6 @@
 
     </aside>
 
-</main>
-
 <!-- FOOTER -->
 
 
@@ -198,5 +193,4 @@
         alert('Click detectado');
     });
 </script>
-</body>
 </x-layout>
