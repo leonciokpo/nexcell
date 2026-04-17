@@ -22,7 +22,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarContenido">
-                <div class="search-container w-100 d-flex justify-content-center mb-2">
+                <div class="search-container w-100 d-flex justify-content-start mb-2">
                     <div class="search-box">
                         <i class="bi bi-search search-icon"></i>
                         <input type="text" class="search-input" placeholder="Buscar productos...">

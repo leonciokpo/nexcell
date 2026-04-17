@@ -6,6 +6,6 @@
 </head> 
 <body> 
 <h1>Acerca del proyecto</h1> 
-<p>Vista agregada por el Alumno B como colaborador.</p> 
+<p>PENE</p> 
 </body> 
 </html> 

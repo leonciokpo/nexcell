@@ -20,7 +20,7 @@ body {
     min-height: 130px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* 🔥 CLAVE */
+    justify-content: space-between;
     padding: 10px 0;
 }
 
@@ -47,13 +47,13 @@ body {
 }
 
 .logo-navbar {
-    height:50px;
+    height: 50px;
     width: auto;
     object-fit: contain;
-    margin-right: 0px;
 
-    transform: scale(4.0); /* 🔥 agranda visualmente */
-    transform-origin: left center; /* mantiene alineación prolija */
+    transform: scale(3.0); /* 🔥 tamaño grande pero estable */
+    transform-origin: left center;
+    margin-left: -35px; /*Si queres que el logo se mueva mas a la izquierda/derecha modifica aca*/
 }
 
 /* NAV LINKS */
@@ -102,17 +102,21 @@ body {
 .navbar-brand {
     display: flex;
     align-items: center;
-    gap: 10px;
-    overflow: visible;
+    gap: 20px; /* 🔥 controla la separación REAL */
+
+    padding-left: 0;
+    margin-left: 0;
+
+    transform: translateX(-15px); /* 🔥 mueve todo a la izquierda sin romper */
 }
 
 .navbar-brand span {
-    color: #ff7a18; /* solo acento naranja */
-    margin-left: 80px;
+    color: #ff7a18;
+
+    position: relative;
+    left: 20px; /*Si queres +/- distancia entre el texto y el logo modifica esto*/
+    white-space: nowrap;
 }
-
-
-
 /* ===== SLIDER PRINCIPAL ===== */
 
 .slider-img {  
@@ -287,7 +291,12 @@ aside .card-custom {
     }
 
     .logo-navbar {
-        transform:scale(1.4);
+        transform: scale(1.6); /* 🔥 más chico en mobile */
+    }
+
+    .navbar-brand {
+        transform: translateX(-10px); /* 🔥 menos desplazamiento */
+        gap: 10px; /* menos espacio */
     }
 }
 
@@ -333,8 +342,8 @@ aside .card-custom {
 /* CONTENEDOR CON ICONO */
 .search-box {
     position: relative;
-    width: 90%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 420px;
 }
 
 /* ICONO */
@@ -411,9 +420,11 @@ aside .card-custom {
 
 .navbar .container-fluid {
     display: flex;
-    flex-direction: column; /* 🔥 esto es lo que te falta */
+    flex-direction: column;
     align-items: stretch;
-    padding-left: 120px;
+
+    padding-left: 8px;   /* 🔥 más pegado al borde */
+    padding-right: 10px;
 }
 
 .navbar-collapse {
