@@ -30,7 +30,9 @@
                 </div>
                 <ul class="navbar-nav w-100">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('home') }}">Inicio</a>
+                        <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
+                            Inicio
+                        </a>
                     </li>
 
                     <li class="nav-item">
@@ -46,7 +48,9 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('quienesSomos') }}">Quienes somos</a>
+                        <a class="nav-link {{ request()->routeIs('quienesSomos') ? 'active' : '' }}" href="{{ route('quienesSomos') }}">
+                            Quienes somos
+                        </a>
                     </li>
                 </ul>
             </div>

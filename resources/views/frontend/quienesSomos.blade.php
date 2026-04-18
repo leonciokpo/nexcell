@@ -5,7 +5,7 @@
         <h1 class="about-title">¿Quiénes somos?</h1>
 
         <p>
-            En <span class="highlight">Punto Celular</span> somos mucho más que una tienda de tecnología:
+            En <span class="highlight">Nexcell</span> somos mucho más que una tienda de tecnología:
             somos un equipo apasionado por acercarte los mejores productos y soluciones para tu día a día.
         </p>
 

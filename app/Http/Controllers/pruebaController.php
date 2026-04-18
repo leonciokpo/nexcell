@@ -11,6 +11,6 @@ class pruebaController extends Controller
     }
 
     public function quienesSomos() {
-        return view('frontend.quienesSomos', ['title' => 'Quienes Somos']);
+        return view('frontend.quienesSomos');
     }
 }
