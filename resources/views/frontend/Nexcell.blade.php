@@ -298,6 +298,117 @@
 <div class="banner-nexcell">
     <img src="{{ asset('images/banner.jpg') }}" alt="Banner Nexcell">
 </div>
+
+<!-- MARCAS -->
+<div class="marcas-nexcell">
+    <div class="container text-center">
+
+        <h2 class="mb-5">Marcas que trabajamos</h2>
+
+        <div class="row justify-content-center align-items-center g-4">
+
+            <div class="col-6 col-md-3">
+                <img src="{{ asset('images/marcas/apple.png') }}" class="marca-logo" alt="Apple">
+            </div>
+
+            <div class="col-6 col-md-3">
+                <img src="{{ asset('images/marcas/samsung.png') }}" class="marca-logo" alt="Samsung">
+            </div>
+
+            <div class="col-6 col-md-3">
+                <img src="{{ asset('images/marcas/xiaomi.png') }}" class="marca-logo" alt="Xiaomi">
+            </div>
+
+            <div class="col-6 col-md-3">
+                <img src="{{ asset('images/marcas/motorola.png') }}" class="marca-logo" alt="Motorola">
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- OPINIONES -->
+<div class="opiniones-nexcell">
+    <div class="container">
+
+        <h2 class="text-center mb-5">Lo que dicen nuestros clientes</h2>
+
+        <div class="row g-4">
+
+            <!-- OPINION 1 -->
+            <div class="col-md-4">
+                <div class="opinion-card">
+                    <p class="texto">"Excelente atención y los productos llegaron rapidísimo. Muy recomendable."</p>
+
+                    <div class="cliente">
+                        <div class="cliente-info">
+                            <img src="{{ asset('images/clientes/cliente1.jpg') }}" alt="Cliente">
+                            <div>
+                                <strong>Juan Pérez</strong>
+                                <div class="stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPINION 2 -->
+            <div class="col-md-4">
+                <div class="opinion-card">
+                    <p class="texto">"Compré un iPhone y todo perfecto. Precio y calidad increíble."</p>
+
+                    <div class="cliente">
+                        <div class="cliente-info">
+                            <img src="{{ asset('images/clientes/cliente2.jpg') }}" alt="Cliente">
+                            <div>
+                                <strong>María Gómez</strong>
+                                <div class="stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPINION 3 -->
+            <div class="col-md-4">
+                <div class="opinion-card">
+                    <p class="texto">"Muy buena experiencia. Me asesoraron antes de comprar."</p>
+
+                    <div class="cliente">
+                        <div class="cliente-info">
+                            <img src="{{ asset('images/clientes/cliente3.jpg') }}" alt="Cliente">
+                            <div>
+                                <strong>Lucas Fernández</strong>
+                                <div class="stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
 <!-- FOOTER -->
 
 
@@ -328,3 +439,4 @@
     });
 </script>
 </x-layout>
+
