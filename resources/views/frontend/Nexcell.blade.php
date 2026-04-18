@@ -44,98 +44,53 @@
 <div id="productos" class="productos">
     <h2 class="text-center mb-4">Nuestros Productos</h2>
 
-    <div class="row g-4">
+<div class="row g-4 accesos-rapidos">
 
-        <!-- SMARTPHONES -->
-        <div class="col-md-4">
-            <div class="card-custom">
-
-                <div id="carouselSmartphones" class="carousel slide product-carousel" data-bs-ride="carousel">
-
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{{ asset('images/minislide1.jpeg') }}" class="card-img">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{ asset('images/minislide2.jpeg') }}" class="card-img">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{ asset('images/minislide3.jpeg') }}" class="card-img">
-                        </div>
-                    </div>
-
-                    <!-- FLECHAS -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselSmartphones" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselSmartphones" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
-
-                </div>
-
-                <h4>Smartphones</h4>
-                <p>Los últimos modelos</p>
+    <!-- SMARTPHONES -->
+    <div class="col-md-6 col-lg-3">
+        <a href="/categoria/smartphones" class="acceso-card">
+            <img src="{{ asset('images/minislide1.jpeg') }}">
+            <div class="overlay">
+                <h3>Smartphones</h3>
+                <p>Últimos modelos</p>
             </div>
-        </div>
-
-        <!-- ACCESORIOS -->
-        <div class="col-md-4">
-            <div class="card-custom">
-
-                <div id="carouselAccesorios" class="carousel slide product-carousel" data-bs-ride="carousel">
-
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{{ asset('images/slide2.jpeg') }}" class="card-img">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{ asset('images/minislide2.jpeg') }}" class="card-img">
-                        </div>
-                    </div>
-
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselAccesorios" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselAccesorios" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
-
-                </div>
-
-                <h4>Accesorios</h4>
-            </div>
-        </div>
-
-        <!-- OFERTAS -->
-        <div class="col-md-4">
-            <div class="card-custom">
-
-                <div id="carouselOfertas" class="carousel slide product-carousel" data-bs-ride="carousel">
-
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{{ asset('images/slide3.jpeg') }}" class="card-img">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{ asset('images/minislide3.jpeg') }}" class="card-img">
-                        </div>
-                    </div>
-
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselOfertas" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselOfertas" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
-
-                </div>
-
-                <h4>Ofertas</h4>
-            </div>
-        </div>
-
+        </a>
     </div>
+
+    <!-- ACCESORIOS -->
+    <div class="col-md-6 col-lg-3">
+        <a href="/categoria/accesorios" class="acceso-card">
+            <img src="{{ asset('images/minislide2.jpeg') }}">
+            <div class="overlay">
+                <h3>Accesorios</h3>
+                <p>Todo lo que necesitás</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- OFERTAS -->
+    <div class="col-md-6 col-lg-3">
+        <a href="/categoria/ofertas" class="acceso-card">
+            <img src="{{ asset('images/minislide3.jpeg') }}">
+            <div class="overlay">
+                <h3>Ofertas</h3>
+                <p>Descuentos reales</p>
+            </div>
+        </a>
+    </div>
+
+    <!-- NUEVOS -->
+    <div class="col-md-6 col-lg-3">
+        <a href="/categoria/nuevos" class="acceso-card">
+            <img src="{{ asset('images/slide2.jpeg') }}">
+            <div class="overlay">
+                <h3>Nuevos</h3>
+                <p>Recién llegados</p>
+            </div>
+        </a>
+    </div>
+
+</div>
 </div>
 
     <!-- 🔥 ASIDE ABAJO -->
@@ -164,7 +119,95 @@
 
     </aside>
 
-<div class="mt-5">
+<div class="ofertas-dia mt-5">
+
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>¡No te pierdas de las ofertas del día!</h2>
+            <span class="contador">Termina en: 12hs</span>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- PRODUCTO 1 -->
+            <div class="col-md-3">
+                <a href="#" class="oferta-card">
+                    <img src="{{ asset('images/Celulares/Apple/Gama Alta/iphone15ProMaxTitanio.jpg') }}">
+
+                    <div class="info">
+                        <p>Iphone 15 Pro Max</p>
+
+                        <div class="precios">
+                            <span class="precio-viejo">$2.500.000</span>
+                            <span class="descuento">-30%</span>
+                        </div>
+
+                        <strong class="precio-nuevo">$2.176.900</strong>
+                    </div>
+                </a>
+            </div>
+
+            <!-- PRODUCTO 2 -->
+            <div class="col-md-3">
+                <a href="#" class="oferta-card">
+                    <img src="{{ asset('images/Celulares/Samsung/Gama Alta/s25ultrablack.jpg') }}">
+
+                    <div class="info">
+                        <p>Samsung S25 Ultra</p>
+
+                        <div class="precios">
+                            <span class="precio-viejo">$2.100.000</span>
+                            <span class="descuento">-20%</span>
+                        </div>
+
+                        <strong class="precio-nuevo">$1.771.900</strong>
+                    </div>
+                </a>
+            </div>
+
+            <!-- PRODUCTO 3 -->
+            <div class="col-md-3">
+                <a href="#" class="oferta-card">
+                    <img src="{{ asset('images/Celulares/Xiaomi/Gama Alta/pocoF7.jpg') }}">
+
+                    <div class="info">
+                        <p>Poco F7</p>
+
+                        <div class="precios">
+                            <span class="precio-viejo">$2.700.000</span>
+                            <span class="descuento">-15%</span>
+                        </div>
+
+                        <strong class="precio-nuevo">$2.316.100</strong>
+                    </div>
+                </a>
+            </div>
+
+            <!-- PRODUCTO 4 -->
+            <div class="col-md-3">
+                <a href="#" class="oferta-card">
+                    <img src="{{ asset('images/Celulares/Motorola/Gama Alta/motoEdge60proCobalto.jpg') }}">
+
+                    <div class="info">
+                        <p>Motorola Edge 60 Pro</p>
+
+                        <div class="precios">
+                            <span class="precio-viejo">$650.000</span>
+                            <span class="descuento">-20%</span>
+                        </div>
+
+                        <strong class="precio-nuevo">$526.500</strong>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="seccion-naranja mt-5">
     <h2 class="mb-4">Nuestros productos mas vendidos</h2>
 
     <div id="carouselProductosMasVendidos" class="carousel slide" data-bs-ride="carousel">
@@ -175,29 +218,33 @@
             <div class="carousel-item active">
                 <div class="d-flex justify-content-between">
 
-                    <div class="productosMasVendidos-card">
+                    <!-- CARD 1 -->
+                    <a href="/producto/iphone15" class="productosMasVendidos-card card-link">
                         <img src="{{ asset('images/Celulares/Apple/Gama Alta/iphone15ProMaxTitanio.jpg') }}">
                         <p>Iphone 15 Pro Max</p>
                         <strong>$2.176.900</strong>
-                    </div>
+                    </a>
 
-                    <div class="productosMasVendidos-card">
-                        <img src="{{ asset('images/s25.png') }}">
+                    <!-- CARD 2 -->
+                    <a href="/producto/s25" class="productosMasVendidos-card card-link">
+                        <img src="{{ asset('images/Celulares/Samsung/Gama Alta/s25ultrablack.jpg') }}">
                         <p>Samsung S25</p>
                         <strong>$1.771.900</strong>
-                    </div>
+                    </a>
 
-                    <div class="productosMasVendidos-card">
-                        <img src="{{ asset('images/moto.png') }}">
-                        <p>Motorola G54</p>
+                    <!-- CARD 3 -->
+                    <a href="/producto/motoG60" class="productosMasVendidos-card card-link">
+                        <img src="{{ asset('images/Celulares/Motorola/Gama Alta/motoEdge60proCobalto.jpg') }}">
+                        <p>Motorola G60 Pro</p>
                         <strong>$526.500</strong>
-                    </div>
+                    </a>
 
-                    <div class="productosMasVendidos-card">
-                        <img src="{{ asset('images/s25ultra.png') }}">
-                        <p>Samsung S25 Ultra</p>
+                    <!-- CARD 4 -->
+                    <a href="/producto/pocoF7" class="productosMasVendidos-card card-link">
+                        <img src="{{ asset('images/Celulares/Xiaomi/Gama Alta/pocoF7.jpg') }}">
+                        <p>Poco F7</p>
                         <strong>$2.316.100</strong>
-                    </div>
+                    </a>
 
                 </div>
             </div>
@@ -206,13 +253,30 @@
             <div class="carousel-item">
                 <div class="d-flex justify-content-between">
 
-                    <div class="productosMasVendidos-card">
-                        <img src="{{ asset('images/moto2.png') }}">
-                        <p>Motorola G85</p>
+                    <a href="#" class="productosMasVendidos-card card-link">
+                        <img src="{{ asset('images/Celulares/Motorola/Gama Alta/motoRazr40blue.jpg') }}">
+                        <p>Motorola Razr 40</p>
                         <strong>$671.300</strong>
-                    </div>
+                    </a>
 
-                    <!-- agregás más productos -->
+                    <a href="#" class="productosMasVendidos-card card-link">
+                        <img src="{{ asset('images/Celulares/Samsung/Gama Alta/samsungS26ultra.jpg') }}">
+                        <p>Samsung S26 Ultra</p>
+                        <strong>$671.300</strong>
+                    </a>
+
+                    <a href="#" class="productosMasVendidos-card card-link">
+                        <img src="{{ asset('images/Celulares/Xiaomi/Gama Alta/pocoF8proBlack.jpg') }}">
+                        <p>Poco F8 Pro</p>
+                        <strong>$671.300</strong>
+                    </a>
+
+                    <a href="#" class="productosMasVendidos-card card-link">
+                        <img src="{{ asset('images/Celulares/Apple/Gama Alta/iphone16proMaxBlack.jpg') }}">
+                        <p>Iphone 16 Pro Max</p>
+                        <strong>$671.300</strong>
+                    </a>
+
                 </div>
             </div>
 
@@ -228,6 +292,11 @@
         </button>
 
     </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner-nexcell">
+    <img src="{{ asset('images/banner.jpg') }}" alt="Banner Nexcell">
 </div>
 <!-- FOOTER -->
 

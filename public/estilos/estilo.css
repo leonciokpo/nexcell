@@ -450,33 +450,239 @@ aside .card-custom {
 
 /* CONTENEDOR OFERTAS */
 .productosMasVendidos-card {
-    background: #fff;
-    color: #000;
-    border-radius: 10px;
-    padding: 10px;
-    width: 23%; /* 🔥 4 por fila */
+    background: #ffffff; /* igual que card-custom */
+    color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    width: 23%;
     text-align: center;
+
     transition: 0.3s;
+
+    border: 1px solid rgba(255,255,255,0.05); /* detalle sutil */
 }
 
 .productosMasVendidos-card img {
     width: 100%;
-    height: 140px;
+    height: 170px;
     object-fit: contain;
+    margin-bottom: 12px;
 }
 
 .productosMasVendidos-card p {
     font-size: 14px;
-    margin: 10px 0 5px;
+    color: #444;
+    margin-bottom: 6px;
 }
 
 .productosMasVendidos-card strong {
-    color: #000;
+    display: block;
+    font-size: 18px;
+    color: #ff7a18;
+}
+
+.productosMasVendidos-card {
+    background: #ffffff;
+    color: #222;
+
+    border-radius: 16px;
+    padding: 18px;
+
+    width: 23%;
+    text-align: center;
+
+    transition: all 0.25s ease;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.productosMasVendidos-card strong {
+    color: #ff7a18; /* 🔥 naranja marca */
+    font-size: 16px;
+}
+
+.seccion-naranja {
+    position: relative;
+
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: linear-gradient(135deg, #ff7a18, #ff9a3c);
+
+    padding: 70px 40px;
+    margin-top: 80px;
+}
+
+.seccion-naranja h2 {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.seccion-naranja p {
+    color: #222;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ACCESOS RÁPIDOS */
+
+.acceso-card {
+    position: relative;
+    display: block;
+    height: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.acceso-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* OVERLAY OSCURO */
+.acceso-card .overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 20px;
+}
+
+.acceso-card h3 {
+    color: #fff;
+    margin: 0;
+    font-size: 20px;
+}
+
+.acceso-card p {
+    color: #ddd;
+    font-size: 14px;
+}
+
+/* HOVER PRO */
+.acceso-card:hover img {
+    transform: scale(1.08);
+}
+
+.acceso-card:hover {
+    box-shadow:
+        0 0 15px rgba(255,122,24,0.6),
+        0 0 40px rgba(255,122,24,0.4);
+}
+
+/* SECCIÓN */
+.ofertas-dia {
+    padding: 50px 0;
+}
+
+/* CONTADOR */
+.contador {
+    color: #ff7a18;
+    font-weight: 600;
+}
+
+/* CARD */
+.oferta-card {
+    background: #111;
+    border-radius: 14px;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+
+    transition: all 0.3s ease;
+}
+
+.oferta-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    background: #ffffff;
+}
+
+/* INFO */
+.oferta-card .info {
+    padding: 15px;
+    text-align: center;
+}
+
+.oferta-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* PRECIOS */
+.precios {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.precio-viejo {
+    text-decoration: line-through;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.descuento {
+    background: #ff7a18;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.precio-nuevo {
+    display: block;
+    font-size: 18px;
+    color: #0dd3c5;
+    margin-top: 5px;
 }
 
 /* HOVER */
-.productosMasVendidos-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255,122,24,0.6);
+.oferta-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 0 12px rgba(255,122,24,0.8),
+        0 0 30px rgba(255,122,24,0.5);
 }
 
+.banner-nexcell {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: flex;
+    justify-content: center; /* centra la imagen */
+    margin-top: 50px;
+}
+
+.banner-nexcell img {
+    width: 100%;
+    max-width: 1400px; /* 🔥 limita el tamaño */
+    height: auto; /* mantiene proporción */
+    display: block;
+}
