@@ -3,6 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pruebaController;
 
-Route::get('/', [pruebaController::class, 'nexcell']);
+Route::get('/', [pruebaController::class, 'nexcell'])->name('home');
 
-Route::get('/quienesSomos', [pruebaController::class, 'quienesSomos']);
+Route::get('/quienes-somos', [pruebaController::class, 'quienesSomos'])->name('quienesSomos');

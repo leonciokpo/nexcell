@@ -29,11 +29,25 @@
                     </div>
                 </div>
                 <ul class="navbar-nav w-100">
-                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Comercializacion</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Quienes somos</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('home') }}">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">Productos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Comercializacion</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('quienesSomos') }}">Quienes somos</a>
+                    </li>
                 </ul>
             </div>
         </div>

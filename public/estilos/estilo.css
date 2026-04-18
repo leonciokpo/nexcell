@@ -5,7 +5,7 @@ body {
     animation: bgMove 16s ease infinite;
     color: #fff;
     font-family: 'Segoe UI', sans-serif;
-    margin-top: 80px;
+    margin-top: 160px;
 }
 
 @keyframes bgMove {
@@ -787,4 +787,45 @@ aside .card-custom {
     box-shadow:
         0 0 12px rgba(255,122,24,0.8),
         0 0 30px rgba(255,122,24,0.5);
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 40px;
+    background: rgba(0,0,0,0.55);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    color: #cfd8dc;
+}
+
+.about-title {
+    text-align: center;
+    color: #ff7a18;
+    margin-bottom: 30px;
+}
+
+.about-container p {
+    line-height: 1.8;
+    font-size: 16.5px;
+    margin-bottom: 15px;
+}
+
+.about-container h2 {
+    color: #0dd3c5;
+    margin-top: 25px;
+}
+
+.highlight {
+    color: #ff7a18;
+    font-weight: bold;
+}
+
+.about-section {
+    margin-top: 25px;
+    padding: 15px;
+    border-left: 3px solid #ff7a18;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
 }

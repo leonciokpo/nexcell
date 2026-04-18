@@ -5,10 +5,10 @@
         <!-- LINKS -->
         <div class="footer-col">
             <h4>Navegación</h4>
-            <a href="#">Inicio</a>
+            <a href="{{ route('home') }}">Inicio</a>
             <a href="#productos">Productos</a>
             <a href="#">Contacto</a>
-            <a href="#">Quiénes Somos</a>
+            <a href="{{ route('quienesSomos') }}">Quiénes Somos</a>
         </div>
 
         <div class="footer-col">
