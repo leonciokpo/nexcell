@@ -686,3 +686,105 @@ aside .card-custom {
     height: auto; /* mantiene proporción */
     display: block;
 }
+
+/* SECCIÓN MARCAS */
+.marcas-nexcell {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.marcas-nexcell h2 {
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* LOGOS */
+.marca-logo {
+    max-width: 140px;
+    width: 100%;
+    height: auto;
+
+    filter: grayscale(100%) brightness(0.9);
+    opacity: 0.8;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER PRO */
+.marca-logo:hover {
+    filter: grayscale(0%) brightness(1.1);
+    opacity: 1;
+
+    transform: scale(1.1);
+
+    filter:
+        drop-shadow(0 0 10px rgba(255,122,24,0.6))
+        brightness(1.1);
+}
+
+/* OPINIONES */
+.opiniones-nexcell {
+    padding: 80px 20px;
+}
+
+/* CARD */
+.opinion-card {
+    background: #111;
+    border-radius: 16px;
+    padding: 25px;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: all 0.3s ease;
+}
+
+/* TEXTO */
+.opinion-card .texto {
+    font-size: 15px;
+    color: #ddd;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* CLIENTE */
+.cliente-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* FOTO */
+.cliente-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 2px solid #ff7a18;
+}
+
+/* NOMBRE */
+.cliente-info strong {
+    color: #fff;
+    display: block;
+}
+
+/* ESTRELLAS */
+.stars {
+    color: #ff7a18;
+    font-size: 14px;
+}
+
+/* HOVER */
+.opinion-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 0 12px rgba(255,122,24,0.8),
+        0 0 30px rgba(255,122,24,0.5);
+}
