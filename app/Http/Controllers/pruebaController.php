@@ -6,11 +6,15 @@ use Illuminate\Http\Request;
 
 class pruebaController extends Controller
 {
-    public function nexcell() {
-        return view('frontend.Nexcell');
+    public function principal() {
+        return view('frontend.principal');
     }
 
     public function quienesSomos() {
         return view('frontend.quienesSomos');
+    }
+
+    public function comercializacion(){
+        return view('frontend.comercializacion');
     }
 }

@@ -44,7 +44,9 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Comercializacion</a>
+                        <a class="nav-link {{ request()->routeIs('comercializacion') ? 'active' : '' }}" href="{{ route('comercializacion') }}">
+                            Comercializacion
+                        </a>
                     </li>
 
                     <li class="nav-item">

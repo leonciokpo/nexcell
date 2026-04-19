@@ -829,3 +829,44 @@ aside .card-custom {
     background: rgba(255,255,255,0.05);
     border-radius: 10px;
 }
+
+.titulo-seccion {
+    color: #ff7a18;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(255,122,24,0.5);
+    padding-bottom: 8px;
+}
+
+.card-info {
+    background: rgba(0,0,0,0.6);
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+
+    transition: all 0.3s ease;
+}
+
+.card-info h4 {
+    color: #0dd3c5;
+    margin-bottom: 10px;
+}
+
+.card-info p,
+.card-info li {
+    color: #cfd8dc;
+    font-size: 14px;
+}
+
+.icono-seccion {
+    margin-right: 10px;
+    color: #ff7a18;
+    font-size: 22px;
+    vertical-align: middle;
+}
+
+.icono-card {
+    font-size: 28px;
+    color: #0dd3c5;
+    margin-bottom: 10px;
+    display: block;
+}
