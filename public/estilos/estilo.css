@@ -919,3 +919,184 @@ aside .card-custom {
     color: #444;
 }
 
+/* ===== CONTACTO ===== */
+
+.contacto-container {
+    max-width: 600px;
+    margin: 140px auto 60px;
+    padding: 40px;
+
+    background: rgba(0,0,0,0.6);
+    border-radius: 16px;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+
+    text-align: center;
+}
+
+.contacto-title {
+    color: #ff7a18;
+    margin-bottom: 10px;
+}
+
+.contacto-subtitle {
+    color: #cfd8dc;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* FORM */
+.contacto-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* GRUPO */
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #aaa;
+}
+
+/* INPUTS */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* FOCUS */
+.form-group input:focus,
+.form-group textarea:focus {
+    border: 1px solid #0dd3c5;
+
+    box-shadow:
+        0 0 8px rgba(13,211,197,0.5),
+        0 0 15px rgba(13,211,197,0.3);
+}
+
+/* BOTÓN */
+.btn-enviar {
+    background: #ff7a18;
+    border: none;
+
+    padding: 12px;
+    border-radius: 10px;
+
+    color: #fff;
+    font-weight: 500;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER */
+.btn-enviar:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 10px rgba(255,122,24,0.8),
+        0 0 20px rgba(255,122,24,0.6);
+}
+
+/* ===== EXITO ===== */
+
+.exito-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 160px;
+    padding: 20px;
+}
+
+/* CARD */
+.exito-card {
+    background: rgba(0,0,0,0.65);
+    padding: 40px;
+    border-radius: 16px;
+
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 0 30px rgba(0,0,0,0.4);
+}
+
+/* ICONO */
+.exito-icon {
+    font-size: 60px;
+    color: #0dd3c5;
+    margin-bottom: 15px;
+
+    animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* TITULO */
+.exito-title {
+    color: #ff7a18;
+    margin-bottom: 15px;
+}
+
+/* TEXTOS */
+.exito-text {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 10px;
+}
+
+.exito-subtext {
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+.exito-gracias {
+    font-size: 14px;
+    color: #0dd3c5;
+    margin-bottom: 25px;
+}
+
+/* BOTÓN */
+.btn-volver {
+    display: inline-block;
+
+    padding: 10px 20px;
+    border-radius: 10px;
+
+    background: #ff7a18;
+    color: #fff;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 10px rgba(255,122,24,0.8),
+        0 0 20px rgba(255,122,24,0.6);
+}

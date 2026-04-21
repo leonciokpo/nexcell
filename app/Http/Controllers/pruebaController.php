@@ -21,4 +21,13 @@ class pruebaController extends Controller
     public function terminosYUsos(){
         return view('frontend.terminosYUsos');
     }
+
+    public function contacto(){
+        return view('frontend.contacto');
+    }
+
+    public function exito(){
+        return view('frontend.exito');
+    }
 }
+

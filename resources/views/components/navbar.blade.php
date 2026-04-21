@@ -40,7 +40,9 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link {{ request()->routeIs('contacto') ? 'active' : '' }}" href="{{ route('contacto') }}">
+                            Contacto
+                        </a>
                     </li>
 
                     <li class="nav-item">
