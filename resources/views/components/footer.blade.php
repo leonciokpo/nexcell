@@ -12,10 +12,9 @@
         </div>
 
         <div class="footer-col">
-            <h4>Ayuda</h4>
-            <a href="#">Política de Cambio</a>
-            <a href="#">Cómo Comprar</a>
-            <a href="#">Política de Devolución</a>
+            <h4>Legal</h4>
+            <a href="{{ route('terminosYUsos') }}">Términos y Usos</a>
+            <a href="#">Política de Privacidad</a>
         </div>
 
         <div class="footer-col">

@@ -870,3 +870,52 @@ aside .card-custom {
     margin-bottom: 10px;
     display: block;
 }
+
+/* CONTENEDOR */
+.terminos-container {
+    max-width: 900px;
+    margin: 120px auto 60px;
+    padding: 40px;
+
+    background: #ffffff;
+    color: #222;
+
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* TÍTULO */
+.terminos-title {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+/* FECHA */
+.terminos-update {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* SECCIONES */
+.terminos-container section {
+    margin-bottom: 25px;
+}
+
+/* SUBTÍTULOS */
+.terminos-container h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #111;
+}
+
+/* TEXTO */
+.terminos-container p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+}
+

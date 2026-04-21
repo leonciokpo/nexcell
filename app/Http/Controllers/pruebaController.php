@@ -17,4 +17,8 @@ class pruebaController extends Controller
     public function comercializacion(){
         return view('frontend.comercializacion');
     }
+
+    public function terminosYUsos(){
+        return view('frontend.terminosYUsos');
+    }
 }
