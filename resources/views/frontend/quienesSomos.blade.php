@@ -47,4 +47,46 @@
 
     </div>
 
+<div class="ubicaciones-container mt-5">
+
+    <h2 class="text-center mb-4">Nuestras sucursales</h2>
+
+    <div class="row g-4">
+
+        <!-- SUCURSAL 1 -->
+        <div class="col-md-6">
+            <div class="map-card">
+                <h5>Sucursal en el shopping </h5>
+
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8837.887571583331!2d-58.80986858899517!3d-27.467353878795592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456b6ca10e6e2b%3A0xa03f567172e58c10!2sCentenario%20Shopping!5e0!3m2!1ses-419!2sar!4v1776954939247!5m2!1ses-419!2sar"
+                    width="100%" 
+                    height="300" 
+                    style="border:0; border-radius:10px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- SUCURSAL 2 -->
+        <div class="col-md-6">
+            <div class="map-card">
+                <h5>Sucursal zona centrica</h5>
+
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.9943334637105!2d-58.8318276252777!3d-27.46943577631975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456ca079eecc7f%3A0x454e2363fbaea20!2sHip%C3%B3lito%20Yrigoyen%201700%2C%20W3400ATK%20Corrientes!5e0!3m2!1ses-419!2sar!4v1776954445543!5m2!1ses-419!2sar"
+                    width="100%" 
+                    height="300" 
+                    style="border:0; border-radius:10px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+    </div>
+</div>
 </x-layout>

@@ -22,6 +22,10 @@
     </main>
 
     <x-footer />
-
+    <a href="#" class="whatsapp-float">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('estilos/estilo.js') }}"></script>
 </body>
 </html>

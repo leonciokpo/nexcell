@@ -5,16 +5,21 @@
 
             <div class="top-navbar">
     <!-- LOGO A LA IZQUIERDA -->
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{{ route('principal') }}">
         <img src="{{ asset('images/logo.png') }}" class="logo-navbar">
         <span>Nexcell.</span>
     </a>
 
     <!-- BOTONES A LA DERECHA -->
     <div class="auth-buttons">
-        <a href="#" class="btn btn-login">Iniciar Sesión</a>
-        <a href="#" class="btn btn-register">Registrarse</a>
-    </div>
+    <a href="#" class="btn btn-login">Iniciar Sesión</a>
+    <a href="#" class="btn btn-register">Registrarse</a>
+
+    <!-- 🛒 CARRITO -->
+    <a href="#" class="btn-cart">
+        <i class="bi bi-cart3"></i>
+    </a>
+</div>
 </div>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido">
@@ -30,7 +35,7 @@
                 </div>
                 <ul class="navbar-nav w-100">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
+                        <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('principal') }}">
                             Inicio
                         </a>
                     </li>

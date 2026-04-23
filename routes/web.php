@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pruebaController;
 use App\Http\Controllers\ContactoController;
 
-Route::get('/', [pruebaController::class, 'principal'])->name('home');
+Route::get('/', [pruebaController::class, 'principal'])->name('principal');
 
 Route::get('/quienes-somos', [pruebaController::class, 'quienesSomos'])->name('quienesSomos');
 

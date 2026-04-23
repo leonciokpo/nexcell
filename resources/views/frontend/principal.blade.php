@@ -412,31 +412,6 @@
 <!-- FOOTER -->
 
 
-<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script>
-    const carousel = document.querySelector('#carouselNexcell');
-    new bootstrap.Carousel(carousel, {
-        interval: 4000,
-        ride: 'carousel'
-    });
-</script>
 
-<script>
-    const navbar = document.querySelector('.navbar');
-
-    window.addEventListener('scroll', () => {
-        if(window.scrollY > 50){
-            navbar.classList.add('navbar-scroll');
-        } else {
-            navbar.classList.remove('navbar-scroll');
-        }
-    });
-</script>
-
-<script>
-    document.querySelector('.search-icon').addEventListener('click', () => {
-        alert('Click detectado');
-    });
-</script>
 </x-layout>
 
