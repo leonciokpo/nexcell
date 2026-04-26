@@ -1,8 +1,6 @@
 /* FONDO */
 body {
-    background: linear-gradient(90deg,#031726,#052c3d,#076b7a,#0dd3c5);
-    background-size: 250% 250%;
-    animation: bgMove 16s ease infinite;
+    background: #031726; /* 🔥 color fijo */
     color: #fff;
     font-family: 'Segoe UI', sans-serif;
     margin-top: 160px;
@@ -1292,15 +1290,19 @@ body.fondo-productos {
 /* ===== GRID PRODUCTOS ===== */
 
 .producto-card {
-    background: rgba(0,0,0,0.7);
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 15px;
     padding: 20px;
     text-align: center;
 
-    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+
+    color: #fff;
 
     transition: all 0.3s ease;
-
     height: 100%;
 }
 
@@ -1310,6 +1312,10 @@ body.fondo-productos {
     height: 180px;
     object-fit: contain;
     margin-bottom: 15px;
+
+    background: #ffff; /* 🔥 leve fondo gris */
+    border-radius: 10px;
+    padding: 10px;
 }
 
 /* TITULO */
@@ -1354,8 +1360,8 @@ body.fondo-productos {
     transform: translateY(-6px);
 
     box-shadow:
-        0 0 15px rgba(255,122,24,0.6),
-        0 0 40px rgba(255,122,24,0.4);
+        0 12px 30px rgba(0,0,0,0.5),
+        0 0 10px rgba(255,122,24,0.4); /* 🔥 glow sutil */
 }
 
 .producto-img {
@@ -1366,4 +1372,37 @@ body.fondo-productos {
 .descripcion {
     color: #cfd8dc;
     font-size: 15px;
+}
+
+.row.g-4 {
+    margin-top: 20px;
+}
+
+/*PRODUCTO*/
+
+.fondo-producto {
+    background: #ffffff
+}
+
+.producto-card .precio-viejo {
+    display: block;
+    text-decoration: line-through;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.producto-card .descuento {
+    background: #ff7a18;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.producto-card .precio-nuevo {
+    display: block;
+    font-size: 18px;
+    color: #0dd3c5;
+    font-weight: 600;
 }

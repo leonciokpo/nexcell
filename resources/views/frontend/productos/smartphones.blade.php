@@ -1,4 +1,4 @@
-<x-layout title="Smartphones" bodyClass="fondo-productos">
+<x-layout title="Smartphones">
 
 <div class="container py-5">
 
@@ -8,20 +8,35 @@
 
         @foreach ($productos as $producto)
         <div class="col-lg-3 col-md-6">
-            <div class="producto-card">
+            <a href="{{ route('producto.show', $producto['id']) }}" class="card-link">
+        
+                <div class="producto-card">
 
-                <img src="{{ asset($producto['imagen']) }}" alt="producto">
+                    <img src="{{ asset($producto['imagen']) }}" alt="producto">
 
-                <h5>{{ $producto['nombre'] }}</h5>
+                    <h5>{{ $producto['nombre'] }}</h5>
 
-                <p class="precio">
-                    $ {{ number_format($producto['precio'], 0, ',', '.') }}
-                </p>
+                    <p class="precio">
+                        @if(isset($producto['precio_viejo']))
+                            <span class="precio-viejo">
+                                $ {{ number_format($producto['precio_viejo'], 0, ',', '.') }}
+                            </span>
 
-                <a href="{{ route('producto.show', $producto['id']) }}" class="btn-comprar">
-                    Ver producto
-                </a>
-            </div>
+                            <span class="descuento">
+                                -{{ $producto['descuento'] }}%
+                            </span>
+                        @endif
+
+                        <br>
+
+                        <span class="precio-nuevo">
+                            $ {{ number_format($producto['precio'], 0, ',', '.') }}
+                        </span>
+                    </p>
+
+                </div>
+
+            </a>
         </div>
         @endforeach
 

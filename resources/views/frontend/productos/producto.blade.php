@@ -1,4 +1,4 @@
-<x-layout title="{{ $producto['nombre'] }}" bodyClass="fondo-productos">
+<x-layout title="{{ $producto['nombre'] }}" bodyClass="fondo-producto">
 
 <div class="container py-5">
 

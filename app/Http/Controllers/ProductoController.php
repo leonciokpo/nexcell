@@ -14,6 +14,8 @@ class ProductoController extends Controller
         "id" => 1,
         "nombre" => "Iphone 15 Pro Max",
         "precio" => 2176900,
+        "precio_viejo" => 2500000,
+        "descuento" => 30,
         "imagen" => "images/Celulares/Apple/Gama Alta/iphone15ProMaxTitanio.jpg",
         "descripcion" => "El iPhone más potente con chip A17 Pro."
     ],
@@ -21,6 +23,8 @@ class ProductoController extends Controller
         "id" => 2,
         "nombre" => "Samsung S25 Ultra",
         "precio" => 1771900,
+        "precio_viejo" => 2100000,
+        "descuento" => 20,
         "imagen" => "images/Celulares/Samsung/Gama Alta/s25ultrablack.jpg",
         "descripcion" => "Pantalla AMOLED y cámara de última generación."
     ],
@@ -28,6 +32,8 @@ class ProductoController extends Controller
         "id" => 3,
         "nombre" => "Poco F7",
         "precio" => 2316100,
+        "precio_viejo" => 2700000,
+        "descuento" => 15,
         "imagen" => "images/Celulares/Xiaomi/Gama Alta/pocoF7.jpg",
         "descripcion" => "Potencia extrema a precio competitivo."
     ],
@@ -35,6 +41,8 @@ class ProductoController extends Controller
         "id" => 4,
         "nombre" => "Motorola Edge 60 Pro",
         "precio" => 526500,
+        "precio_viejo" => 650000,
+        "descuento" => 20,
         "imagen" => "images/Celulares/Motorola/Gama Alta/motoEdge60proCobalto.jpg",
         "descripcion" => "Diseño premium y gran rendimiento."
     ],
@@ -58,5 +66,20 @@ public function show($id)
     }
 
     return view('frontend.productos.producto', compact('producto'));
+}
+
+public function principal()
+{
+    $productos = $this->getProductos();
+
+    $masVendidosIds = [1, 2, 3, 4];
+    $masVendidos = collect($productos)->whereIn('id', $masVendidosIds);
+
+    // 👇 ACA CREÁS LAS OFERTAS
+    $ofertas = collect($productos)->filter(function ($producto) {
+        return isset($producto['descuento']) && $producto['descuento'] > 0;
+    });
+
+    return view('frontend.principal', compact('productos', 'masVendidos', 'ofertas'));
 }
 }

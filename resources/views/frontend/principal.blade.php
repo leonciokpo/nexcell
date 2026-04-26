@@ -130,77 +130,35 @@
 
         <div class="row g-4">
 
-            <!-- PRODUCTO 1 -->
-            <div class="col-md-3">
-                <a href="#" class="oferta-card">
-                    <img src="{{ asset('images/Celulares/Apple/Gama Alta/iphone15ProMaxTitanio.jpg') }}">
+            @foreach ($ofertas as $producto)
+                <div class="col-md-3">
 
-                    <div class="info">
-                        <p>Iphone 15 Pro Max</p>
+                    <a href="{{ route('producto.show', $producto['id']) }}" class="oferta-card">
 
-                        <div class="precios">
-                            <span class="precio-viejo">$2.500.000</span>
-                            <span class="descuento">-30%</span>
+                        <img src="{{ asset($producto['imagen']) }}">
+
+                        <div class="info">
+                            <p>{{ $producto['nombre'] }}</p>
+
+                            <div class="precios">
+                                <span class="precio-viejo">
+                                    $ {{ number_format($producto['precio_viejo'], 0, ',', '.') }}
+                                </span>
+
+                                <span class="descuento">
+                                    -{{ $producto['descuento'] }}%
+                                </span>
+                            </div>
+
+                            <strong class="precio-nuevo">
+                                $ {{ number_format($producto['precio'], 0, ',', '.') }}
+                            </strong>
                         </div>
 
-                        <strong class="precio-nuevo">$2.176.900</strong>
-                    </div>
-                </a>
-            </div>
+                    </a>
 
-            <!-- PRODUCTO 2 -->
-            <div class="col-md-3">
-                <a href="#" class="oferta-card">
-                    <img src="{{ asset('images/Celulares/Samsung/Gama Alta/s25ultrablack.jpg') }}">
-
-                    <div class="info">
-                        <p>Samsung S25 Ultra</p>
-
-                        <div class="precios">
-                            <span class="precio-viejo">$2.100.000</span>
-                            <span class="descuento">-20%</span>
-                        </div>
-
-                        <strong class="precio-nuevo">$1.771.900</strong>
-                    </div>
-                </a>
-            </div>
-
-            <!-- PRODUCTO 3 -->
-            <div class="col-md-3">
-                <a href="#" class="oferta-card">
-                    <img src="{{ asset('images/Celulares/Xiaomi/Gama Alta/pocoF7.jpg') }}">
-
-                    <div class="info">
-                        <p>Poco F7</p>
-
-                        <div class="precios">
-                            <span class="precio-viejo">$2.700.000</span>
-                            <span class="descuento">-15%</span>
-                        </div>
-
-                        <strong class="precio-nuevo">$2.316.100</strong>
-                    </div>
-                </a>
-            </div>
-
-            <!-- PRODUCTO 4 -->
-            <div class="col-md-3">
-                <a href="#" class="oferta-card">
-                    <img src="{{ asset('images/Celulares/Motorola/Gama Alta/motoEdge60proCobalto.jpg') }}">
-
-                    <div class="info">
-                        <p>Motorola Edge 60 Pro</p>
-
-                        <div class="precios">
-                            <span class="precio-viejo">$650.000</span>
-                            <span class="descuento">-20%</span>
-                        </div>
-
-                        <strong class="precio-nuevo">$526.500</strong>
-                    </div>
-                </a>
-            </div>
+                </div>
+            @endforeach
 
         </div>
 
@@ -214,71 +172,26 @@
         
         <div class="carousel-inner">
 
-            <!-- SLIDE 1 -->
-            <div class="carousel-item active">
-                <div class="d-flex justify-content-between">
+            @foreach ($masVendidos->chunk(4) as $chunk)
+                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                    <div class="d-flex justify-content-between">
 
-                    <!-- CARD 1 -->
-                    <a href="/producto/iphone15" class="productosMasVendidos-card card-link">
-                        <img src="{{ asset('images/Celulares/Apple/Gama Alta/iphone15ProMaxTitanio.jpg') }}">
-                        <p>Iphone 15 Pro Max</p>
-                        <strong>$2.176.900</strong>
-                    </a>
+                        @foreach ($chunk as $producto)
+                            <a href="{{ route('producto.show', $producto['id']) }}" class="productosMasVendidos-card card-link">
 
-                    <!-- CARD 2 -->
-                    <a href="/producto/s25" class="productosMasVendidos-card card-link">
-                        <img src="{{ asset('images/Celulares/Samsung/Gama Alta/s25ultrablack.jpg') }}">
-                        <p>Samsung S25</p>
-                        <strong>$1.771.900</strong>
-                    </a>
+                                <img src="{{ asset($producto['imagen']) }}">
+                                <p>{{ $producto['nombre'] }}</p>
 
-                    <!-- CARD 3 -->
-                    <a href="/producto/motoG60" class="productosMasVendidos-card card-link">
-                        <img src="{{ asset('images/Celulares/Motorola/Gama Alta/motoEdge60proCobalto.jpg') }}">
-                        <p>Motorola G60 Pro</p>
-                        <strong>$526.500</strong>
-                    </a>
+                                <strong>
+                                    $ {{ number_format($producto['precio'], 0, ',', '.') }}
+                                </strong>
 
-                    <!-- CARD 4 -->
-                    <a href="/producto/pocoF7" class="productosMasVendidos-card card-link">
-                        <img src="{{ asset('images/Celulares/Xiaomi/Gama Alta/pocoF7.jpg') }}">
-                        <p>Poco F7</p>
-                        <strong>$2.316.100</strong>
-                    </a>
+                            </a>
+                        @endforeach
 
+                    </div>
                 </div>
-            </div>
-
-            <!-- SLIDE 2 -->
-            <div class="carousel-item">
-                <div class="d-flex justify-content-between">
-
-                    <a href="#" class="productosMasVendidos-card card-link">
-                        <img src="{{ asset('images/Celulares/Motorola/Gama Alta/motoRazr40blue.jpg') }}">
-                        <p>Motorola Razr 40</p>
-                        <strong>$671.300</strong>
-                    </a>
-
-                    <a href="#" class="productosMasVendidos-card card-link">
-                        <img src="{{ asset('images/Celulares/Samsung/Gama Alta/samsungS26ultra.jpg') }}">
-                        <p>Samsung S26 Ultra</p>
-                        <strong>$671.300</strong>
-                    </a>
-
-                    <a href="#" class="productosMasVendidos-card card-link">
-                        <img src="{{ asset('images/Celulares/Xiaomi/Gama Alta/pocoF8proBlack.jpg') }}">
-                        <p>Poco F8 Pro</p>
-                        <strong>$671.300</strong>
-                    </a>
-
-                    <a href="#" class="productosMasVendidos-card card-link">
-                        <img src="{{ asset('images/Celulares/Apple/Gama Alta/iphone16proMaxBlack.jpg') }}">
-                        <p>Iphone 16 Pro Max</p>
-                        <strong>$671.300</strong>
-                    </a>
-
-                </div>
-            </div>
+            @endforeach
 
         </div>
 
