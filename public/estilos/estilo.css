@@ -1193,3 +1193,177 @@ aside .card-custom {
         0 0 12px rgba(255,122,24,0.8),
         0 0 25px rgba(255,122,24,0.5);
 }
+
+/* DROPDOWN NEXCELL */
+.dropdown-nexcell {
+    background: rgba(5, 44, 61, 0.95);
+    backdrop-filter: blur(10px);
+
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+
+    padding: 10px 0;
+    margin-top: 10px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* ITEMS */
+.dropdown-nexcell .dropdown-item {
+    color: #cfd8dc;
+    padding: 10px 20px;
+    font-size: 14px;
+
+    transition: all 0.25s ease;
+}
+
+/* HOVER PRO */
+.dropdown-nexcell .dropdown-item:hover {
+    background: rgba(13, 211, 197, 0.12);
+    color: #0dd3c5;
+
+    transform: translateX(5px);
+}
+
+/* ACTIVO */
+.dropdown-nexcell .dropdown-item:active {
+    background: rgba(255,122,24,0.15);
+    color: #ff7a18;
+}
+
+/* FLECHITA */
+.navbar .dropdown-toggle::after {
+    margin-left: 8px;
+    vertical-align: middle;
+    border-top-color: #0dd3c5;
+}
+
+/* DROPDOWN FONDO */
+.dropdown-menu {
+    background: rgba(5, 44, 61, 0.95) !important; /* azul oscuro Nexcell */
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+
+    overflow: hidden;
+}
+
+/* ITEMS */
+.dropdown-item {
+    color: #cfd8dc !important;
+    background: transparent !important;
+
+    transition: all 0.25s ease;
+}
+
+/* HOVER */
+.dropdown-item:hover {
+    background: rgba(13, 211, 197, 0.12) !important;
+    color: #0dd3c5 !important;
+
+    transform: translateX(5px);
+}
+
+/* CLICK */
+.dropdown-item:active {
+    background: rgba(255,122,24,0.15) !important;
+    color: #ff7a18 !important;
+}
+
+.dropdown-item:not(:last-child) {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ITEMS DROPDOWN AJUSTADOS */
+.dropdown-item {
+    padding: 8px 16px !important; /* 🔥 más chico */
+    margin: 2px 8px; /* 🔥 separa del borde del contenedor */
+    border-radius: 8px; /* 🔥 para que el hover no sea cuadrado rígido */
+}
+
+body.fondo-productos {
+    background: url('/images/fondoProductos.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
+}
+
+/* ===== GRID PRODUCTOS ===== */
+
+.producto-card {
+    background: rgba(0,0,0,0.7);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+
+    backdrop-filter: blur(10px);
+
+    transition: all 0.3s ease;
+
+    height: 100%;
+}
+
+/* IMAGEN */
+.producto-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* TITULO */
+.producto-card h5 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* PRECIO */
+.producto-card .precio {
+    color: #ff7a18;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* BOTON */
+.btn-comprar {
+    background: transparent;
+    border: 1px solid #0dd3c5;
+    color: #0dd3c5;
+
+    padding: 8px 16px;
+    border-radius: 20px;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER */
+.btn-comprar:hover {
+    background: #0dd3c5;
+    color: #000;
+
+    box-shadow:
+        0 0 10px rgba(13,211,197,0.6),
+        0 0 20px rgba(13,211,197,0.4);
+}
+
+/* HOVER CARD */
+.producto-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 0 15px rgba(255,122,24,0.6),
+        0 0 40px rgba(255,122,24,0.4);
+}
+
+.producto-img {
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.descripcion {
+    color: #cfd8dc;
+    font-size: 15px;
+}
