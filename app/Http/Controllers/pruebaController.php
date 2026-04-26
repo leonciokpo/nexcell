@@ -33,5 +33,8 @@ class pruebaController extends Controller
     public function smartphones(){
         return view('frontend.productos.smartphones');
     }
+    public function accesorios(){
+        return view('frontend.productos.accesorios');
+    }
 }
 

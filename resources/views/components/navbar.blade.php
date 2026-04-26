@@ -46,7 +46,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarProductos">
                         <li><a class="dropdown-item" href="{{ route('smartphones') }}">Smartphones</a></li>
-                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                        <li><a class="dropdown-item" href="{{ route('accesorios') }}">Accesorios</a></li>
                         <li><a class="dropdown-item" href="#">Ofertas</a></li>
                         <li><a class="dropdown-item" href="#">Nuevos</a></li>
                         </ul>

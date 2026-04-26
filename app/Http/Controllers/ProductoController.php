@@ -57,8 +57,11 @@ class ProductoController extends Controller
 
 public function show($id)
 {
-    
-    $productos = $this->getProductos();
+    $productos = array_merge(
+        $this->getProductos(),
+        $this->getAccesorios()
+    );
+
     $producto = collect($productos)->firstWhere('id', $id);
 
     if (!$producto) {
@@ -81,5 +84,59 @@ public function principal()
     });
 
     return view('frontend.principal', compact('productos', 'masVendidos', 'ofertas'));
+}
+
+private function getAccesorios()
+{
+    return [
+
+        [
+            "id" => 5,
+            "nombre" => "Auriculares JBL Tune 520BT",
+            "precio" => 45000,
+            "precio_viejo" => 60000,
+            "descuento" => 25,
+            "imagen" => "images/accesorios/Samsung/jbl.jpg",
+            "descripcion" => "Auriculares inalámbricos con gran sonido."
+        ],
+
+        [
+            "id" => 6,
+            "nombre" => "Cargador Samsung 25W",
+            "precio" => 18000,
+            "precio_viejo" => 25000,
+            "descuento" => 15,
+            "imagen" => "images/accesorios/cargadorSamsung.jpg",
+            "descripcion" => "Carga rápida original Samsung."
+        ],
+
+        [
+            "id" => 7,
+            "nombre" => "Cable USB-C Xiaomi",
+            "precio" => 8500,
+            "precio_viejo" => 12000,
+            "descuento" => 10,
+            "imagen" => "images/accesorios/usbC.jpg",
+            "descripcion" => "Cable USB tipo C de alta velocidad."
+        ],
+
+        [
+            "id" => 8,
+            "nombre" => "Power Bank 10000mAh",
+            "precio" => 32000,
+            "precio_viejo" => 40000,
+            "descuento" => 20,
+            "imagen" => "images/accesorios/powerbank.jpg",
+            "descripcion" => "Batería portátil para todo tipo de dispositivos."
+        ]
+
+    ];
+}
+
+public function accesorios()
+{
+    $productos = $this->getAccesorios();
+
+    return view('frontend.productos.accesorios', compact('productos'));
 }
 }
