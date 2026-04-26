@@ -1626,4 +1626,99 @@ body.fondo-productos {
     .producto-img {
         max-height: 300px;
     }
-}   
+} 
+
+/* MINIATURAS */
+.miniatura {
+    width: 55px;
+    height: 70px;
+    object-fit: contain;
+
+    border: 2px solid #ccc;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    padding: 4px;
+    background: #fff;
+
+    transition: all 0.25s ease;
+}
+
+/* HOVER */
+.miniatura:hover {
+    transform: scale(1.08);
+    border-color: #ff7a18;
+}
+
+/* ACTIVA */
+.miniatura.active {
+    border: 2px solid #0d6efd;
+    box-shadow: 0 0 0 2px rgba(13,110,253,0.2);
+}
+
+.ver-pagos {
+    color: #0d6efd;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ver-pagos:hover {
+    text-decoration: underline;
+}
+
+/* IMAGENES DE PAGO */
+.pago-img {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    background: #fff;
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+/* LINK */
+.metodos-link {
+    color: #3483fa;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.metodos-link:hover {
+    text-decoration: underline;
+}
+
+/* MODAL */
+.modal-ml {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* TITULOS */
+.subtitulo-pagos {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* GRID LOGOS */
+.pagos-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* LOGOS */
+.pagos-grid img {
+    height: 30px;
+    object-fit: contain;
+    background: #fff;
+    padding: 4px 6px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}

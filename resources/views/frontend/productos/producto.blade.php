@@ -10,8 +10,31 @@
             <div class="col-lg-6 text-center">
 
                 <div class="producto-img-box">
-                    <img src="{{ asset($producto['imagen']) }}" 
-                         class="img-fluid producto-img">
+                    <img src="{{ asset($producto['variantes'][0]['imagen'] ?? $producto['imagen']) }}" 
+                        class="img-fluid producto-img"
+                        id="imagenPrincipal">
+                        @if(isset($producto['variantes']))
+                            <div class="mt-4">
+
+                                <p><strong>Color:</strong> 
+                                    <span id="colorSeleccionado">
+                                        {{ $producto['variantes'][0]['color'] }}
+                                    </span>
+                                </p>
+
+                                <div class="d-flex gap-2">
+
+                                    @foreach ($producto['variantes'] as $index => $variante)
+                                        <img src="{{ asset($variante['imagen']) }}"
+                                            class="miniatura {{ $loop->first ? 'active' : '' }}"
+                                            data-imagen="{{ asset($variante['imagen']) }}"
+                                            data-color="{{ $variante['color'] }}">
+                                    @endforeach
+
+                                </div>
+
+                            </div>
+                        @endif
                 </div>
 
             </div>
@@ -52,6 +75,10 @@
                     en 6 cuotas sin interés
                 </p>
 
+                <p class="metodos-link mt-2" data-bs-toggle="modal" data-bs-target="#modalPagos">
+                    Ver Metodos de Pago
+                </p>
+
                 <hr>
 
                 <div class="producto-descripcion">
@@ -82,4 +109,38 @@
 
 </div>
 
+<!-- MODAL METODOS DE PAGO -->
+<div class="modal fade" id="modalPagos" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-ml">
+
+            <div class="modal-header border-0">
+                <h5 class="modal-title">Medios de pago</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <p class="subtitulo-pagos">Pagá con tarjetas de crédito</p>
+
+                <div class="pagos-grid">
+                    <img src="{{ asset('images/medios_de_pago/visa.jpg') }}">
+                    <img src="{{ asset('images/medios_de_pago/mastercard.jpg') }}">
+                    <img src="{{ asset('images/medios_de_pago/cabal.jpg') }}">
+                </div>
+
+                <hr>
+
+                <p class="subtitulo-pagos">Pagá en efectivo</p>
+
+                <div class="pagos-grid">
+                    <img src="{{ asset('images/medios_de_pago/rapipago.jpg') }}">
+                    <img src="{{ asset('images/medios_de_pago/pagofacil.jpg') }}">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
 </x-layout>

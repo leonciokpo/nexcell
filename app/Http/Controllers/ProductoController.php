@@ -11,13 +11,23 @@ class ProductoController extends Controller
 {
     return [
     [
-        "id" => 1,
-        "nombre" => "Iphone 15 Pro Max",
-        "precio" => 2176900,
-        "precio_viejo" => 2500000,
-        "descuento" => 30,
-        "imagen" => "images/Celulares/Apple/Gama Alta/iphone15ProMaxTitanio.jpg",
-        "descripcion" => "El iPhone más potente con chip A17 Pro."
+    "id" => 1,
+    "nombre" => "Iphone 15 Pro Max",
+    "precio" => 2176900,
+    "precio_viejo" => 2500000,
+    "descuento" => 30,
+    "imagen" => "images/Celulares/Apple/Gama_Alta/iphone15ProMaxTitanio.jpg",
+    "descripcion" => "El iPhone más potente con chip A17 Pro.",
+    "variantes" => [
+        [
+            "color" => "Blanco",
+            "imagen" => "images/Celulares/Apple/Gama_Alta/iphone15ProMaxTitanio.jpg"
+        ],
+        [
+            "color" => "Negro",
+            "imagen" => "images/Celulares/Apple/Gama_Alta/iphone15ProMaxBlack.jpg"
+        ],
+    ],
     ],
     [
         "id" => 2,

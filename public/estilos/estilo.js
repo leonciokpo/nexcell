@@ -29,3 +29,26 @@ if (searchIcon) {
         alert('Click detectado');
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const miniaturas = document.querySelectorAll('.miniatura');
+    const imagenPrincipal = document.getElementById('imagenPrincipal');
+    const colorTexto = document.getElementById('colorSeleccionado');
+
+    miniaturas.forEach(img => {
+        img.addEventListener('click', () => {
+
+            // Cambiar imagen principal
+            imagenPrincipal.src = img.dataset.imagen;
+
+            // Cambiar texto del color
+            colorTexto.textContent = img.dataset.color;
+
+            // Cambiar estado activo
+            miniaturas.forEach(i => i.classList.remove('active'));
+            img.classList.add('active');
+        });
+    });
+
+});
