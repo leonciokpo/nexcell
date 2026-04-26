@@ -29,5 +29,9 @@ class pruebaController extends Controller
     public function exito(){
         return view('frontend.exito');
     }
+
+    public function smartphones(){
+        return view('frontend.productos.smartphones');
+    }
 }
 

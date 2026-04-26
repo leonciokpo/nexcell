@@ -35,13 +35,21 @@
                 </div>
                 <ul class="navbar-nav w-100">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('principal') }}">
+                        <a class="nav-link {{ request()->routeIs('principal') ? 'active' : '' }}" href="{{ route('principal') }}">
                             Inicio
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#productos">Productos</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarProductos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Productos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarProductos">
+                        <li><a class="dropdown-item" href="{{ route('smartphones') }}">Smartphones</a></li>
+                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                        <li><a class="dropdown-item" href="#">Ofertas</a></li>
+                        <li><a class="dropdown-item" href="#">Nuevos</a></li>
+                        </ul>
                     </li>
 
                     <li class="nav-item">

@@ -1,4 +1,4 @@
-@props(['title'])
+@props(['title', 'bodyClass' => ''])
 
 <!DOCTYPE html>
 <html lang="es">
@@ -13,7 +13,7 @@
     
 </head>
 
-<body>
+<body class="{{ $bodyClass ?? '' }}">
 
     <x-navbar />
 

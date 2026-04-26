@@ -27,7 +27,7 @@
         </p>
 
         <!-- BOTÓN -->
-        <a href="{{ route('home') }}" class="btn-volver">
+        <a href="{{ route('principal') }}" class="btn-volver">
             Volver al inicio
         </a>
 
