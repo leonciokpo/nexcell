@@ -22,9 +22,6 @@
                         Podés retirar tu compra personalmente sin costo adicional.
                     </p>
 
-                    <div class="logo-mini mt-3">
-                        <img src="/images/local.png" alt="Retiro en local">
-                    </div>
                 </div>
             </div>
 
@@ -39,10 +36,6 @@
                         Entrega a domicilio en un plazo de 3 a 7 días hábiles en todo el país.
                     </p>
 
-                    <div class="logos-mini mt-3">
-                        <img src="/images/oca.png" alt="OCA">
-                        <img src="/images/correoargentino.png" alt="Correo Argentino">
-                    </div>
                 </div>
             </div>
 
@@ -57,9 +50,6 @@
                         Recibí tu producto en 24 a 48 hs en zonas seleccionadas.
                     </p>
 
-                    <div class="logos-mini mt-3">
-                        <img src="/images/andreani.png" alt="Andreani">
-                    </div>
                 </div>
             </div>
 
@@ -100,9 +90,6 @@
                         Recibirás un código de seguimiento para saber en todo momento dónde está tu compra.
                     </p>
 
-                    <div class="logo-mini mt-3">
-                        <img src="/images/tracking.png" alt="Seguimiento">
-                    </div>
                 </div>
             </div>
 
@@ -144,7 +131,7 @@
                     </p>
 
                     <div class="logos-mini mt-3">
-                        <img src="/images/mercadopago.png" alt="Mercado Pago">
+                        <img src="/images/Comercializacion/Mercado_Pago.svg.png" alt="Mercado Pago">
                     </div>
                 </div>
             </div>
@@ -158,9 +145,6 @@
                         Podés abonar en efectivo al retirar tu producto en el local.
                     </p>
 
-                    <div class="logo-mini mt-3">
-                        <img src="/images/efectivo.png" alt="Efectivo">
-                    </div>
                 </div>
             </div>
 
