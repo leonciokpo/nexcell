@@ -1715,12 +1715,15 @@ body.fondo-productos {
 
 /* LOGOS */
 .pagos-grid img {
-    height: 30px;
+    height: 80px; /* 🔥 más grandes */
     object-fit: contain;
+
     background: #fff;
-    padding: 4px 6px;
-    border-radius: 4px;
+    padding: 6px 8px;
+    border-radius: 6px;
     border: 1px solid #eee;
+
+    transition: transform 0.2s ease;
 }
 
 /* ===== COMERCIALIZACIÓN ===== */
@@ -1780,3 +1783,13 @@ body.fondo-productos {
         0 0 10px rgba(13,211,197,0.5),
         0 0 18px rgba(13,211,197,0.3);
 }
+
+.producto-descripcion h5 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.producto-descripcion {
+    padding: 10px 5px;
+}
+

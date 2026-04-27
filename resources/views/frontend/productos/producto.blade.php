@@ -81,14 +81,6 @@
 
                 <hr>
 
-                <div class="producto-descripcion">
-                    <h5>Descripción</h5>
-
-                    <p>
-                        {{ $producto['descripcion'] }}
-                    </p>
-                </div>
-
                 <div class="d-grid gap-3 mt-4">
 
                     <button class="btn-comprar-detalle">
@@ -105,6 +97,24 @@
 
         </div>
 
+        <!-- DESCRIPCIÓN ABAJO -->
+        <div class="row mt-5">
+            <div class="col-12">
+
+                <div class="producto-detalle-card">
+
+                    <div class="producto-descripcion">
+                        <h5>Descripción</h5>
+
+                        <p>
+                            {{ $producto['descripcion'] }}
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
     </div>
 
 </div>

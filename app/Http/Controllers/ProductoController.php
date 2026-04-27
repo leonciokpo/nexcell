@@ -17,7 +17,29 @@ class ProductoController extends Controller
     "precio_viejo" => 2500000,
     "descuento" => 30,
     "imagen" => "images/Celulares/Apple/Gama_Alta/iphone15ProMaxTitanio.jpg",
-    "descripcion" => "El iPhone más potente con chip A17 Pro.",
+    "descripcion" => "Tamaño y peso2
+Ancho: 76.7 mm
+Alto: 159.9 mm
+Grosor: 8.25 mm
+Peso: 221 g
+Pantalla
+Pantalla Super Retina XDR
+Pantalla OLED de 6.7 pulgadas (diagonal) sin marco
+Resolución de 2796 x 1290 pixeles a 460 ppi
+Dynamic Island
+Pantalla siempre activa
+Tecnología ProMotion con frecuencias de actualización adaptativas de hasta 120 Hz
+Pantalla HDR
+True Tone
+Amplia gama de colores (P3)
+Toque con respuesta háptica
+Relación de contraste 2,000,000:1 (normal)
+Brillo máximo de 1,000 nits (normal); pico de brillo de 1,600 nits (HDR); pico de brillo de 2,000 nits (en exteriores)
+Revestimiento oleofóbico resistente a huellas dactilares
+Compatibilidad para mostrar varios idiomas y caracteres simultáneamente
+La pantalla del iPhone 15 Pro Max tiene esquinas redondeadas que siguen el elegante diseño curvo del teléfono, y las esquinas se encuentran dentro de un rectángulo estándar. Si se mide en forma de rectángulo estándar, la pantalla tiene 6.69 pulgadas en diagonal (el área real de visualización es menor).
+Resistencia a las salpicaduras, al agua y al polvo3
+Clasificación IP68 (hasta 30 minutos a una profundidad máxima de 6 metros) según la norma IEC 60529",
     "variantes" => [
         [
             "color" => "Blanco",
