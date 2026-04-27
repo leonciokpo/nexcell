@@ -106,8 +106,8 @@
                     <div class="producto-descripcion">
                         <h5>Descripción</h5>
 
-                        <p>
-                            {{ $producto['descripcion'] }}
+                        <p class="descripcion">
+                            {!! nl2br(e($producto['descripcion'])) !!}
                         </p>
                     </div>
 

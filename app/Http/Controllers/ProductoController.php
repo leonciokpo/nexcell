@@ -51,33 +51,373 @@ Clasificación IP68 (hasta 30 minutos a una profundidad máxima de 6 metros) seg
         ],
     ],
     ],
-    [
+        [
         "id" => 2,
         "nombre" => "Samsung S25 Ultra",
         "precio" => 1771900,
         "precio_viejo" => 2100000,
         "descuento" => 20,
-        "imagen" => "images/Celulares/Samsung/Gama Alta/s25ultrablack.jpg",
-        "descripcion" => "Pantalla AMOLED y cámara de última generación."
+        "imagen" => "images/Celulares/Samsung/Gama_Alta/s25ultrablack.jpg",
+        "descripcion" => "Pantalla
+        Pantalla Dynamic AMOLED 2X de 6.8 pulgadas
+        Resolución Quad HD+ (3200 x 1440)
+        Frecuencia adaptativa de hasta 120 Hz
+        Brillo máximo de 2600 nits
+        Compatibilidad HDR10+
+
+        Procesador
+        Snapdragon de última generación
+        Arquitectura optimizada para alto rendimiento y gaming
+
+        Cámara
+        Cámara principal de 200 MP
+        Teleobjetivo con zoom óptico avanzado
+        Ultra gran angular de alta definición
+        Grabación en 8K
+
+        Batería
+        5000 mAh
+        Carga rápida e inalámbrica
+        Carga inversa
+
+        Sistema
+        Android con capa One UI
+        Reconocimiento facial y lector de huella ultrasónico
+        Resistencia al agua IP68",
+        "variantes" => [
+            ["color" => "Negro", "imagen" => "images/Celulares/Samsung/Gama_Alta/s25ultrablack.jpg"],
+            ["color" => "Blanco", "imagen" => "images/Celulares/Samsung/Gama_Alta/s25ultrawhite.jpg"],
+        ],
     ],
+
     [
         "id" => 3,
         "nombre" => "Poco F7",
         "precio" => 2316100,
         "precio_viejo" => 2700000,
         "descuento" => 15,
-        "imagen" => "images/Celulares/Xiaomi/Gama Alta/pocoF7.jpg",
-        "descripcion" => "Potencia extrema a precio competitivo."
+        "imagen" => "images/Celulares/Xiaomi/Gama_Alta/pocoF7white.jpg",
+        "descripcion" => "Pantalla
+        AMOLED de 6.67 pulgadas
+        Resolución Full HD+
+        Tasa de refresco de 120 Hz
+
+        Procesador
+        Chipset de alto rendimiento orientado a gaming
+        Excelente gestión térmica
+
+        Cámara
+        Cámara principal de 64 MP
+        Modo nocturno avanzado
+        Grabación en 4K
+
+        Batería
+        5000 mAh
+        Carga rápida de 67W
+
+        Sistema
+        MIUI optimizado para rendimiento
+        Altavoces estéreo
+        Sensor de huella lateral",
+        "variantes" => [
+            ["color" => "Negro", "imagen" => "images/Celulares/Xiaomi/Gama_Alta/pocoF7white.jpg"],
+            ["color" => "Blanco", "imagen" => "images/Celulares/Xiaomi/Gama_Alta/pocoF7black.jpg"],
+        ],
     ],
+
     [
         "id" => 4,
         "nombre" => "Motorola Edge 60 Pro",
         "precio" => 526500,
         "precio_viejo" => 650000,
         "descuento" => 20,
-        "imagen" => "images/Celulares/Motorola/Gama Alta/motoEdge60proCobalto.jpg",
-        "descripcion" => "Diseño premium y gran rendimiento."
+        "imagen" => "images/Celulares/Motorola/Gama_Alta/motoEdge60proCobalto.jpg",
+        "descripcion" => "Pantalla
+        OLED curva de 6.7 pulgadas
+        Resolución Full HD+
+        Frecuencia de 144 Hz
+
+        Procesador
+        Snapdragon de gama alta
+        Excelente rendimiento multitarea
+
+        Cámara
+        Cámara principal de alta resolución
+        Estabilización óptica (OIS)
+        Modo retrato y nocturno mejorado
+
+        Batería
+        4600 mAh
+        Carga ultra rápida
+
+        Sistema
+        Android casi puro
+        Diseño premium con acabado elegante
+        Resistencia al agua y polvo",
+        "variantes" => [
+            ["color" => "Azul", "imagen" => "images/Celulares/Motorola/Gama_Alta/motoEdge60proCobalto.jpg"],
+            ["color" => "Celeste", "imagen" => "images/Celulares/Motorola/Gama_Alta/motoEdge60proceleste.jpg"],
+        ],
     ],
+
+    // ================= NUEVOS =================
+
+    [
+        "id" => 9,
+        "nombre" => "Iphone 14",
+        "precio" => 1400000,
+        "imagen" => "images/Celulares/Apple/Gama_Media/iphone14blue.jpg",
+        "descripcion" => "Pantalla
+        Super Retina XDR OLED de 6.1 pulgadas
+        Resolución de 2532 x 1170 píxeles
+        HDR y True Tone
+
+        Procesador
+        Chip A15 Bionic
+        Excelente rendimiento y eficiencia energética
+
+        Cámara
+        Sistema de doble cámara de 12 MP
+        Modo noche y Deep Fusion
+        Grabación en 4K HDR
+
+        Batería
+        Autonomía para todo el día
+        Carga rápida e inalámbrica
+
+        Sistema
+        iOS optimizado
+        Face ID
+        Diseño resistente con Ceramic Shield",
+        "variantes" => [
+            ["color" => "Azul", "imagen" => "images/Celulares/Apple/Gama_Media/iphone14blue.jpg"],
+            ["color" => "Morado", "imagen" => "images/Celulares/Apple/Gama_Media/iphone14purple.jpg"],
+        ],
+    ],
+
+    [
+        "id" => 10,
+        "nombre" => "Iphone 12",
+        "precio" => 950000,
+        "imagen" => "images/Celulares/Apple/Gama_Baja/iphone12black.jpg",
+        "descripcion" => "Pantalla
+        Super Retina XDR OLED de 6.1 pulgadas
+        Resolución Full HD+
+
+        Procesador
+        Chip A14 Bionic
+        Gran rendimiento en apps y juegos
+
+        Cámara
+        Doble cámara de 12 MP
+        Modo noche
+        Grabación 4K
+
+        Batería
+        Carga rápida
+        Compatible con MagSafe
+
+        Sistema
+        iOS fluido y seguro
+        Face ID
+        Diseño compacto y liviano",
+        "variantes" => [
+            ["color" => "Negro", "imagen" => "images/Celulares/Apple/Gama_Baja/iphone12black.jpg"],
+            ["color" => "Blanco", "imagen" => "images/Celulares/Apple/Gama_Baja/iphone12white.jpg"],
+        ],
+    ],
+
+    [
+        "id" => 11,
+        "nombre" => "Motorola Razr 40",
+        "precio" => 1200000,
+        "precio_viejo" => 1400000,
+        "descuento" => 15,
+        "imagen" => "images/Celulares/Motorola/Gama_Alta/motoRazr40blue.jpg",
+        "descripcion" => "Pantalla
+        Pantalla plegable pOLED de 6.9 pulgadas
+        Pantalla externa interactiva
+
+        Procesador
+        Snapdragon optimizado
+        Buen rendimiento en multitarea
+
+        Cámara
+        Sistema de doble cámara
+        Modo selfie con pantalla externa
+
+        Batería
+        4200 mAh
+        Carga rápida
+
+        Sistema
+        Android limpio
+        Diseño plegable compacto
+        Ideal para portabilidad",
+        "variantes" => [
+            ["color" => "Azul", "imagen" => "images/Celulares/Motorola/Gama_Alta/motoRazr40blue.jpg"],
+        ],
+    ],
+
+    [
+        "id" => 12,
+        "nombre" => "Motorola G56",
+        "precio" => 420000,
+        "imagen" => "images/Celulares/Motorola/Gama_Media/g56blue.jpg",
+        "descripcion" => "Pantalla
+        LCD de 6.5 pulgadas
+        Resolución HD+
+
+        Procesador
+        Octa-core eficiente
+        Rendimiento equilibrado
+
+        Cámara
+        Cámara principal de 50 MP
+        Modo retrato
+
+        Batería
+        5000 mAh
+        Gran duración
+
+        Sistema
+        Android optimizado
+        Sensor de huella lateral
+        Equipo ideal para uso diario",
+        "variantes" => [
+            ["color" => "Azul", "imagen" => "images/Celulares/Motorola/Gama_Media/g56blue.jpg"],
+            ["color" => "Negro", "imagen" => "images/Celulares/Motorola/Gama_Media/g56black.jpg"],
+        ],
+    ],
+
+    [
+        "id" => 13,
+        "nombre" => "Motorola G84",
+        "precio" => 480000,
+        "imagen" => "images/Celulares/Motorola/Gama_Media/g84white.jpg",
+        "descripcion" => "Pantalla
+        OLED de 6.5 pulgadas
+        Resolución Full HD+
+
+        Procesador
+        Snapdragon de gama media
+        Buen rendimiento general
+
+        Cámara
+        Cámara principal de alta calidad
+        Modo noche mejorado
+
+        Batería
+        5000 mAh
+        Carga rápida
+
+        Sistema
+        Android limpio
+        Diseño moderno y liviano",
+        "variantes" => [
+            ["color" => "Blanco", "imagen" => "images/Celulares/Motorola/Gama_Media/g84white.jpg"],
+            ["color" => "Negro", "imagen" => "images/Celulares/Motorola/Gama_Media/g84black.jpg"],
+        ],
+    ],
+
+    [
+        "id" => 14,
+        "nombre" => "Samsung Galaxy S26 Ultra",
+        "precio" => 2100000,
+        "precio_viejo" => 2400000,
+        "descuento" => 10,
+        "imagen" => "images/Celulares/Samsung/Gama_Alta/s26ultrablack.jpg",
+        "descripcion" => "Pantalla
+        Dynamic AMOLED 2X de 6.9 pulgadas
+        Resolución 2K
+        Frecuencia adaptativa de 120 Hz
+
+        Procesador
+        Última generación Snapdragon
+        Alto rendimiento en IA y gaming
+
+        Cámara
+        Sensor principal de 200 MP
+        Zoom óptico avanzado
+        Grabación 8K
+
+        Batería
+        5000 mAh
+        Carga rápida e inalámbrica
+
+        Sistema
+        Android con One UI
+        S-Pen integrado
+        Resistencia IP68",
+        "variantes" => [
+            ["color" => "Negro", "imagen" => "images/Celulares/Samsung/Gama_Alta/s26ultrablack.jpg"],
+            ["color" => "Blanco", "imagen" => "images/Celulares/Samsung/Gama_Alta/s26ultrawhite.jpg"],
+            ["color" => "Azul", "imagen" => "images/Celulares/Samsung/Gama_Alta/s26ultrablue.jpg"],
+        ],
+    ],
+
+    [
+        "id" => 15,
+        "nombre" => "Xiaomi Poco F8 Pro",
+        "precio" => 1100000,
+        "imagen" => "images/Celulares/Xiaomi/Gama_Alta/pocof8problack.jpg",
+        "descripcion" => "Pantalla
+        AMOLED de 6.7 pulgadas
+        Resolución Full HD+
+        120 Hz
+
+        Procesador
+        Chipset de alto rendimiento
+        Optimizado para gaming
+
+        Cámara
+        Sensor principal de alta resolución
+        Modo nocturno
+
+        Batería
+        5000 mAh
+        Carga rápida
+
+        Sistema
+        MIUI optimizado
+        Altavoces estéreo
+        Excelente relación precio/calidad",
+        "variantes" => [
+            ["color" => "Negro", "imagen" => "images/Celulares/Xiaomi/Gama_Alta/pocof8problack.jpg"],
+            ["color" => "Blanco", "imagen" => "images/Celulares/Xiaomi/Gama_Alta/pocof8prowhite.jpg"],
+        ],
+    ],
+
+    [
+        "id" => 16,
+        "nombre" => "Xiaomi Redmi Note 14",
+        "precio" => 350000,
+        "imagen" => "images/Celulares/Xiaomi/Gama_Media/redmi14white.jpg",
+        "descripcion" => "Pantalla
+        AMOLED de 6.6 pulgadas
+        Resolución Full HD+
+
+        Procesador
+        MediaTek eficiente
+        Buen rendimiento diario
+
+        Cámara
+        Cámara principal de 50 MP
+        IA para mejoras fotográficas
+
+        Batería
+        5000 mAh
+        Carga rápida
+
+        Sistema
+        MIUI basado en Android
+        Equipo ideal para uso cotidiano",
+        "variantes" => [
+            ["color" => "Blanco", "imagen" => "images/Celulares/Xiaomi/Gama_Media/redmi14white.jpg"],
+            ["color" => "Negro", "imagen" => "images/Celulares/Xiaomi/Gama_Media/redmi14black.jpg"],
+        ],
+    ],
+
     ];
 }
     public function smartphones()
