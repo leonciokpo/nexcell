@@ -608,6 +608,7 @@ aside .card-custom {
     display: block;
     text-decoration: none;
     color: #fff;
+    width: 23%;
 
     transition: all 0.3s ease;
 }
@@ -657,14 +658,6 @@ aside .card-custom {
     font-size: 18px;
     color: #0dd3c5;
     margin-top: 5px;
-}
-
-/* HOVER */
-.oferta-card:hover {
-    transform: translateY(-6px);
-    box-shadow:
-        0 0 12px rgba(255,122,24,0.8),
-        0 0 30px rgba(255,122,24,0.5);
 }
 
 .banner-nexcell {

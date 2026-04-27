@@ -15,7 +15,7 @@
 
             <div class="contacto-item">
                 <i class="bi bi-geo-alt-fill"></i>
-                San Martín 706 - Luján Hiper Chango Más - Luján
+                Hipolito Yrigoyen 1700 - Centenario Shopping
             </div>
 
             <div class="contacto-item">
@@ -25,17 +25,17 @@
 
             <div class="contacto-item">
                 <i class="bi bi-telephone-fill"></i>
-                +54 2323 348545
+                +54 8912 839123
             </div>
 
             <div class="contacto-item">
                 <i class="bi bi-envelope-fill"></i>
-                info@puntocelular.com.ar
+                nexcell@gmail.com
             </div>
 
             <div class="contacto-item">
                 <i class="bi bi-shop"></i>
-                Lorenzo Casey 920 - Luján
+                Hipolito Yrigoyen 1700
             </div>
 
         </div>

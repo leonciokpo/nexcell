@@ -95,7 +95,7 @@ Clasificación IP68 (hasta 30 minutos a una profundidad máxima de 6 metros) seg
         "nombre" => "Poco F7",
         "precio" => 2316100,
         "precio_viejo" => 2700000,
-        "descuento" => 15,
+        "descuento" => 0,
         "imagen" => "images/Celulares/Xiaomi/Gama_Alta/pocoF7white.jpg",
         "descripcion" => "Pantalla
         AMOLED de 6.67 pulgadas
@@ -130,7 +130,7 @@ Clasificación IP68 (hasta 30 minutos a una profundidad máxima de 6 metros) seg
         "nombre" => "Motorola Edge 60 Pro",
         "precio" => 526500,
         "precio_viejo" => 650000,
-        "descuento" => 20,
+        "descuento" => 0,
         "imagen" => "images/Celulares/Motorola/Gama_Alta/motoEdge60proCobalto.jpg",
         "descripcion" => "Pantalla
         OLED curva de 6.7 pulgadas
@@ -445,10 +445,24 @@ public function show($id)
 
 public function principal()
 {
-    $productos = $this->getProductos();
+    $productos = array_merge(
+        $this->getProductos(),
+        $this->getAccesorios()
+    );
 
-    $masVendidosIds = [1, 2, 3, 4];
-    $masVendidos = collect($productos)->whereIn('id', $masVendidosIds);
+    // 👇 4 smartphones + 4 accesorios
+    $masVendidosIds = [
+        1, 2, 3, 4, // smartphones
+        5, 8,       // auriculares
+        18,         // parlante
+        20          // smartwatch
+    ];
+
+    // 👇 esto mantiene el orden
+    $masVendidos = collect($masVendidosIds)
+        ->map(function ($id) use ($productos) {
+            return collect($productos)->firstWhere('id', $id);
+        });
 
     // 👇 ACA CREÁS LAS OFERTAS
     $ofertas = collect($productos)->filter(function ($producto) {

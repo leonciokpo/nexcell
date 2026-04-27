@@ -6,6 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? 'Home' }}</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/logo-titulo.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/logo-titulo.png') }}">
+    <link rel="icon" type="image/png" sizes="64x64" href="{{ asset('images/logo-titulo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo-titulo.png') }}">
 
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}">

@@ -81,7 +81,7 @@
 
     <!-- NUEVOS -->
     <div class="col-md-6 col-lg-3">
-        <a href="#" class="acceso-card">
+        <a href="{{ route('nuevos') }}" class="acceso-card">
             <img src="{{ asset('images/Celulares/cajaAbierta.jpg') }}">
             <div class="overlay">
                 <h3>Nuevos</h3>
@@ -98,21 +98,21 @@
 
         <div class="col-md-4">
             <div class="card-custom">
-                <h5>🔥 Promos</h5>
+                <h5><i class="bi bi-fire icono-card"></i> Promos</h5>
                 <p>Hasta 30% OFF</p>
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="card-custom">
-                <h5>🚚 Envíos</h5>
-                <p>Todo el país</p>
+                <h5><i class="bi bi-truck icono-card"></i> Envíos</h5>
+                <p>A todo el país</p>
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="card-custom">
-                <h5>💳 Pagos</h5>
+                <h5><i class="bi bi-credit-card icono-card"></i> Pagos</h5>
                 <p>Tarjetas y efectivo</p>
             </div>
         </div>
@@ -128,39 +128,56 @@
             <span class="contador">Termina en: 12hs</span>
         </div>
 
-        <div class="row g-4">
+<div id="carouselOfertas" class="carousel slide" data-bs-ride="carousel">
 
-            @foreach ($ofertas as $producto)
-                <div class="col-md-3">
+    <div class="carousel-inner">
 
-                    <a href="{{ route('producto.show', $producto['id']) }}" class="oferta-card">
+        @foreach ($ofertas->chunk(4) as $chunk)
+            <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                <div class="d-flex justify-content-between">
 
-                        <img src="{{ asset($producto['imagen']) }}">
+                    @foreach ($chunk as $producto)
+                        <a href="{{ route('producto.show', $producto['id']) }}" class="oferta-card">
 
-                        <div class="info">
-                            <p>{{ $producto['nombre'] }}</p>
+                            <img src="{{ asset($producto['imagen']) }}">
 
-                            <div class="precios">
-                                <span class="precio-viejo">
-                                    $ {{ number_format($producto['precio_viejo'], 0, ',', '.') }}
-                                </span>
+                            <div class="info">
+                                <p>{{ $producto['nombre'] }}</p>
 
-                                <span class="descuento">
-                                    -{{ $producto['descuento'] }}%
-                                </span>
+                                <div class="precios">
+                                    <span class="precio-viejo">
+                                        $ {{ number_format($producto['precio_viejo'], 0, ',', '.') }}
+                                    </span>
+
+                                    <span class="descuento">
+                                        -{{ $producto['descuento'] }}%
+                                    </span>
+                                </div>
+
+                                <strong class="precio-nuevo">
+                                    $ {{ number_format($producto['precio'], 0, ',', '.') }}
+                                </strong>
                             </div>
 
-                            <strong class="precio-nuevo">
-                                $ {{ number_format($producto['precio'], 0, ',', '.') }}
-                            </strong>
-                        </div>
-
-                    </a>
+                        </a>
+                    @endforeach
 
                 </div>
-            @endforeach
+            </div>
+        @endforeach
 
-        </div>
+    </div>
+
+    <!-- FLECHAS -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselOfertas" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselOfertas" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+
+</div>
 
     </div>
 </div>

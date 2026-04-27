@@ -34,10 +34,9 @@
         <div class="footer-col">
             <h4>Contacto</h4>
             <p class="muted">
-                +54 9 3782 40-3095<br>
-                +54 9 3782 50-7942<br>
-                leofonteina06@gmail.com<br>
-                agustin552689@gmail.com
+                +54 9 2323 348545<br>
+                +54 8912 839123<br>
+                nexcell@gmail.com<br>
             </p>
         </div>
 
