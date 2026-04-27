@@ -1,8 +1,0 @@
-<?php
-
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\pruebaController;
-
-Route::get('/', [pruebaController::class, 'nexcell'])->name('home');
-
-Route::get('/quienes-somos', [pruebaController::class, 'quienesSomos'])->name('quienes-somos');

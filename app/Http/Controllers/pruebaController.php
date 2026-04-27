@@ -37,9 +37,10 @@ class pruebaController extends Controller
     public function accesorios(){
         return view('frontend.productos.accesorios');
     }
-
     public function ofertas(){
         return view('frontend.productos.ofertas');
     }
+    public function nuevos(){
+        return view('frontend.productos.nuevos');
+    }
 }
-

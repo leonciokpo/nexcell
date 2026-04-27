@@ -26,3 +26,5 @@ Route::get('/producto/{id}', [ProductoController::class, 'show'])->name('product
 Route::get('/accesorios', [ProductoController::class, 'accesorios'])->name('accesorios');
 
 Route::get('/ofertas', [ProductoController::class, 'ofertas'])->name('ofertas');
+
+Route::get('/nuevos', [ProductoController::class, 'nuevos'])->name('nuevos');
