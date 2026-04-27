@@ -469,7 +469,34 @@ private function getAccesorios()
             "precio_viejo" => 60000,
             "descuento" => 25,
             "imagen" => "images/accesorios/Apple/airpods2Soloss.jpg",
-            "descripcion" => "Auriculares inalámbricos Apple...",
+
+            "descripcion" => "Descripción
+
+Diseño
+Auriculares inalámbricos compactos y livianos
+Diseño ergonómico para mayor comodidad
+Estuche de carga portátil incluido
+
+Audio
+Sonido envolvente de alta calidad
+Graves potentes y audio equilibrado
+Compatible con Audio Espacial de Apple
+
+Conectividad
+Bluetooth de alta velocidad
+Emparejamiento instantáneo con dispositivos Apple
+Cambio automático entre dispositivos
+
+Batería
+Hasta 6 horas de reproducción continua
+Más de 30 horas utilizando el estuche
+Carga rápida y eficiente
+
+Funciones
+Micrófonos integrados para llamadas claras
+Control táctil inteligente
+Compatibles con Siri",
+
             "variantes" => [
                 [
                     "color" => "Frente",
@@ -493,7 +520,29 @@ private function getAccesorios()
             "precio_viejo" => 25000,
             "descuento" => 15,
             "imagen" => "images/accesorios/Samsung/cargador25W.jpg",
-            "descripcion" => "Cargador original Samsung con tecnología Super Fast Charging de 25W.",
+
+            "descripcion" => "Descripción
+
+Potencia
+Tecnología Super Fast Charging de 25W
+Carga rápida y estable
+Compatible con dispositivos Samsung Galaxy
+
+Diseño
+Formato compacto y portátil
+Construcción resistente y liviana
+Ideal para uso diario y viajes
+
+Seguridad
+Protección contra sobrecalentamiento
+Protección contra sobrecarga
+Sistema de carga inteligente
+
+Compatibilidad
+Puerto USB-C
+Compatible con smartphones, tablets y accesorios
+Excelente rendimiento energético",
+
             "variantes" => [
                 [
                     "color" => "Frente",
@@ -517,7 +566,29 @@ private function getAccesorios()
             "precio_viejo" => 12000,
             "descuento" => 10,
             "imagen" => "images/accesorios/Apple/fundas/f1.jpg",
-            "descripcion" => "Fundas de silicona premium para iPhone 17.",
+
+            "descripcion" => "Descripción
+
+Material
+Silicona premium flexible y resistente
+Interior suave de microfibra
+Excelente agarre antideslizante
+
+Protección
+Protección contra golpes y rayaduras
+Bordes reforzados para mayor seguridad
+Cobertura completa del dispositivo
+
+Diseño
+Acabado moderno y elegante
+Compatible con carga inalámbrica
+Diseño liviano y cómodo
+
+Compatibilidad
+Diseñada especialmente para iPhone 17
+Acceso preciso a botones y puertos
+Disponible en varios colores y estilos",
+
             "variantes" => [
                 [
                     "color" => "Funda 1",
@@ -545,7 +616,29 @@ private function getAccesorios()
             "precio_viejo" => 12000,
             "descuento" => 10,
             "imagen" => "images/accesorios/Auriculares/VinchasJBL.jpg",
-            "descripcion" => "Auriculares JBL inalámbricos.",
+
+            "descripcion" => "Descripción
+
+Diseño
+Auriculares inalámbricos tipo vincha
+Almohadillas acolchadas para mayor comodidad
+Diseño moderno y liviano
+
+Audio
+Sonido JBL Pure Bass
+Graves profundos y audio potente
+Excelente calidad para música y gaming
+
+Conectividad
+Bluetooth de conexión rápida
+Compatibles con Android y iPhone
+Micrófono integrado para llamadas
+
+Batería
+Gran autonomía de uso
+Carga rápida mediante USB
+Ideal para uso diario",
+
             "variantes" => [
                 [
                     "color" => "Negro",
@@ -569,7 +662,29 @@ private function getAccesorios()
             "precio_viejo" => 12000,
             "descuento" => 10,
             "imagen" => "images/accesorios/Auriculares/AuricularesVinchas.jpg",
-            "descripcion" => "Auriculares Apple premium.",
+
+            "descripcion" => "Descripción
+
+Diseño
+Auriculares premium tipo vincha
+Construcción elegante y moderna
+Materiales resistentes y cómodos
+
+Audio
+Sonido de alta fidelidad
+Excelente aislamiento de ruido
+Audio equilibrado y envolvente
+
+Conectividad
+Bluetooth de alta velocidad
+Compatibles con dispositivos Apple y Android
+Micrófono integrado
+
+Batería
+Gran autonomía de reproducción
+Carga rápida
+Ideal para música y multimedia",
+
             "variantes" => [
                 [
                     "color" => "Blanco",
@@ -593,7 +708,29 @@ private function getAccesorios()
             "precio_viejo" => 12000,
             "descuento" => 10,
             "imagen" => "images/accesorios/Parlantes/jbl.jpg",
-            "descripcion" => "Parlante portátil JBL Charge 5.",
+
+            "descripcion" => "Descripción
+
+Diseño
+Parlante portátil resistente
+Diseño compacto y moderno
+Protección contra agua y polvo IP67
+
+Audio
+Sonido JBL Original Pro
+Graves potentes y audio claro
+Excelente potencia para exteriores
+
+Conectividad
+Bluetooth inalámbrico
+Compatible con múltiples dispositivos
+Conexión rápida y estable
+
+Batería
+Hasta 20 horas de reproducción
+Función Power Bank integrada
+Ideal para viajes y fiestas",
+
             "variantes" => [
                 [
                     "color" => "Negro",
@@ -613,7 +750,29 @@ private function getAccesorios()
             "precio_viejo" => 12000,
             "descuento" => 10,
             "imagen" => "images/accesorios/Parlantes/jblBox.jpg",
-            "descripcion" => "Parlante JBL Party Box.",
+
+            "descripcion" => "Descripción
+
+Diseño
+Parlante de gran tamaño para fiestas
+Luces LED integradas
+Diseño robusto y moderno
+
+Audio
+Sonido JBL de alta potencia
+Graves profundos y audio envolvente
+Ideal para eventos y reuniones
+
+Conectividad
+Bluetooth inalámbrico
+Entradas USB y auxiliar
+Compatible con micrófonos
+
+Batería
+Gran autonomía
+Carga rápida
+Excelente rendimiento en exteriores",
+
             "variantes" => [
                 [
                     "color" => "Party Box",
@@ -629,7 +788,34 @@ private function getAccesorios()
             "precio_viejo" => 12000,
             "descuento" => 10,
             "imagen" => "images/accesorios/Samsung/SmartWatch.avif",
-            "descripcion" => "SmartWatch Samsung Galaxy.",
+
+            "descripcion" => "Descripción
+
+Pantalla
+Pantalla AMOLED táctil
+Excelente brillo y colores vivos
+Diseño moderno y elegante
+
+Funciones
+Monitoreo de actividad física
+Control de ritmo cardíaco
+Seguimiento de sueño y calorías
+
+Conectividad
+Bluetooth y sincronización con smartphone
+Notificaciones de llamadas y mensajes
+Compatible con Android
+
+Batería
+Gran autonomía diaria
+Carga rápida
+Excelente optimización energética
+
+Diseño
+Correa cómoda e intercambiable
+Resistencia al agua
+Ideal para deporte y uso diario",
+
             "variantes" => [
                 [
                     "color" => "SmartWatch 1",
