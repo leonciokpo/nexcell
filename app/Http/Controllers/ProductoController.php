@@ -468,27 +468,22 @@ private function getAccesorios()
             "precio" => 45000,
             "precio_viejo" => 60000,
             "descuento" => 25,
-            "imagen" => "images\accesorios\Apple\airpods2Soloss.jpg",
-            "descripcion" => "Auriculares inalámbricos Apple de 3ra generación 
-            con audio espacial y ecualización adaptativa para una experiencia de sonido envolvente. 
-            Incorporan micrófonos duales para llamadas más claras, sensor táctil para controlar música y
-             llamadas, resistencia al agua y sudor IPX4 y estuche de carga Lightning. Ofrecen varias horas
-            de autonomía y 
-            conexión rápida con dispositivos Apple mediante Bluetooth",
+            "imagen" => "images/accesorios/Apple/airpods2Soloss.jpg",
+            "descripcion" => "Auriculares inalámbricos Apple...",
             "variantes" => [
-    [
-        "color" => "Frente",
-        "imagen" => "images\accesorios\Apple\airpods2Soloss.jpg"
-    ],
-    [
-        "color" => "Caja",
-        "imagen" => "images\accesorios\Apple\airpodsEstuche.jpg"
-    ],
-    [
-        "color" => "Estuche",
-        "imagen" => "images/accesorios/Apple/estucheAirpod.jpg"
-    ],
-]
+                [
+                    "color" => "Frente",
+                    "imagen" => "images/accesorios/Apple/airpods2Soloss.jpg"
+                ],
+                [
+                    "color" => "Caja",
+                    "imagen" => "images/accesorios/Apple/airpodsEstuche.jpg"
+                ],
+                [
+                    "color" => "Estuche",
+                    "imagen" => "images/accesorios/Apple/estucheAirpod.jpg"
+                ],
+            ]
         ],
 
         [
@@ -497,56 +492,51 @@ private function getAccesorios()
             "precio" => 18000,
             "precio_viejo" => 25000,
             "descuento" => 15,
-            "imagen" => "images\accesorios\Samsung\cargador25W.jpg",
-            "descripcion" => "Cargador original Samsung con tecnología Super Fast Charging de 25W, 
-            diseñado para ofrecer una carga rápida, segura y eficiente. 
-            Compatible con smartphones Samsung Galaxy y otros dispositivos USB-C. Cuenta con protección contra
-             sobrecalentamiento y sobrecarga, diseño compacto y materiales resistentes ideales para uso diario.",
+            "imagen" => "images/accesorios/Samsung/cargador25W.jpg",
+            "descripcion" => "Cargador original Samsung...",
             "variantes" => [
-    [
-        "color" => "Frente",
-        "imagen" => "images\accesorios\Samsung\cargador25W.jpg"
-    ],
-    [
-        "color" => "Caja",
-        "imagen" => "images\accesorios\Samsung\Cargador25Ww.jpg"
-    ],
-    [
-        "color" => "Estuche",
-        "imagen" => "images\accesorios\Samsung\cargador25CCable.jpg"
-    ],
-        ]
-],
-        [
-    "id" => 7,
-    "nombre" => "Funda de silicona - iPhone 17",
-    "precio" => 8500,
-    "precio_viejo" => 12000,
-    "descuento" => 10,
-    "imagen" => "images/accesorios/Apple/fundas/f1.jpg",
+                [
+                    "color" => "Frente",
+                    "imagen" => "images/accesorios/Samsung/cargador25W.jpg"
+                ],
+                [
+                    "color" => "Caja",
+                    "imagen" => "images/accesorios/Samsung/Cargador25Ww.jpg"
+                ],
+                [
+                    "color" => "Cable",
+                    "imagen" => "images/accesorios/Samsung/cargador25CCable.jpg"
+                ],
+            ]
+        ],
 
-    "descripcion" => "Fundas de silicona premium para iPhone 17, diseñadas para brindar protección contra golpes, 
-    rayaduras y caídas leves. Fabricadas con material flexible y resistente, 
-    con interior suave de microfibra y acabado antideslizante para un mejor agarre. 
-    Compatibles con carga inalámbrica y disponibles en varios colores y diseños modernos.",
-    "variantes" => [
         [
-            "color" => "Funda 1",
-            "imagen" => "images/accesorios/Apple/fundas/f1.jpg"
+            "id" => 7,
+            "nombre" => "Funda de silicona - iPhone 17",
+            "precio" => 8500,
+            "precio_viejo" => 12000,
+            "descuento" => 10,
+            "imagen" => "images/accesorios/Apple/fundas/f1.jpg",
+            "descripcion" => "Fundas de silicona premium...",
+            "variantes" => [
+                [
+                    "color" => "Funda 1",
+                    "imagen" => "images/accesorios/Apple/fundas/f1.jpg"
+                ],
+                [
+                    "color" => "Funda 2",
+                    "imagen" => "images/accesorios/Apple/fundas/f2.jpg"
+                ],
+                [
+                    "color" => "Funda 3",
+                    "imagen" => "images/accesorios/Apple/fundas/f3.jpg"
+                ],
+                [
+                    "color" => "Funda 4",
+                    "imagen" => "images/accesorios/Apple/fundas/f4.jpg"
+                ],
+            ]
         ],
-        [
-            "color" => "Funda 2",
-            "imagen" => "images/accesorios/Apple/fundas/f2.jpg"
-        ],
-        [
-            "color" => "Funda 3",
-            "imagen" => "images/accesorios/Apple/fundas/f3.jpg"
-        ],
-        [
-            "color" => "Funda 4",
-            "imagen" => "images/accesorios/Apple/fundas/f4.jpg"
-        ]
-],
 
         [
             "id" => 8,
@@ -557,7 +547,7 @@ private function getAccesorios()
             "imagen" => "images/accesorios/powerbank.jpg",
             "descripcion" => "Batería portátil para todo tipo de dispositivos."
         ]
-        ]
+
     ];
 }
 
@@ -566,5 +556,19 @@ public function accesorios()
     $productos = $this->getAccesorios();
 
     return view('frontend.productos.accesorios', compact('productos'));
+}
+
+public function ofertas()
+{
+    $productos = array_merge(
+        $this->getProductos(),
+        $this->getAccesorios()
+    );
+
+    $ofertas = collect($productos)->filter(function ($producto) {
+        return isset($producto['descuento']) && $producto['descuento'] > 0;
+    });
+
+    return view('frontend.productos.ofertas', compact('ofertas'));
 }
 }

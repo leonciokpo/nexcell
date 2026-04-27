@@ -24,3 +24,5 @@ Route::get('/smartphones', [ProductoController::class, 'smartphones'])->name('sm
 Route::get('/producto/{id}', [ProductoController::class, 'show'])->name('producto.show');
 
 Route::get('/accesorios', [ProductoController::class, 'accesorios'])->name('accesorios');
+
+Route::get('/ofertas', [ProductoController::class, 'ofertas'])->name('ofertas');

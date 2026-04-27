@@ -48,8 +48,8 @@
 
     <!-- SMARTPHONES -->
     <div class="col-md-6 col-lg-3">
-        <a href="/categoria/smartphones" class="acceso-card">
-            <img src="{{ asset('images/Celulares/Apple/Gama Alta/iphone16proMaxWhite.jpg') }}">
+        <a href="{{ route('smartphones') }}" class="acceso-card">
+            <img src="{{ asset('images/Celulares/Apple/Gama_Alta/iphone16proMaxWhite.jpg') }}">
             <div class="overlay">
                 <h3>Smartphones</h3>
                 <p>Últimos modelos</p>
@@ -59,7 +59,7 @@
 
     <!-- ACCESORIOS -->
     <div class="col-md-6 col-lg-3">
-        <a href="/categoria/accesorios" class="acceso-card">
+        <a href="{{ route('accesorios') }}" class="acceso-card">
             <img src="{{ asset('images/Celulares/Accesorios/flat-lay.jpg') }}">
             <div class="overlay">
                 <h3>Accesorios</h3>
@@ -70,7 +70,7 @@
 
     <!-- OFERTAS -->
     <div class="col-md-6 col-lg-3">
-        <a href="/categoria/ofertas" class="acceso-card">
+        <a href="{{ route('ofertas') }}" class="acceso-card">
             <img src="{{ asset('images/Celulares/descuento.jpg') }}">
             <div class="overlay">
                 <h3>Ofertas</h3>
@@ -81,7 +81,7 @@
 
     <!-- NUEVOS -->
     <div class="col-md-6 col-lg-3">
-        <a href="/categoria/nuevos" class="acceso-card">
+        <a href="#" class="acceso-card">
             <img src="{{ asset('images/Celulares/cajaAbierta.jpg') }}">
             <div class="overlay">
                 <h3>Nuevos</h3>
