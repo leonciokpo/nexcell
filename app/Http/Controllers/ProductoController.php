@@ -471,19 +471,19 @@ private function getAccesorios()
             "imagen" => "images/accesorios/Apple/airpods2Soloss.jpg",
             "descripcion" => "Auriculares inalámbricos Apple...",
             "variantes" => [
-    [
-        "color" => "Frente",
-        "imagen" => "images\accesorios\Apple\airpods2Soloss.jpg"
-    ],
-    [
-        "color" => "Caja",
-        "imagen" => "images\accesorios\Apple\airpodsEstuche.jpg"
-    ],
-    [
-        "color" => "Estuche",
-        "imagen" => "images/accesorios/Apple/estucheAirpod.jpg"
-    ],
-]
+                [
+                    "color" => "Frente",
+                    "imagen" => "images/accesorios/Apple/airpods2Soloss.jpg"
+                ],
+                [
+                    "color" => "Caja",
+                    "imagen" => "images/accesorios/Apple/airpodsEstuche.jpg"
+                ],
+                [
+                    "color" => "Estuche",
+                    "imagen" => "images/accesorios/Apple/estucheAirpod.jpg"
+                ],
+            ]
         ],
 
         [
@@ -492,68 +492,175 @@ private function getAccesorios()
             "precio" => 18000,
             "precio_viejo" => 25000,
             "descuento" => 15,
-            "imagen" => "images\accesorios\Samsung\cargador25W.jpg",
-            "descripcion" => "Cargador original Samsung con tecnología Super Fast Charging de 25W, 
-            diseñado para ofrecer una carga rápida, segura y eficiente. 
-            Compatible con smartphones Samsung Galaxy y otros dispositivos USB-C. Cuenta con protección contra
-             sobrecalentamiento y sobrecarga, diseño compacto y materiales resistentes ideales para uso diario.",
+            "imagen" => "images/accesorios/Samsung/cargador25W.jpg",
+            "descripcion" => "Cargador original Samsung con tecnología Super Fast Charging de 25W.",
             "variantes" => [
-    [
-        "color" => "Frente",
-        "imagen" => "images\accesorios\Samsung\cargador25W.jpg"
-    ],
-    [
-        "color" => "Caja",
-        "imagen" => "images\accesorios\Samsung\Cargador25Ww.jpg"
-    ],
-    [
-        "color" => "Estuche",
-        "imagen" => "images\accesorios\Samsung\cargador25CCable.jpg"
-    ],
-        ]
-],
-        [
-    "id" => 7,
-    "nombre" => "Funda de silicona - iPhone 17",
-    "precio" => 8500,
-    "precio_viejo" => 12000,
-    "descuento" => 10,
-    "imagen" => "images/accesorios/Apple/fundas/f1.jpg",
+                [
+                    "color" => "Frente",
+                    "imagen" => "images/accesorios/Samsung/cargador25W.jpg"
+                ],
+                [
+                    "color" => "Caja",
+                    "imagen" => "images/accesorios/Samsung/Cargador25Ww.jpg"
+                ],
+                [
+                    "color" => "Cable",
+                    "imagen" => "images/accesorios/Samsung/cargador25CCable.jpg"
+                ],
+            ]
+        ],
 
-    "descripcion" => "Fundas de silicona premium para iPhone 17, diseñadas para brindar protección contra golpes, 
-    rayaduras y caídas leves. Fabricadas con material flexible y resistente, 
-    con interior suave de microfibra y acabado antideslizante para un mejor agarre. 
-    Compatibles con carga inalámbrica y disponibles en varios colores y diseños modernos.",
-    "variantes" => [
         [
-            "color" => "Funda 1",
-            "imagen" => "images/accesorios/Apple/fundas/f1.jpg"
+            "id" => 7,
+            "nombre" => "Funda de silicona - iPhone 17",
+            "precio" => 8500,
+            "precio_viejo" => 12000,
+            "descuento" => 10,
+            "imagen" => "images/accesorios/Apple/fundas/f1.jpg",
+            "descripcion" => "Fundas de silicona premium para iPhone 17.",
+            "variantes" => [
+                [
+                    "color" => "Funda 1",
+                    "imagen" => "images/accesorios/Apple/fundas/f1.jpg"
+                ],
+                [
+                    "color" => "Funda 2",
+                    "imagen" => "images/accesorios/Apple/fundas/f2.jpg"
+                ],
+                [
+                    "color" => "Funda 3",
+                    "imagen" => "images/accesorios/Apple/fundas/f3.jpg"
+                ],
+                [
+                    "color" => "Funda 4",
+                    "imagen" => "images/accesorios/Apple/fundas/f4.jpg"
+                ]
+            ]
         ],
-        [
-            "color" => "Funda 2",
-            "imagen" => "images/accesorios/Apple/fundas/f2.jpg"
-        ],
-        [
-            "color" => "Funda 3",
-            "imagen" => "images/accesorios/Apple/fundas/f3.jpg"
-        ],
-        [
-            "color" => "Funda 4",
-            "imagen" => "images/accesorios/Apple/fundas/f4.jpg"
-        ]
-],
 
         [
             "id" => 8,
-            "nombre" => "Power Bank 10000mAh",
-            "precio" => 32000,
-            "precio_viejo" => 40000,
-            "descuento" => 20,
-            "imagen" => "images/accesorios/powerbank.jpg",
-            "descripcion" => "Batería portátil para todo tipo de dispositivos."
-        ]
-        ]
+            "nombre" => "Auriculares JBL",
+            "precio" => 8500,
+            "precio_viejo" => 12000,
+            "descuento" => 10,
+            "imagen" => "images/accesorios/Auriculares/VinchasJBL.jpg",
+            "descripcion" => "Auriculares JBL inalámbricos.",
+            "variantes" => [
+                [
+                    "color" => "Negro",
+                    "imagen" => "images/accesorios/Auriculares/VinchasJBL.jpg"
+                ],
+                [
+                    "color" => "Blanco",
+                    "imagen" => "images/accesorios/Auriculares/VinchasJBL2.jpg"
+                ],
+                [
+                    "color" => "Azul",
+                    "imagen" => "images/accesorios/Auriculares/VinchasJBL3.jpg"
+                ]
+            ]
+        ],
+
+        [
+            "id" => 17,
+            "nombre" => "Auriculares Apple",
+            "precio" => 8500,
+            "precio_viejo" => 12000,
+            "descuento" => 10,
+            "imagen" => "images/accesorios/Auriculares/AuricularesVinchas.jpg",
+            "descripcion" => "Auriculares Apple premium.",
+            "variantes" => [
+                [
+                    "color" => "Blanco",
+                    "imagen" => "images/accesorios/Auriculares/AuricularesVinchas.jpg"
+                ],
+                [
+                    "color" => "Negro",
+                    "imagen" => "images/accesorios/Auriculares/AuricularesVinchas2.jpg"
+                ],
+                [
+                    "color" => "Silver",
+                    "imagen" => "images/accesorios/Auriculares/AuricularesVinchas3.jpg"
+                ]
+            ]
+        ],
+
+        [
+            "id" => 18,
+            "nombre" => "Parlante JBL Charge 5",
+            "precio" => 8500,
+            "precio_viejo" => 12000,
+            "descuento" => 10,
+            "imagen" => "images/accesorios/Parlantes/jbl.jpg",
+            "descripcion" => "Parlante portátil JBL Charge 5.",
+            "variantes" => [
+                [
+                    "color" => "Negro",
+                    "imagen" => "images/accesorios/Parlantes/jbl.jpg"
+                ],
+                [
+                    "color" => "Azul",
+                    "imagen" => "images/accesorios/Parlantes/jbl2.jpg"
+                ]
+            ]
+        ],
+
+        [
+            "id" => 19,
+            "nombre" => "Parlante JBL Party Box",
+            "precio" => 8500,
+            "precio_viejo" => 12000,
+            "descuento" => 10,
+            "imagen" => "images/accesorios/Parlantes/jblBox.jpg",
+            "descripcion" => "Parlante JBL Party Box.",
+            "variantes" => [
+                [
+                    "color" => "Party Box",
+                    "imagen" => "images/accesorios/Parlantes/jblBox.jpg"
+                ]
+            ]
+        ],
+
+        [
+            "id" => 20,
+            "nombre" => "SmartWatch Samsung",
+            "precio" => 8500,
+            "precio_viejo" => 12000,
+            "descuento" => 10,
+            "imagen" => "images/accesorios/Samsung/SmartWatch.avif",
+            "descripcion" => "SmartWatch Samsung Galaxy.",
+            "variantes" => [
+                [
+                    "color" => "SmartWatch 1",
+                    "imagen" => "images/accesorios/Samsung/SmartWatch.avif"
+                ],
+                [
+                    "color" => "SmartWatch 2",
+                    "imagen" => "images/accesorios/Samsung/SmartWatch2.avif"
+                ],
+                [
+                    "color" => "SmartWatch 3",
+                    "imagen" => "images/accesorios/Samsung/SmartWatch3.avif"
+                ]
+            ]
+        ],
+
     ];
+}
+
+public function nuevos()
+{
+    $productos = array_merge(
+        $this->getProductos(),
+        $this->getAccesorios()
+    );
+
+    $nuevosIds = [1,2,3,4,5,6,7,8,9,10,11,12,17,18,19,20];
+
+    $productos = collect($productos)->whereIn('id', $nuevosIds);
+
+    return view('frontend.productos.nuevos', compact('productos'));
 }
 
 public function accesorios()
