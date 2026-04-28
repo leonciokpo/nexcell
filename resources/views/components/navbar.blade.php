@@ -4,29 +4,43 @@
         <div class="container-fluid">
 
             <div class="top-navbar">
-    <!-- LOGO A LA IZQUIERDA -->
-    <a class="navbar-brand" href="{{ route('principal') }}">
-        <img src="{{ asset('images/logo.png') }}" class="logo-navbar">
-        <span>Nexcell.</span>
-    </a>
+                <!-- LOGO A LA IZQUIERDA -->
+                <a class="navbar-brand" href="{{ route('principal') }}">
+                    <img src="{{ asset('images/logo.png') }}" class="logo-navbar">
+                    <span>Nexcell.</span>
+                </a>
 
-    <!-- BOTONES A LA DERECHA -->
-    <div class="auth-buttons">
-    <a href="#" class="btn btn-login">Iniciar Sesión</a>
-    <a href="#" class="btn btn-register">Registrarse</a>
+                <!-- BOTONES A LA DERECHA -->
+                <div class="auth-buttons d-none d-lg-flex">
+                <a href="#" class="btn btn-login">Iniciar Sesión</a>
+                <a href="#" class="btn btn-register">Registrarse</a>
 
-    <!-- 🛒 CARRITO -->
-    <a href="#" class="btn-cart">
-        <i class="bi bi-cart3"></i>
-    </a>
-</div>
-</div>
+                <!-- 🛒 CARRITO -->
+                <a href="#" class="btn-cart">
+                    <i class="bi bi-cart3"></i>
+                </a>
+            </div>
+        </div>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarContenido">
+                <div class="mobile-auth d-lg-none">
+    
+                    <div class="auth-box">
+                        <a href="#" class="btn btn-login">Iniciar Sesión</a>
+                        <a href="#" class="btn btn-register">Registrarse</a>
+                    </div>
+
+                    <div class="cart-box">
+                        <a href="#" class="btn-cart">
+                            <i class="bi bi-cart3"></i>
+                        </a>
+                    </div>
+
+                </div>
                 <div class="search-container w-100 d-flex justify-content-start mb-2">
                     <div class="search-box">
                         <i class="bi bi-search search-icon"></i>

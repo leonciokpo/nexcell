@@ -301,16 +301,15 @@ aside .card-custom {
     }
 }
 
-@media(max-width:768px){
+@media(max-width: 991px){
     .productosMasVendidos-card{
-        width: 48%; /* 2 por fila */
-        margin-bottom: 10px;
+        width: 48%;
     }
 }
 
-@media(max-width:480px){
+@media(max-width: 576px){
     .productosMasVendidos-card{
-        width: 100%; /* 1 por fila */
+        width: 100%;
     }
 }
 
@@ -456,6 +455,7 @@ aside .card-custom {
     border-radius: 12px;
     padding: 15px;
     width: 23%;
+    min-width: 220px;
     text-align: center;
 
     transition: 0.3s;
@@ -1792,7 +1792,7 @@ body.fondo-productos {
 /* ===== RESPONSIVE NAVBAR ===== */
 
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
 
     /* ===== NAVBAR FULLSCREEN ===== */
     .navbar-collapse {
@@ -1856,7 +1856,7 @@ body.fondo-productos {
         flex-direction: column !important;
         width: 100%;
         align-items: stretch !important;
-        gap: 12px;
+        gap: 6px;
     }
 
     .navbar-nav .nav-item {
@@ -1865,9 +1865,12 @@ body.fondo-productos {
     }
 
     .nav-link {
+        min-width: unset;
         width: 100%;
-        text-align: center;
-        padding: 14px 20px;
+        padding: 10px 12px;
+
+        font-size: 13.5px;
+        border-radius: 6px;
     }
 
     /* ===== DROPDOWN PRODUCTOS (FIX FINAL) ===== */
@@ -1908,4 +1911,68 @@ body.fondo-productos {
     .navbar-nav .dropdown-menu .dropdown-item:last-child {
         border-bottom: none;
     }
+
+    .mobile-auth {
+        margin-bottom: 10px;
+    }
+
+    .mobile-auth .btn {
+        text-align: center;
+    }
+
+    #carouselOfertas .carousel-item .d-flex {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .productosMasVendidos-card{
+        width: 48% !important;
+        min-width: unset; /* 🔥 2 por fila */
+    }
+    
+    #carouselProductosMasVendidos .carousel-item .d-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    }
+
+    .oferta-card {
+        width: 48% !important;
+    }
+
+    .oferta-card img {
+        height: 140px;
+    }
+}
+
+.mobile-auth {
+    margin-bottom: 15px;
+}
+
+/* CONTENEDOR LOGIN + REGISTER */
+.auth-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.auth-box .btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* CONTENEDOR CARRITO */
+.cart-box {
+    display: flex;
+    justify-content: center;
+}
+
+/* BOTÓN MÁS PRO EN MOBILE */
+.cart-box .btn-cart {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
 }
