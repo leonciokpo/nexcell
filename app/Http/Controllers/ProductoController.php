@@ -160,7 +160,7 @@ Clasificación IP68 (hasta 30 minutos a una profundidad máxima de 6 metros) seg
         ],
     ],
 
-    // ================= NUEVOS =================
+    // NUEVOS 
 
     [
         "id" => 9,
@@ -450,7 +450,6 @@ public function principal()
         $this->getAccesorios()
     );
 
-    // 👇 4 smartphones + 4 accesorios
     $masVendidosIds = [
         1, 2, 3, 4, // smartphones
         5, 8,       // auriculares
@@ -458,13 +457,11 @@ public function principal()
         20          // smartwatch
     ];
 
-    // 👇 esto mantiene el orden
     $masVendidos = collect($masVendidosIds)
         ->map(function ($id) use ($productos) {
             return collect($productos)->firstWhere('id', $id);
         });
 
-    // 👇 ACA CREÁS LAS OFERTAS
     $ofertas = collect($productos)->filter(function ($producto) {
         return isset($producto['descuento']) && $producto['descuento'] > 0;
     });
