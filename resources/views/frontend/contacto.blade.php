@@ -1,5 +1,15 @@
 <x-layout title="Contacto">
 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <section class="contacto-container">
 
     <div class="contacto-grid">
@@ -47,11 +57,17 @@
             <div class="form-group">
                 <label>Nombre</label>
                 <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+                @error('nombre')
+                    <small class="text-danger">{{ $message }}</small>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label>Email</label>
                 <input type="email" name="email" placeholder="tuemail@email.com" required>
+                @error('email')
+                    <small class="text-danger">{{ $message }}</small>
+                @enderror
             </div>
 
             <div class="form-group">
@@ -66,6 +82,11 @@
 
     </div>
 
+    @if (session('success_message'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success_message') }}
+        </div>
+    @endif
 </section>
 
 </x-layout>
