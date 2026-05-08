@@ -1,6 +1,6 @@
 /* FONDO */
 body {
-    background: #031726; /* 🔥 color fijo */
+    background: #031726;
     color: #fff;
     font-family: 'Segoe UI', sans-serif;
     margin-top: 160px;
@@ -31,8 +31,8 @@ body {
 }
 
 .navbar-scroll {
-    background: rgba(0, 0, 0, 0.85); /* más oscuro */
-    backdrop-filter: blur(8px); /* 🔥 efecto vidrio */
+    background: rgba(0, 0, 0, 0.85); 
+    backdrop-filter: blur(8px); 
     border-bottom: 2px solid #ff7a18;
 }
 
@@ -49,9 +49,9 @@ body {
     width: auto;
     object-fit: contain;
 
-    transform: scale(3.0); /* 🔥 tamaño grande pero estable */
+    transform: scale(3.0); 
     transform-origin: left center;
-    margin-left: -35px; /*Si queres que el logo se mueva mas a la izquierda/derecha modifica aca*/
+    margin-left: -35px; 
 }
 
 /* NAV LINKS */
@@ -59,7 +59,7 @@ body {
     width:100%;
     display:flex;
     justify-content:center;
-    gap: 10px; /* separación limpia */
+    gap: 10px; 
 }
 
 .navbar-nav .nav-item {
@@ -71,10 +71,10 @@ body {
 .nav-link {
     width: auto;
     min-width: 140px;
-    padding: 12px 35px; /* 🔥 más espacio interno */
+    padding: 12px 35px; 
     
     border: none;
-    border-radius: 8px; /* opcional: un poco más redondeado */
+    border-radius: 8px; 
 
     color: #cfd8dc;
     font-weight: 500;
@@ -85,7 +85,7 @@ body {
 
 .nav-link:hover {
     color: #ffffff;
-    background: rgba(13, 211, 197, 0.15); /* celeste suave */
+    background: rgba(13, 211, 197, 0.15);
 }
 
 .nav-link:active {
@@ -100,19 +100,19 @@ body {
 .navbar-brand {
     display: flex;
     align-items: center;
-    gap: 20px; /* 🔥 controla la separación REAL */
+    gap: 20px; 
 
     padding-left: 0;
     margin-left: 0;
 
-    transform: translateX(-15px); /* 🔥 mueve todo a la izquierda sin romper */
+    transform: translateX(-15px); 
 }
 
 .navbar-brand span {
     color: #ff7a18;
 
     position: relative;
-    left: 20px; /*Si queres +/- distancia entre el texto y el logo modifica esto*/
+    left: 20px; 
     white-space: nowrap;
 }
 /* ===== SLIDER PRINCIPAL ===== */
@@ -190,7 +190,7 @@ body {
     justify-content:space-between;
 
     height:100%;
-    min-height:340px; /* 🔥 todas iguales */
+    min-height:340px; 
 
     transition:0.3s;
 }
@@ -215,15 +215,6 @@ body {
     height:100%;
     object-fit:cover;
     object-position:center;
-}
-
-/* 🔥 GLOW NARANJA REAL */
-.card-custom:hover {
-    transform:translateY(-6px);
-    box-shadow:
-        0 0 12px rgba(255,122,24,0.9),
-        0 0 30px rgba(255,122,24,0.7),
-        0 0 60px rgba(255,122,24,0.5);
 }
 
 /* ICONOS NARANJA */
@@ -289,28 +280,27 @@ aside .card-custom {
     }
 
     .logo-navbar {
-        transform: scale(3); /* 🔥 más chico en mobile */
+        transform: scale(3); 
     }
 
     .navbar-brand {
-        transform: translateX(-10px); /* 🔥 menos desplazamiento */
-        gap: 10px; /* menos espacio */
+        transform: translateX(-10px); 
+        gap: 10px; 
     }
     .navbar-brand span{
         left: 32px;
     }
 }
 
-@media(max-width:768px){
+@media(max-width: 991px){
     .productosMasVendidos-card{
-        width: 48%; /* 2 por fila */
-        margin-bottom: 10px;
+        width: 48%;
     }
 }
 
-@media(max-width:480px){
+@media(max-width: 576px){
     .productosMasVendidos-card{
-        width: 100%; /* 1 por fila */
+        width: 100%;
     }
 }
 
@@ -321,7 +311,7 @@ aside .card-custom {
 
 .search-input {
     width: 100%;
-    padding: 10px 40px 10px 15px; /* espacio para icono */
+    padding: 10px 40px 10px 15px; 
 
     border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.2);
@@ -338,7 +328,7 @@ aside .card-custom {
 }
 
 .search-input:focus {
-    border: 1px solid #0dd3c5; /* celeste */
+    border: 1px solid #0dd3c5; 
     background: rgba(255,255,255,0.12);
 
     box-shadow:
@@ -367,7 +357,7 @@ aside .card-custom {
     top: 50%;
     transform: translateY(-50%);
     color: #bbb;
-    font-size: 14px; /* 🔥 más limpio que emoji */
+    font-size: 14px; 
     pointer-events: auto;
     cursor: pointer;
 }
@@ -381,7 +371,7 @@ aside .card-custom {
 .top-navbar {
     width: 100%;
     display: flex;
-    justify-content: flex-end; /* 🔥 a la derecha */
+    justify-content: flex-end; 
     padding: 0px 20px;
     margin-bottom: 0px;
 }
@@ -389,12 +379,12 @@ aside .card-custom {
 .top-navbar {
     width: 100%;
     display: flex;
-    justify-content: space-between; /* 🔥 separa logo y botones */
+    justify-content: space-between; 
     align-items: center;
     padding: 0px 20px;
 }
 
-/* BOTONES AUTH (YA NO absolute) */
+/* BOTONES AUTH */
 .auth-buttons {
     display: flex;
     gap: 10px;
@@ -437,7 +427,7 @@ aside .card-custom {
     flex-direction: column;
     align-items: stretch;
 
-    padding-left: 8px;   /* 🔥 más pegado al borde */
+    padding-left: 8px;   
     padding-right: 10px;
 }
 
@@ -451,16 +441,17 @@ aside .card-custom {
 
 /* CONTENEDOR OFERTAS */
 .productosMasVendidos-card {
-    background: #ffffff; /* igual que card-custom */
+    background: #ffffff; 
     color: #fff;
     border-radius: 12px;
     padding: 15px;
     width: 23%;
+    min-width: 220px;
     text-align: center;
 
     transition: 0.3s;
 
-    border: 1px solid rgba(255,255,255,0.05); /* detalle sutil */
+    border: 1px solid rgba(255,255,255,0.05); 
 }
 
 .productosMasVendidos-card img {
@@ -498,7 +489,7 @@ aside .card-custom {
 }
 
 .productosMasVendidos-card strong {
-    color: #ff7a18; /* 🔥 naranja marca */
+    color: #ff7a18; 
     font-size: 16px;
 }
 
@@ -670,14 +661,14 @@ aside .card-custom {
     transform: translateX(-50%);
     
     display: flex;
-    justify-content: center; /* centra la imagen */
+    justify-content: center; 
     margin-top: 50px;
 }
 
 .banner-nexcell img {
     width: 100%;
-    max-width: 1400px; /* 🔥 limita el tamaño */
-    height: auto; /* mantiene proporción */
+    max-width: 1400px; 
+    height: auto; 
     display: block;
 }
 
@@ -775,13 +766,6 @@ aside .card-custom {
 }
 
 /* HOVER */
-.opinion-card:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 0 12px rgba(255,122,24,0.8),
-        0 0 30px rgba(255,122,24,0.5);
-}
 
 .about-container {
     max-width: 1000px;
@@ -1327,9 +1311,9 @@ aside .card-custom {
 
 /* ITEMS DROPDOWN AJUSTADOS */
 .dropdown-item {
-    padding: 8px 16px !important; /* 🔥 más chico */
-    margin: 2px 8px; /* 🔥 separa del borde del contenedor */
-    border-radius: 8px; /* 🔥 para que el hover no sea cuadrado rígido */
+    padding: 8px 16px !important;
+    margin: 2px 8px;
+    border-radius: 8px; 
 }
 
 body.fondo-productos {
@@ -1363,7 +1347,7 @@ body.fondo-productos {
     object-fit: contain;
     margin-bottom: 15px;
 
-    background: #ffff; /* 🔥 leve fondo gris */
+    background: #ffff; 
     border-radius: 10px;
     padding: 10px;
 }
@@ -1411,7 +1395,7 @@ body.fondo-productos {
 
     box-shadow:
         0 12px 30px rgba(0,0,0,0.5),
-        0 0 10px rgba(255,122,24,0.4); /* 🔥 glow sutil */
+        0 0 10px rgba(255,122,24,0.4); 
 }
 
 .producto-img {
@@ -1711,7 +1695,7 @@ body.fondo-productos {
 
 /* LOGOS */
 .pagos-grid img {
-    height: 80px; /* 🔥 más grandes */
+    height: 80px; 
     object-fit: contain;
 
     background: #fff;
@@ -1734,14 +1718,6 @@ body.fondo-productos {
     transition: all 0.3s ease;
 
     backdrop-filter: blur(10px);
-}
-
-.card-info:hover {
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 0 12px rgba(255,122,24,0.7),
-        0 0 25px rgba(255,122,24,0.4);
 }
 
 /* LOGOS CHICOS */
@@ -1792,7 +1768,7 @@ body.fondo-productos {
 /* ===== RESPONSIVE NAVBAR ===== */
 
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
 
     /* ===== NAVBAR FULLSCREEN ===== */
     .navbar-collapse {
@@ -1856,7 +1832,7 @@ body.fondo-productos {
         flex-direction: column !important;
         width: 100%;
         align-items: stretch !important;
-        gap: 12px;
+        gap: 6px;
     }
 
     .navbar-nav .nav-item {
@@ -1865,12 +1841,15 @@ body.fondo-productos {
     }
 
     .nav-link {
+        min-width: unset;
         width: 100%;
-        text-align: center;
-        padding: 14px 20px;
+        padding: 10px 12px;
+
+        font-size: 13.5px;
+        border-radius: 6px;
     }
 
-    /* ===== DROPDOWN PRODUCTOS (FIX FINAL) ===== */
+    /* ===== DROPDOWN PRODUCTOS ===== */
     .navbar-nav .dropdown-menu {
         position: static !important;
         float: none !important;
@@ -1908,4 +1887,68 @@ body.fondo-productos {
     .navbar-nav .dropdown-menu .dropdown-item:last-child {
         border-bottom: none;
     }
+
+    .mobile-auth {
+        margin-bottom: 10px;
+    }
+
+    .mobile-auth .btn {
+        text-align: center;
+    }
+
+    #carouselOfertas .carousel-item .d-flex {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .productosMasVendidos-card{
+        width: 48% !important;
+        min-width: unset; 
+    }
+    
+    #carouselProductosMasVendidos .carousel-item .d-flex {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    }
+
+    .oferta-card {
+        width: 48% !important;
+    }
+
+    .oferta-card img {
+        height: 140px;
+    }
+}
+
+.mobile-auth {
+    margin-bottom: 15px;
+}
+
+/* CONTENEDOR LOGIN + REGISTER */
+.auth-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.auth-box .btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* CONTENEDOR CARRITO */
+.cart-box {
+    display: flex;
+    justify-content: center;
+}
+
+/* BOTÓN MÁS PRO EN MOBILE */
+.cart-box .btn-cart {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
 }

@@ -7,14 +7,14 @@
             <h4>Navegación</h4>
             <a href="{{ route('principal') }}">Inicio</a>
             <a href="#productos">Productos</a>
-            <a href="#">Contacto</a>
+            <a href="{{ route('contacto') }}">Contacto</a>
+            <a href="{{ route('comercializacion') }}">Comercializacion</a>
             <a href="{{ route('quienesSomos') }}">Quiénes Somos</a>
         </div>
 
         <div class="footer-col">
             <h4>Legal</h4>
             <a href="{{ route('terminosYUsos') }}">Términos y Usos</a>
-            <a href="#">Política de Privacidad</a>
         </div>
 
         <div class="footer-col">
