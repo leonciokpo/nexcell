@@ -43,4 +43,12 @@ class pruebaController extends Controller
     public function nuevos(){
         return view('frontend.productos.nuevos');
     }
+
+    public function inicioSesion(){
+        return view('frontend.inicioSesion');
+    }
+
+    public function registroSesion(){
+        return view('frontend.registroSesion');
+    }
 }

@@ -72,10 +72,10 @@
 
             <div class="form-group">
                 <label>Mensaje</label>
-                <textarea name="mensaje" rows="4" placeholder="Escribí tu mensaje..." value="{{ old('mensaje') }}"></textarea>
+                <textarea name="mensaje" rows="4" placeholder="Escribí tu mensaje..." required></textarea>
                 @error('mensaje')
                     <small class="text-danger">{{ $message }}</small>
-                @enderror
+                @enderror            
             </div>
 
             <button type="submit" class="btn-enviar">

@@ -12,8 +12,8 @@
 
                 <!-- BOTONES A LA DERECHA -->
                 <div class="auth-buttons d-none d-lg-flex">
-                <a href="#" class="btn btn-login">Iniciar Sesión</a>
-                <a href="#" class="btn btn-register">Registrarse</a>
+                <a href="{{ route('inicioSesion') }}" class="btn btn-login">Iniciar Sesión</a>
+                <a href="{{ route('registroSesion') }}" class="btn btn-register">Registrarse</a>
 
                 <!-- 🛒 CARRITO -->
                 <a href="#" class="btn-cart">
@@ -30,8 +30,8 @@
                 <div class="mobile-auth d-lg-none">
     
                     <div class="auth-box">
-                        <a href="#" class="btn btn-login">Iniciar Sesión</a>
-                        <a href="#" class="btn btn-register">Registrarse</a>
+                        <a href="{{ route('inicioSesion') }}" class="btn btn-login">Iniciar Sesión</a>
+                        <a href="{{ route('registroSesion') }}" class="btn btn-register">Registrarse</a>
                     </div>
 
                     <div class="cart-box">

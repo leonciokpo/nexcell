@@ -1952,3 +1952,202 @@ body.fondo-productos {
     height: 45px;
     font-size: 20px;
 }
+
+/* ===== LOGIN ===== */
+
+.login-container {
+    max-width: 1200px;
+    margin: 140px auto 60px;
+    padding: 20px 40px;
+}
+
+.login-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 70px;
+}
+
+/* INFO */
+.login-info {
+    flex: 1;
+    padding-top: 20px;
+}
+
+.login-title {
+    color: #ff7a18;
+    margin-bottom: 20px;
+}
+
+.login-texto {
+    color: #cfd8dc;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.login-item {
+    margin-bottom: 18px;
+
+    color: #fff;
+    font-size: 15px;
+
+    border-left: 3px solid #ff7a18;
+    padding-left: 12px;
+}
+
+.login-item i {
+    color: #ff7a18;
+    margin-right: 10px;
+}
+
+/* FORM */
+.login-form {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    background: rgba(0,0,0,0.6);
+
+    padding: 35px;
+    border-radius: 16px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+/* BOTON */
+.btn-login-submit {
+    background: #ff7a18;
+    border: none;
+
+    padding: 12px;
+    border-radius: 10px;
+
+    color: #fff;
+    font-weight: 500;
+
+    transition: all 0.3s ease;
+}
+
+.btn-login-submit:hover {
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 10px rgba(255,122,24,0.8),
+        0 0 20px rgba(255,122,24,0.6);
+}
+
+/* MOBILE */
+@media(max-width: 991px){
+
+    .login-grid {
+        flex-direction: column;
+    }
+
+    .login-form,
+    .login-info {
+        width: 100%;
+    }
+}
+
+/* ===== REGISTRO ===== */
+
+.registro-container {
+    max-width: 1200px;
+    margin: 140px auto 60px;
+    padding: 20px 40px;
+}
+
+.registro-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 70px;
+}
+
+.registro-info {
+    flex: 1;
+    padding-top: 20px;
+}
+
+.registro-title {
+    color: #ff7a18;
+    margin-bottom: 20px;
+}
+
+.registro-texto {
+    color: #cfd8dc;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.registro-item {
+    margin-bottom: 18px;
+
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.7;
+
+    border-left: 3px solid #ff7a18;
+    padding-left: 12px;
+}
+
+.registro-item i {
+    color: #ff7a18;
+    margin-right: 10px;
+}
+
+.registro-form {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    background: rgba(0,0,0,0.6);
+
+    padding: 35px;
+    border-radius: 16px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+.btn-registro-submit {
+    background: #ff7a18;
+    border: none;
+
+    padding: 12px;
+    border-radius: 10px;
+
+    color: #fff;
+    font-weight: 500;
+
+    transition: all 0.3s ease;
+}
+
+.btn-registro-submit:hover {
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 10px rgba(255,122,24,0.8),
+        0 0 20px rgba(255,122,24,0.6);
+}
+
+/* MOBILE */
+
+@media(max-width: 991px){
+
+    .registro-grid {
+        flex-direction: column;
+    }
+
+    .registro-form,
+    .registro-info {
+        width: 100%;
+    }
+}

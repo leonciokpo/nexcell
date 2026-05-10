@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pruebaController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\InicioSesionController;
+use App\Http\Controllers\RegistroSesionController;
 
 Route::get('/', [ProductoController::class, 'principal'])->name('principal');
 
@@ -15,7 +17,7 @@ Route::get('/terminos-y-usos', [pruebaController::class, 'terminosYUsos'])->name
 
 Route::get('/contacto', [pruebaController::class, 'contacto'])->name('contacto');
 
-Route::post('/contacto', [ContactoController::class, 'procesar'])->name('procesar');
+Route::post('/contacto', [ContactoController::class, 'store_contact'])->name('procesar');
 
 Route::get('/exito', [pruebaController::class, 'exito'])->name('exito');
 
@@ -28,3 +30,11 @@ Route::get('/accesorios', [ProductoController::class, 'accesorios'])->name('acce
 Route::get('/ofertas', [ProductoController::class, 'ofertas'])->name('ofertas');
 
 Route::get('/nuevos', [ProductoController::class, 'nuevos'])->name('nuevos');
+
+Route::get('/inicioSesion', [pruebaController::class, 'inicioSesion'])->name('inicioSesion');
+
+Route::post('/inicioSesion', [InicioSesionController::class, 'login'])->name('login.procesar');
+
+Route::get('/registroSesion', [pruebaController::class, 'registroSesion'])->name('registroSesion');
+
+Route::post('/registroSesion', [RegistroSesionController::class, 'signup'])->name('signup.procesar');
