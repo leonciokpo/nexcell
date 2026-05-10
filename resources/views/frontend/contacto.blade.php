@@ -56,7 +56,7 @@
 
             <div class="form-group">
                 <label>Nombre</label>
-                <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+                <input type="text" name="nombre" placeholder="Tu nombre completo" value="{{ old('nombre') }}">
                 @error('nombre')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror
@@ -64,7 +64,7 @@
 
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" name="email" placeholder="tuemail@email.com" required>
+                <input type="email" name="email" placeholder="tuemail@email.com" value="{{ old('email') }}">
                 @error('email')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror
@@ -72,7 +72,10 @@
 
             <div class="form-group">
                 <label>Mensaje</label>
-                <textarea name="mensaje" rows="4" placeholder="Escribí tu mensaje..." required></textarea>
+                <textarea name="mensaje" rows="4" placeholder="Escribí tu mensaje..." value="{{ old('mensaje') }}"></textarea>
+                @error('mensaje')
+                    <small class="text-danger">{{ $message }}</small>
+                @enderror
             </div>
 
             <button type="submit" class="btn-enviar">

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Requests;
+use App\Http\Requests\ContactoRequest;
 
 class ContactoController extends Controller{
 
@@ -19,8 +19,7 @@ class ContactoController extends Controller{
 
         $nombre = $datos['nombre'];
         $email = $datos['email'];
-        $motivo = $datos['motivo'];
-        $consulta = $datos['consulta'];
+        $mensaje = $datos['mensaje'];
 
         return redirect()->back()->with('success_message', 'Tu consulta ha sido enviada correctamente.');
     }
