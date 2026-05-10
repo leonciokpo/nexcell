@@ -72,7 +72,7 @@
 
             <div class="form-group">
                 <label>Mensaje</label>
-                <textarea name="mensaje" rows="4" placeholder="Escribí tu mensaje..." required></textarea>
+                <textarea name="consulta" rows="4" placeholder="Escribí tu mensaje..." required></textarea>            
             </div>
 
             <button type="submit" class="btn-enviar">
