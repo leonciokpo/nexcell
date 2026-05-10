@@ -71,6 +71,16 @@
             </div>
 
             <div class="form-group">
+    <label>Motivo</label>
+
+            <input 
+                type="text" name="motivo" placeholder="Motivo de la consulta" required>
+            @error('motivo')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
+            </div>
+
+            <div class="form-group">
                 <label>Mensaje</label>
                 <textarea name="mensaje" rows="4" placeholder="Escribí tu mensaje..." required></textarea>
                 @error('mensaje')
