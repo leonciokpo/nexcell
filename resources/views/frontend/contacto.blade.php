@@ -82,8 +82,8 @@
 
             <div class="form-group">
                 <label>Mensaje</label>
-                <textarea name="mensaje" rows="4" placeholder="Escribí tu mensaje..." required></textarea>
-                @error('mensaje')
+                <textarea name="consulta" rows="4" placeholder="Escribí tu mensaje..." required></textarea>
+                @error('consulta')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror            
             </div>

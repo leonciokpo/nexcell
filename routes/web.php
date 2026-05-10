@@ -17,7 +17,7 @@ Route::get('/terminos-y-usos', [pruebaController::class, 'terminosYUsos'])->name
 
 Route::get('/contacto', [pruebaController::class, 'contacto'])->name('contacto');
 
-Route::post('/contacto', [ContactoController::class, 'store_contact'])->name('procesar');
+Route::post('/contacto', [ContactoController::class, 'procesar']);
 
 Route::get('/exito', [pruebaController::class, 'exito'])->name('exito');
 

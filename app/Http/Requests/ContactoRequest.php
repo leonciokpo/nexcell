@@ -25,7 +25,8 @@ class ContactoRequest extends FormRequest
         return [
             'nombre'=>'required|string|max:100',
             'email'=>'required|email|max:150',
-            'mensaje'=>'required|string|min:10|max:500',
+            'motivo' => 'required|string|max:200',
+            'consulta'=>'required|string|min:10|max:500',
         ];
     }
 
@@ -34,12 +35,17 @@ class ContactoRequest extends FormRequest
         return[
             'nombre.required'=>'El nombre es obligatorio.',
             'nombre.max'=>'El nombre no debe sobrepasar los 100 caracteres.',
+
             'email.required'=>'El email es obligatorio.',
             'email.max'=>'El email no debe sobrepasar los 100 caracteres.',
-            'mensaje.required'=>'El mensaje es obligatorio.',
             'email.email'=>'Formato de email inválido.',
-            'mensaje.min'=>'Debe tener al menos 10 caracteres.',
-            'mensaje.max'=>'El mensaje no debe sobrepasar los 500 caracteres.',
+
+            'consulta.required'=>'El mensaje es obligatorio.',
+            'consulta.min'=>'Debe tener al menos 10 caracteres.',
+            'consulta.max'=>'El mensaje no debe sobrepasar los 500 caracteres.',
+
+            'motivo.required' => 'El motivo es obligatorio.',
+            'motivo.max' => 'El motivo no debe sobrepasar los 200 caracteres.',
         ];
     }
 }
