@@ -64,6 +64,25 @@
 
                 </div>
 
+                {{-- APELLIDO --}}
+                <div class="form-group">
+
+                    <label>Apellido</label>
+
+                    <input
+                        type="text"
+                        name="apellido"
+                        value="{{ old('apellido') }}"
+                        placeholder="Ingresá tu apellido">
+
+                    @error('apellido')
+                        <small class="text-danger">
+                            {{ $message }}
+                        </small>
+                    @enderror
+
+                </div>
+
                 {{-- EMAIL --}}
                 <div class="form-group">
 
@@ -83,6 +102,25 @@
 
                 </div>
 
+                {{-- TELEFONO --}}
+                <div class="form-group">
+
+                    <label>Número de teléfono (opcional)</label>
+
+                    <input
+                        type="text"
+                        name="telefono"
+                        value="{{ old('telefono') }}"
+                        placeholder="Ingresá tu número">
+
+                    @error('telefono')
+                        <small class="text-danger">
+                            {{ $message }}
+                        </small>
+                    @enderror
+
+                </div>
+
                 {{-- PASSWORD --}}
                 <div class="form-group">
 
@@ -91,6 +129,7 @@
                     <input
                         type="password"
                         name="password"
+                        value="{{ old('password') }}"
                         placeholder="Ingresá tu contraseña">
 
                     @error('password')
@@ -109,6 +148,7 @@
                     <input
                         type="password"
                         name="password_confirmation"
+                        value="{{ old('password') }}"
                         placeholder="Repetí tu contraseña">
 
                 </div>

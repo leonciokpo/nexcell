@@ -74,7 +74,7 @@
     <label>Motivo</label>
 
             <input 
-                type="text" name="motivo" placeholder="Motivo de la consulta" required>
+                type="text" name="motivo" placeholder="Motivo de la consulta" value="{{ old('motivo') }}">
             @error('motivo')
                 <small class="text-danger">{{ $message }}</small>
             @enderror
@@ -82,7 +82,7 @@
 
             <div class="form-group">
                 <label>Mensaje</label>
-                <textarea name="consulta" rows="4" placeholder="Escribí tu mensaje..." required></textarea>
+                <textarea name="consulta" rows="4" placeholder="Escribí tu mensaje..." value="{{ old('consulta') }}"></textarea>
                 @error('consulta')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror            

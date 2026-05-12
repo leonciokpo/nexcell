@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\InicioSesionRequest;
 
 class InicioSesionController extends Controller
 {
     public function login(InicioSesionRequest $request)
     {
-        $email = $request->email;
-        $password = $request->password;
+        // Buscar usuario por email
+        $usuario = Usuario::where('email', $request->email)->first();
 
-        // DEMO LOGIN
-        // Más adelante acá iría Auth::attempt()
+        // Verificar si existe y si la contraseña coincide
+        if($usuario && Hash::check($request->password, $usuario->password)) {
 
-        if($email === 'admin@nexcell.com' && $password === '12345678'){
-            
             return redirect()
                 ->route('principal')
                 ->with('success', 'Inicio de sesión exitoso');
