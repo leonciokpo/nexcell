@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\InicioSesionController;
 use App\Http\Controllers\RegistroSesionController;
+use App\Http\Controllers\CategoriaController;
 
 Route::get('/', [ProductoController::class, 'principal'])->name('principal');
 
@@ -38,3 +39,7 @@ Route::post('/inicioSesion', [InicioSesionController::class, 'login'])->name('lo
 Route::get('/registroSesion', [pruebaController::class, 'registroSesion'])->name('registroSesion');
 
 Route::post('/registroSesion', [RegistroSesionController::class, 'signup'])->name('signup.procesar');
+
+Route::post('/categorias', [CategoriaController::class, 'store']);
+
+Route::post('/marcas', [MarcaController::class, 'store']);
