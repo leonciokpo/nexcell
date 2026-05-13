@@ -4,21 +4,18 @@
         <div class="container-fluid">
 
             <div class="top-navbar">
-                <!-- LOGO A LA IZQUIERDA -->
                 <a class="navbar-brand" href="{{ route('principal') }}">
                     <img src="{{ asset('images/logo.png') }}" class="logo-navbar">
                     <span>Nexcell.</span>
                 </a>
 
-                <!-- BOTONES A LA DERECHA -->
                 <div class="auth-buttons d-none d-lg-flex">
                 <a href="{{ route('inicioSesion') }}" class="btn btn-login">Iniciar Sesión</a>
                 <a href="{{ route('registroSesion') }}" class="btn btn-register">Registrarse</a>
 
-                <!-- 🛒 CARRITO -->
-                <a href="#" class="btn-cart">
+                <button class="btn-cart" id="openCart">
                     <i class="bi bi-cart3"></i>
-                </a>
+                </button>
             </div>
         </div>
 
@@ -35,9 +32,9 @@
                     </div>
 
                     <div class="cart-box">
-                        <a href="#" class="btn-cart">
+                        <button class="btn-cart" id="openCartMobile">
                             <i class="bi bi-cart3"></i>
-                        </a>
+                        </button>
                     </div>
 
                 </div>
