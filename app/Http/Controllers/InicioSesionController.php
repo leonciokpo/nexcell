@@ -11,10 +11,8 @@ class InicioSesionController extends Controller
 {
     public function login(InicioSesionRequest $request)
     {
-        // Buscar usuario por email
-        $usuario = Usuario::where('email', $request->email)->first();
+           $usuario = Usuario::where('email', $request->email)->first();
 
-        // Verificar si existe y si la contraseña coincide
         if($usuario && Hash::check($request->password, $usuario->password)) {
 
             return redirect()

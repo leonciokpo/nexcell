@@ -17,8 +17,13 @@ return new class extends Migration
             $table->string('apellido');
             $table->string('email')->unique();
             $table->string('telefono')->nullable();
-            $table->string('password');
+            $table->string('password', 500);
+            $table->foreignId('perfil_id')
+                  ->constrained('perfiles')
+                  ->onDelete('cascade');
+            $table->boolean('estado')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

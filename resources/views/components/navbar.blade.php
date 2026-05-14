@@ -8,16 +8,22 @@
                     <img src="{{ asset('images/logo.png') }}" class="logo-navbar">
                     <span>Nexcell.</span>
                 </a>
-
+                
                 <div class="auth-buttons d-none d-lg-flex">
-                <a href="{{ route('inicioSesion') }}" class="btn btn-login">Iniciar Sesión</a>
-                <a href="{{ route('registroSesion') }}" class="btn btn-register">Registrarse</a>
+                    @guest
+                    <a href="{{ route('inicioSesion') }}" class="btn btn-login">Iniciar Sesión</a>
+                    <a href="{{ route('registroSesion') }}" class="btn btn-register">Registrarse</a>
+                    @endguest
 
-                <button class="btn-cart" id="openCart">
-                    <i class="bi bi-cart3"></i>
-                </button>
+                    @auth
+                    <a href="#" class="btn btn-login">Mi Perfil</a>
+                    <a href="#" class="btn btn-login">Cerrar Sesion</a>
+                    <button class="btn-cart" id="openCart">
+                        <i class="bi bi-cart3"></i>
+                    </button>
+                    @endauth
+                </div>
             </div>
-        </div>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido">
                 <span class="navbar-toggler-icon"></span>
