@@ -19,11 +19,12 @@ return new class extends Migration
             $table->string('telefono')->nullable();
             $table->string('password', 500);
             $table->foreignId('perfil_id')
+                   ->nullable()
                   ->constrained('perfiles')
                   ->onDelete('cascade');
             $table->boolean('estado')->default(true);
             $table->timestamps();
-            $table->softDeletes();
+            $table->softDeletes()->nullable();
         });
     }
 

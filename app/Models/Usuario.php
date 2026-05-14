@@ -12,5 +12,6 @@ class Usuario extends Model
         'email',
         'telefono',
         'password',
+        'estado',
     ];
 }

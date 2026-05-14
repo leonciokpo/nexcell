@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('perfiles', function (Blueprint $table) {
-            $table->id('perfil_id');
+            $table->id();
             $table->string('perfil_descripcion');
             $table->timestamps();
         });
