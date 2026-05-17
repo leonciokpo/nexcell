@@ -10,18 +10,43 @@
                 </a>
                 
                 <div class="auth-buttons d-none d-lg-flex">
-                    @guest
-                    <a href="{{ route('inicioSesion') }}" class="btn btn-login">Iniciar Sesión</a>
-                    <a href="{{ route('registroSesion') }}" class="btn btn-register">Registrarse</a>
-                    @endguest
+                    @if(session('usuario_id'))
 
-                    @auth
-                    <a href="#" class="btn btn-login">Mi Perfil</a>
-                    <a href="#" class="btn btn-login">Cerrar Sesion</a>
-                    <button class="btn-cart" id="openCart">
-                        <i class="bi bi-cart3"></i>
-                    </button>
-                    @endauth
+    <a href="#" class="btn btn-login">
+        {{ session('usuario_nombre') }}
+    </a>
+
+            @if(session('usuario_rol') === 'admin')
+
+                <a href="/admin" class="btn btn-register">
+                    Panel Admin
+                </a>
+
+            @endif
+
+            <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                @csrf
+
+                <button type="submit" class="btn btn-login">
+                 Cerrar Sesión
+                </button>
+            </form>
+
+            <button class="btn-cart" id="openCart">
+                <i class="bi bi-cart3"></i>
+            </button>
+
+        @else
+
+            <a href="{{ route('inicioSesion') }}" class="btn btn-login">
+                Iniciar Sesión
+            </a>
+
+            <a href="{{ route('registroSesion') }}" class="btn btn-register">
+                Registrarse
+            </a>
+
+            @endif
                 </div>
             </div>
 
@@ -33,9 +58,42 @@
                 <div class="mobile-auth d-lg-none">
     
                     <div class="auth-box">
-                        <a href="{{ route('inicioSesion') }}" class="btn btn-login">Iniciar Sesión</a>
-                        <a href="{{ route('registroSesion') }}" class="btn btn-register">Registrarse</a>
-                    </div>
+
+    @if(session('usuario_id'))
+
+        <p class="mb-2">
+            Hola {{ session('usuario_nombre') }}
+        </p>
+
+        @if(session('usuario_rol') === 'admin')
+
+            <a href="/admin" class="btn btn-register mb-2">
+                Panel Admin
+            </a>
+
+        @endif
+
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+
+            <button type="submit" class="btn btn-login">
+                Cerrar Sesión
+            </button>
+        </form>
+
+    @else
+
+        <a href="{{ route('inicioSesion') }}" class="btn btn-login">
+            Iniciar Sesión
+        </a>
+
+        <a href="{{ route('registroSesion') }}" class="btn btn-register">
+            Registrarse
+        </a>
+
+    @endif
+
+    </div>
 
                     <div class="cart-box">
                         <button class="btn-cart" id="openCartMobile">

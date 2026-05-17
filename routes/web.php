@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\InicioSesionController;
 use App\Http\Controllers\RegistroSesionController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\MarcaController;
 
 Route::get('/', [ProductoController::class, 'principal'])->name('principal');
 
@@ -43,3 +44,20 @@ Route::post('/registroSesion', [RegistroSesionController::class, 'signup'])->nam
 Route::post('/categorias', [CategoriaController::class, 'store']);
 
 Route::post('/marcas', [MarcaController::class, 'store']);
+
+Route::middleware('admin')->group(function () {
+
+    Route::get('/admin', function () {
+        return view('backend.admin.dashboard');
+    });
+
+});
+
+Route::post('/logout', function () {
+
+    session()->flush();
+
+    return redirect()->route('principal');
+
+})->name('logout');
+

@@ -11,9 +11,19 @@ class InicioSesionController extends Controller
 {
     public function login(InicioSesionRequest $request)
     {
-           $usuario = Usuario::where('email', $request->email)->first();
+        $usuario = Usuario::where('email', $request->email)->first();
 
         if($usuario && Hash::check($request->password, $usuario->password)) {
+
+            session([
+                'usuario_id' => $usuario->id,
+                'usuario_nombre' => $usuario->nombre,
+                'usuario_rol' => $usuario->rol,
+            ]);
+
+            if($usuario->rol === 'admin') {
+                return redirect('/admin');
+            }
 
             return redirect()
                 ->route('principal')
