@@ -45,10 +45,10 @@ class pruebaController extends Controller
     }
 
     public function inicioSesion(){
-        return view('frontend.inicioSesion');
+        return view('backend.usuarios.inicioSesion');
     }
 
     public function registroSesion(){
-        return view('frontend.registroSesion');
+        return view('backend.usuarios.registroSesion');
     }
 }
