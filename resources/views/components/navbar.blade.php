@@ -16,7 +16,7 @@
         {{ session('usuario_nombre') }}
     </a>
 
-            @if(session('usuario_rol') === 'admin')
+            @if(session('usuario_perfil') == 1)
 
                 <a href="/admin" class="btn btn-register">
                     Panel Admin
@@ -65,7 +65,7 @@
             Hola {{ session('usuario_nombre') }}
         </p>
 
-        @if(session('usuario_rol') === 'admin')
+        @if(session('usuario_perfil') == 1)
 
             <a href="/admin" class="btn btn-register mb-2">
                 Panel Admin
