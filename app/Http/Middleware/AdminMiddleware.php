@@ -8,12 +8,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AdminMiddleware
 {
-    public function handle(Request $request, Closure $next): Response
-    {
-        if(session('usuario_perfil') == 1) {
-            return $next($request);
-        }
-
+    public function handle(Request $request, Closure $next): Response{
+        if (session('usuario_perfil') != 1) {
         abort(403, 'Acceso no autorizado');
+    }
+
+    return $next($request);
     }
 }

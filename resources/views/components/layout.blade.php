@@ -21,10 +21,57 @@
 
     <x-navbar />
 
-    <main class="container mt-4">
+    <div class="d-flex">
+
+    {{-- SIDEBAR ADMIN --}}
+    @if(session('usuario_perfil') == 1 && request()->is('admin*'))
+
+        <div class="bg-dark text-white p-3"
+             style="width: 260px; min-height: 100vh;">
+
+            <h4 class="mb-4">
+                Panel Admin
+            </h4>
+
+            <div class="list-group">
+
+                <a href="/admin"
+                   class="list-group-item list-group-item-action">
+                    Dashboard
+                </a>
+
+                <a href="/admin/usuarios"
+                   class="list-group-item list-group-item-action">
+                    Usuarios
+                </a>
+
+                <a href="/admin/productos"
+                   class="list-group-item list-group-item-action">
+                    Productos
+                </a>
+
+                <a href="/admin/categorias"
+                   class="list-group-item list-group-item-action">
+                    Categorías
+                </a>
+
+                <a href="/consultas"
+                   class="list-group-item list-group-item-action">
+                    Consultas
+                </a>
+
+            </div>
+
+        </div>
+
+    @endif
+
+    {{-- CONTENIDO --}}
+    <main class="flex-grow-1 p-4">
         {{ $slot }}
     </main>
 
+</div>
     <x-footer />
     <a href="#" class="whatsapp-float">
         <i class="bi bi-whatsapp"></i>
