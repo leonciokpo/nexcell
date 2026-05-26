@@ -133,37 +133,45 @@
     <div class="carousel-inner">
 
         @foreach ($ofertas->chunk(4) as $chunk)
+
             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                 <div class="d-flex justify-content-between">
 
                     @foreach ($chunk as $producto)
-                        <a href="{{ route('producto.show', $producto['id']) }}" class="oferta-card">
 
-                            <img src="{{ asset($producto['imagen']) }}">
+                        <a href="{{ route('producto.show', $producto->id) }}" class="oferta-card">
+
+                            <img src="{{ asset($producto->imagenes->first()->ruta ?? 'images/default.png') }}">
 
                             <div class="info">
-                                <p>{{ $producto['nombre'] }}</p>
+
+                                <p>{{ $producto->nombre }}</p>
 
                                 <div class="precios">
+
                                     <span class="precio-viejo">
-                                        $ {{ number_format($producto['precio_viejo'], 0, ',', '.') }}
+                                        $ {{ number_format($producto->precio_viejo, 0, ',', '.') }}
                                     </span>
 
                                     <span class="descuento">
-                                        -{{ $producto['descuento'] }}%
+                                        -{{ $producto->descuento }}%
                                     </span>
+
                                 </div>
 
                                 <strong class="precio-nuevo">
-                                    $ {{ number_format($producto['precio'], 0, ',', '.') }}
+                                    $ {{ number_format($producto->precio, 0, ',', '.') }}
                                 </strong>
+
                             </div>
 
                         </a>
+
                     @endforeach
 
                 </div>
             </div>
+
         @endforeach
 
     </div>
@@ -194,13 +202,14 @@
                     <div class="d-flex justify-content-between">
 
                         @foreach ($chunk as $producto)
-                            <a href="{{ route('producto.show', $producto['id']) }}" class="productosMasVendidos-card card-link">
+                            <a href="{{ route('producto.show', $producto->id) }}" class="productosMasVendidos-card card-link">
 
-                                <img src="{{ asset($producto['imagen']) }}">
-                                <p>{{ $producto['nombre'] }}</p>
+                                <img src="{{ asset($producto->imagenes->first()->ruta ?? 'images/default.png') }}">
+
+                                <p>{{ $producto->nombre }}</p>
 
                                 <strong>
-                                    $ {{ number_format($producto['precio'], 0, ',', '.') }}
+                                    $ {{ number_format($producto->precio, 0, ',', '.') }}
                                 </strong>
 
                             </a>

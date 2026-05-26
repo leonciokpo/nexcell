@@ -51,4 +51,8 @@ class pruebaController extends Controller
     public function registroSesion(){
         return view('backend.usuarios.registroSesion');
     }
+
+    public function productos(){
+        return view('frontend.productos.productos');
+    }
 }

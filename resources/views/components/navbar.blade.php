@@ -16,7 +16,7 @@
         {{ session('usuario_nombre') }}
     </a>
 
-            @if(session('usuario_perfil') == 1)
+            @if(session('usuario_rol') === 'admin')
 
                 <a href="/admin" class="btn btn-register">
                     Panel Admin
@@ -65,7 +65,7 @@
             Hola {{ session('usuario_nombre') }}
         </p>
 
-        @if(session('usuario_perfil') == 1)
+        @if(session('usuario_rol') === 'admin')
 
             <a href="/admin" class="btn btn-register mb-2">
                 Panel Admin
@@ -115,17 +115,11 @@
                         </a>
                     </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarProductos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('productos') ? 'active' : '' }}" href="{{ route('productos') }}">
                         Productos
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarProductos">
-                        <li><a class="dropdown-item" href="{{ route('smartphones') }}">Smartphones</a></li>
-                        <li><a class="dropdown-item" href="{{ route('accesorios') }}">Accesorios</a></li>
-                        <li><a class="dropdown-item" href="{{ route('nuevos') }}">Nuevos</a></li>
-                        <li><a class="dropdown-item" href="{{ route('ofertas') }}">Ofertas</a></li>
-                        </ul>
-                    </li>
+                </li>
 
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('contacto') ? 'active' : '' }}" href="{{ route('contacto') }}">

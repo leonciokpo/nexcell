@@ -61,3 +61,6 @@ Route::post('/logout', function () {
 
 })->name('logout');
 
+Route::get('/productos', [ProductoController::class, 'productos'])->name('productos');
+
+Route::get('/productos/filtro', [ProductoController::class, 'filtrar'])->name('filtrar');

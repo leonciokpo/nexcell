@@ -1316,92 +1316,8 @@ aside .card-custom {
     border-radius: 8px; 
 }
 
-body.fondo-productos {
-    background: url('/images/fondoProductos.jpg') no-repeat center center fixed !important;
-    background-size: cover !important;
-}
-
 /* ===== GRID PRODUCTOS ===== */
 
-.producto-card {
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(10px);
-
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-
-    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-
-    color: #fff;
-
-    transition: all 0.3s ease;
-    height: 100%;
-}
-
-/* IMAGEN */
-.producto-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    margin-bottom: 15px;
-
-    background: #ffff; 
-    border-radius: 10px;
-    padding: 10px;
-}
-
-/* TITULO */
-.producto-card h5 {
-    color: #fff;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-/* PRECIO */
-.producto-card .precio {
-    color: #ff7a18;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-/* BOTON */
-.btn-comprar {
-    background: transparent;
-    border: 1px solid #0dd3c5;
-    color: #0dd3c5;
-
-    padding: 8px 16px;
-    border-radius: 20px;
-
-    transition: all 0.3s ease;
-}
-
-/* HOVER */
-.btn-comprar:hover {
-    background: #0dd3c5;
-    color: #000;
-
-    box-shadow:
-        0 0 10px rgba(13,211,197,0.6),
-        0 0 20px rgba(13,211,197,0.4);
-}
-
-/* HOVER CARD */
-.producto-card:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 12px 30px rgba(0,0,0,0.5),
-        0 0 10px rgba(255,122,24,0.4); 
-}
-
-.producto-img {
-    max-height: 400px;
-    object-fit: contain;
-}
 
 .descripcion {
     color: #cfd8dc;
@@ -1514,7 +1430,7 @@ body.fondo-productos {
 
 .precio-actual {
     font-size: 42px;
-    color: #111;
+    color: #ff7a18;
     font-weight: 500;
     line-height: 1.1;
 }
@@ -1529,6 +1445,13 @@ body.fondo-productos {
 .producto-cuotas {
     color: #00a650;
     font-size: 16px;
+    margin-top: 10px;
+}
+
+/*STOCK*/
+.producto-stock {
+    font-size: 16px;
+    color: #111;
     margin-top: 10px;
 }
 
@@ -2347,5 +2270,352 @@ body.fondo-productos {
     .cart-sidebar {
         width: 100%;
         right: -100%;
+    }
+}
+
+/* =========================
+   VISTA PRODUCTOS
+========================= */
+
+/* GRID */
+.productos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+
+    margin-top: 40px;
+}
+
+/* CARD */
+.producto-card {
+    position: relative;
+
+    width: 260px;
+
+    background: linear-gradient(
+        180deg,
+        rgba(8, 32, 46, 0.98),
+        rgba(3, 18, 28, 0.98)
+    );
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.35);
+
+    transition: all 0.35s ease;
+}
+
+/* HOVER */
+.producto-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(255,122,24,0.45);
+
+    box-shadow:
+        0 0 12px rgba(255,122,24,0.35),
+        0 18px 40px rgba(0,0,0,0.45);
+}
+
+/* LINK */
+.producto-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* DESCUENTO */
+.producto-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+
+    background: #ff7a18;
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    z-index: 5;
+
+    box-shadow:
+        0 0 10px rgba(255,122,24,0.5);
+}
+
+/* CONTENEDOR IMAGEN */
+.producto-img-container {
+    background: #ffffff;
+
+    padding: 28px;
+
+    height: 240px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* IMAGEN */
+.producto-img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition: transform 0.4s ease;
+}
+
+/* EFECTO */
+.producto-card:hover .producto-img {
+    transform: scale(1.06);
+}
+
+/* INFO */
+.producto-info {
+    padding: 22px 20px 20px;
+}
+
+/* MARCA */
+.producto-marca {
+    color: #0dd3c5;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+}
+
+
+/* PRECIOS */
+.producto-precios {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* PRECIO VIEJO */
+.producto-precio-viejo {
+    color: #8d99a3;
+
+    font-size: 14px;
+
+    text-decoration: line-through;
+}
+
+/* PRECIO NUEVO */
+.producto-precio {
+    color: #ff7a18;
+
+    font-size: 42px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+/* CUOTAS */
+.producto-cuotas {
+    color: #0dd3c5;
+
+    font-size: 14px;
+
+    margin-top: 6px;
+}
+
+/* BOTONES */
+.producto-acciones {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+/* BOTON COMPRAR */
+.btn-producto {
+    flex: 1;
+
+    background: #ff7a18;
+    border: none;
+
+    color: #fff;
+
+    padding: 11px 14px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER */
+.btn-producto:hover {
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 12px rgba(255,122,24,0.6),
+        0 0 22px rgba(255,122,24,0.35);
+}
+
+/* BOTON CARRITO */
+.btn-cart-producto {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(13,211,197,0.4);
+
+    background: rgba(13,211,197,0.08);
+
+    color: #0dd3c5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+
+    transition: all 0.3s ease;
+}
+
+.btn-cart-producto:hover {
+    background: #0dd3c5;
+    color: #fff;
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 10px rgba(13,211,197,0.5),
+        0 0 18px rgba(13,211,197,0.3);
+}
+
+/* MOBILE */
+@media(max-width: 768px){
+
+    .productos-grid {
+        gap: 16px;
+    }
+
+    .producto-card {
+        width: 47%;
+    }
+
+    .producto-img-container {
+        height: 180px;
+        padding: 18px;
+    }
+
+    .producto-titulo {
+        font-size: 16px;
+        min-height: 44px;
+    }
+
+    .producto-precio {
+        font-size: 30px;
+    }
+}
+
+@media(max-width: 576px){
+
+    .producto-card {
+        width: 100%;
+    }
+}
+
+/* =========================
+   DROPDOWN ORDEN PRODUCTOS
+========================= */
+
+.ordenar-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.ordenar-label {
+    font-size: 13px;
+    color: #aaa;
+    letter-spacing: 0.5px;
+}
+
+/* BOTÓN */
+.btn-dropdown-order {
+    background: rgba(5, 44, 61, 0.95);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    color: #fff;
+
+    min-width: 240px;
+
+    padding: 12px 18px;
+
+    border-radius: 14px;
+
+    text-align: left;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: all 0.25s ease;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* HOVER */
+.btn-dropdown-order:hover {
+    border-color: rgba(255,122,24,0.5);
+
+    box-shadow:
+        0 0 12px rgba(255,122,24,0.25);
+
+    color: #fff;
+}
+
+/* FOCUS */
+.btn-dropdown-order:focus {
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px rgba(255,122,24,0.2);
+}
+
+/* MENU */
+.dropdown-order-menu {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* ITEM ACTIVO */
+.dropdown-order-menu .active-sort {
+    background: rgba(255,122,24,0.12) !important;
+    color: #ff7a18 !important;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .ordenar-box {
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .btn-dropdown-order {
+        width: 100%;
+        min-width: unset;
     }
 }

@@ -93,3 +93,98 @@ if(closeButton){
 if(cartOverlay){
     cartOverlay.addEventListener('click', closeCart);
 }
+
+// ===============================
+// FILTROS EN TIEMPO REAL
+// ===============================
+document.addEventListener('DOMContentLoaded', () => {
+
+    const grid = document.getElementById('productos-grid');
+
+    function obtenerFiltros() {
+
+        let categorias = [];
+        let marcas = [];
+
+        document.querySelectorAll('.filtros-box input[type=checkbox]:checked').forEach(el => {
+
+            if (el.name.includes('categorias')) {
+                categorias.push(el.value);
+            }
+
+            if (el.name.includes('marcas')) {
+                marcas.push(el.value);
+            }
+        });
+
+        return {
+            categorias,
+            marcas,
+            min: document.querySelector('input[name="min"]').value,
+            max: document.querySelector('input[name="max"]').value
+        };
+    }
+    
+    let sortActual = 'default';
+    function filtrarProductos() {
+
+        const params = new URLSearchParams();
+
+        document.querySelectorAll('.filtros-box input[type=checkbox]:checked').forEach(el => {
+            if (el.name.includes('categorias')) {
+                params.append('categorias[]', el.value);
+            }
+
+            if (el.name.includes('marcas')) {
+                params.append('marcas[]', el.value);
+            }
+        });
+
+        const min = document.querySelector('input[name="min"]').value;
+        const max = document.querySelector('input[name="max"]').value;
+
+        if (min) params.append('min', min);
+        if (max) params.append('max', max);
+
+        params.append('sort', sortActual);
+
+        fetch("/productos/filtro?" + params.toString())
+            .then(res => res.text())
+            .then(html => {
+                grid.innerHTML = html;
+            });
+    }
+
+    document.querySelectorAll('.filtros-box input').forEach(input => {
+        input.addEventListener('change', filtrarProductos);
+        input.addEventListener('input', filtrarProductos);
+    });
+
+    const sortButton = document.getElementById('sortDropdownBtn');
+
+    document.querySelectorAll('.sort-option').forEach(option => {
+
+        option.addEventListener('click', (e) => {
+
+            e.preventDefault();
+
+            sortActual = option.dataset.sort;
+
+            // CAMBIAR TEXTO DEL BOTÓN
+            sortButton.textContent = option.dataset.label;
+
+            // REMOVER ACTIVO
+            document.querySelectorAll('.sort-option').forEach(el => {
+                el.classList.remove('active-sort');
+            });
+
+            // AGREGAR ACTIVO
+            option.classList.add('active-sort');
+
+            // FILTRAR
+            filtrarProductos();
+        });
+
+    });
+
+});
