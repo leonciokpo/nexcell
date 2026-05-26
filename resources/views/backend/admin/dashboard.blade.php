@@ -16,7 +16,8 @@
 
         <div class="row g-4">
 
-            <div class="col-md-4">
+            {{-- Productos --}}
+            <div class="col-md-3">
                 <div class="card shadow border-0 h-100">
 
                     <div class="card-body text-center">
@@ -26,12 +27,12 @@
                         </h5>
 
                         <p class="text-muted">
-                            Gestionar productos del sistema
+                            Gestionar productos
                         </p>
 
-                        <a href="/productos"
+                        <a href="/admin/productos"
                            class="btn btn-primary">
-                            Ver Productos
+                            Ver
                         </a>
 
                     </div>
@@ -39,7 +40,8 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            {{-- Usuarios --}}
+            <div class="col-md-3">
                 <div class="card shadow border-0 h-100">
 
                     <div class="card-body text-center">
@@ -49,12 +51,12 @@
                         </h5>
 
                         <p class="text-muted">
-                            Administrar usuarios registrados
+                            Administrar usuarios
                         </p>
 
-                        <a href="/usuarios"
+                        <a href="/admin/usuarios"
                            class="btn btn-dark">
-                            Ver Usuarios
+                            Ver
                         </a>
 
                     </div>
@@ -62,22 +64,47 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            {{-- Categorías --}}
+            <div class="col-md-3">
                 <div class="card shadow border-0 h-100">
 
                     <div class="card-body text-center">
 
                         <h5 class="card-title">
-                            Crear Producto
+                            Categorías
                         </h5>
 
                         <p class="text-muted">
-                            Agregar nuevos productos
+                            Gestionar categorías
                         </p>
 
-                        <a href="/productos/create"
+                        <a href="/admin/categorias"
                            class="btn btn-success">
-                            Agregar
+                            Ver
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+            {{-- Consultas --}}
+            <div class="col-md-3">
+                <div class="card shadow border-0 h-100">
+
+                    <div class="card-body text-center">
+
+                        <h5 class="card-title">
+                            Consultas
+                        </h5>
+
+                        <p class="text-muted">
+                            Mensajes de contacto
+                        </p>
+
+                        <a href="/admin/consultas"
+                           class="btn btn-warning">
+                            Ver
                         </a>
 
                     </div>

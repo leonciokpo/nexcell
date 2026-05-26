@@ -8,6 +8,8 @@ use App\Http\Controllers\InicioSesionController;
 use App\Http\Controllers\RegistroSesionController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\UsuarioController;
+
 
 Route::get('/', [ProductoController::class, 'principal'])->name('principal');
 
@@ -64,3 +66,13 @@ Route::post('/logout', function () {
 Route::get('/productos', [ProductoController::class, 'productos'])->name('productos');
 
 Route::get('/productos/filtro', [ProductoController::class, 'filtrar'])->name('filtrar');
+
+Route::get('/admin/usuarios', [UsuarioController::class, 'index']);
+
+Route::get('/admin/categorias', [CategoriaController::class, 'index']);
+
+Route::get('/admin/consultas', [ContactoController::class, 'index']);
+
+Route::post('/admin/usuarios/{id}/rol', [UsuarioController::class, 'cambiarRol']);
+
+Route::delete('/admin/usuarios/{id}', [UsuarioController::class, 'destroy']);

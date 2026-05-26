@@ -15,8 +15,8 @@ class RegistroSesionController extends Controller
             'apellido' => $request->apellido,
             'email' => $request->email,
             'telefono' => $request->telefono,
-            'password' => Hash::make($request->password)
-
+            'password' => Hash::make($request->password),
+            'perfil_id' => 2,
         ]);
 
         return redirect()
