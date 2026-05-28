@@ -11,7 +11,7 @@ class UsuarioController extends Controller
     {
         $buscar = $request->buscar;
 
-        $administradores = Usuario::query()
+        $administradores = Usuario::withTrashed()
             ->where('perfil_id', 1)
             ->when($buscar, function ($query) use ($buscar) {
 
@@ -25,7 +25,7 @@ class UsuarioController extends Controller
             })
             ->get();
 
-        $clientes = Usuario::query()
+        $clientes = Usuario::withTrashed()
             ->where('perfil_id', 2)
             ->when($buscar, function ($query) use ($buscar) {
 
@@ -55,7 +55,7 @@ class UsuarioController extends Controller
             'perfil_id' => 'required|in:1,2'
         ]);
 
-        $usuario = Usuario::findOrFail($id);
+        $usuario = Usuario::withTrashed()->findOrFail($id);
 
         if(
             $usuario->id == session('usuario_id')
@@ -83,7 +83,7 @@ class UsuarioController extends Controller
             abort(403);
         }
 
-        $usuario = Usuario::findOrFail($id);
+        $usuario = Usuario::withTrashed()->findOrFail($id);
 
         if($usuario->id == session('usuario_id')) {
 
@@ -103,11 +103,23 @@ class UsuarioController extends Controller
             );
         }
 
-        $usuario->forceDelete();
+        // SI ESTÁ ELIMINADO → RESTAURAR
+        if($usuario->trashed()) {
+
+            $usuario->restore();
+
+            return back()->with(
+                'success',
+                'Usuario activado correctamente'
+            );
+        }
+
+        // SI ESTÁ ACTIVO → DESACTIVAR
+        $usuario->delete();
 
         return back()->with(
             'success',
-            'Usuario eliminado correctamente'
+            'Usuario desactivado correctamente'
         );
     }
 }

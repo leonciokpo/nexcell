@@ -46,6 +46,7 @@
                                 <th>Nombre</th>
                                 <th>Email</th>
                                 <th>Acciones</th>
+                                <th>Estado</th>
                             </tr>
                         </thead>
 
@@ -59,27 +60,7 @@
                                     <td>{{ $usuario->email }}</td>
 
                                     <td>
-
-                                        {{-- CAMBIAR ROL (UNIFICADO) --}}
-                                        <form method="POST" action="/admin/usuarios/{{ $usuario->id }}/rol">
-                                            @csrf
-
-                                            <select name="perfil_id" class="form-select form-select-sm">
-                                                <option value="1" {{ $usuario->perfil_id == 1 ? 'selected' : '' }}>
-                                                    Admin
-                                                </option>
-
-                                                <option value="2" {{ $usuario->perfil_id == 2 ? 'selected' : '' }}>
-                                                    Cliente
-                                                </option>
-                                            </select>
-
-                                            <button class="btn btn-sm btn-dark mt-1">
-                                                Cambiar
-                                            </button>
-
-                                        </form>
-
+                                    
                                         {{-- ELIMINAR --}}
                                         <form method="POST"
                                               action="/admin/usuarios/{{ $usuario->id }}"
@@ -95,9 +76,8 @@
                                         </form>
 
                                     </td>
-                                </tr>
 
-                            @endforeach
+                                    
 
                         </tbody>
 
@@ -142,25 +122,7 @@
 
                                     <td>
 
-                                        {{-- CAMBIAR ROL (MISMO FORM, SIN DUPLICAR LÓGICA) --}}
-                                        <form method="POST" action="/admin/usuarios/{{ $usuario->id }}/rol">
-                                            @csrf
-
-                                            <select name="perfil_id" class="form-select form-select-sm">
-                                                <option value="2" {{ $usuario->perfil_id == 2 ? 'selected' : '' }}>
-                                                    Cliente
-                                                </option>
-
-                                                <option value="1" {{ $usuario->perfil_id == 1 ? 'selected' : '' }}>
-                                                    Admin
-                                                </option>
-                                            </select>
-
-                                            <button class="btn btn-sm btn-dark mt-1">
-                                                Cambiar
-                                            </button>
-
-                                        </form>
+                                        
 
                                         {{-- ELIMINAR --}}
                                         <form method="POST"
@@ -170,13 +132,44 @@
                                             @csrf
                                             @method('DELETE')
 
-                                            <button class="btn btn-sm btn-danger mt-1">
-                                                Eliminar
-                                            </button>
+                                            @if($usuario->trashed())
+
+                                                <button class="btn btn-sm btn-success mt-1">
+                                                    Activar
+                                                </button>
+
+                                            @else
+
+                                                <button class="btn btn-sm btn-danger mt-1">
+                                                    Desactivar
+                                                </button>
+
+                                            @endif
 
                                         </form>
 
                                     </td>
+
+                                    <td>
+
+                                    @if($usuario->trashed())
+
+                                        <span class="badge bg-danger">
+                                            Inactivo
+                                        </span>
+
+                                    @else
+
+                                        <span class="badge bg-success">
+                                            Activo
+                                        </span>
+
+                                    @endif
+
+                                </td>
+                                </tr>
+
+                            @endforeach
                                 </tr>
 
                             @endforeach
