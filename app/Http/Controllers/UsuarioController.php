@@ -8,62 +8,106 @@ use Illuminate\Http\Request;
 class UsuarioController extends Controller
 {
     public function index(Request $request)
-{
-    $buscar = $request->buscar;
+    {
+        $buscar = $request->buscar;
 
-    $administradores = Usuario::query()
-        ->where('perfil_id', 1)
-        ->when($buscar, function ($query) use ($buscar) {
-            $query->where(function ($q) use ($buscar) {
-                $q->where('nombre', 'like', "%{$buscar}%")
-                  ->orWhere('email', 'like', "%{$buscar}%");
-            });
-        })
-        ->get();
+        $administradores = Usuario::query()
+            ->where('perfil_id', 1)
+            ->when($buscar, function ($query) use ($buscar) {
 
-    $clientes = Usuario::query()
-        ->where('perfil_id', 2)
-        ->when($buscar, function ($query) use ($buscar) {
-            $query->where(function ($q) use ($buscar) {
-                $q->where('nombre', 'like', "%{$buscar}%")
-                  ->orWhere('email', 'like', "%{$buscar}%");
-            });
-        })
-        ->get();
+                $query->where(function ($q) use ($buscar) {
 
-    return view('backend.admin.vistaUsuarios', compact('administradores', 'clientes'));
-}
+                    $q->where('nombre', 'like', "%{$buscar}%")
+                      ->orWhere('email', 'like', "%{$buscar}%");
 
-public function cambiarRol(Request $request, $id){
-    if (session('usuario_perfil') != 1) {
-        abort(403);
+                });
+
+            })
+            ->get();
+
+        $clientes = Usuario::query()
+            ->where('perfil_id', 2)
+            ->when($buscar, function ($query) use ($buscar) {
+
+                $query->where(function ($q) use ($buscar) {
+
+                    $q->where('nombre', 'like', "%{$buscar}%")
+                      ->orWhere('email', 'like', "%{$buscar}%");
+
+                });
+
+            })
+            ->get();
+
+        return view(
+            'backend.admin.vistaUsuarios',
+            compact('administradores', 'clientes')
+        );
     }
 
-    $request->validate([
-        'perfil_id' => 'required|in:1,2'
-    ]);
+    public function cambiarRol(Request $request, $id)
+    {
+        if(session('perfil_id') != 1) {
+            abort(403);
+        }
 
-    $usuario = Usuario::findOrFail($id);
+        $request->validate([
+            'perfil_id' => 'required|in:1,2'
+        ]);
 
-    $usuario->perfil_id = $request->perfil_id;
-    $usuario->save();
+        $usuario = Usuario::findOrFail($id);
 
-    return back()->with('success', 'Rol actualizado correctamente');
-}
+        if(
+            $usuario->id == session('usuario_id')
+            && $request->perfil_id == 2
+        ){
+            return back()->with(
+                'error',
+                'No puedes quitarte tu propio rol de administrador'
+            );
+        }
+
+        $usuario->perfil_id = $request->perfil_id;
+
+        $usuario->save();
+
+        return back()->with(
+            'success',
+            'Rol actualizado correctamente'
+        );
+    }
 
     public function destroy($id)
-{
-    if (session('usuario_perfil') != 1) {
-        abort(403);
+    {
+        if(session('perfil_id') != 1) {
+            abort(403);
+        }
+
+        $usuario = Usuario::findOrFail($id);
+
+        if($usuario->id == session('usuario_id')) {
+
+            return back()->with(
+                'error',
+                'No puedes eliminar tu propia cuenta'
+            );
+        }
+
+        if(
+            $usuario->perfil_id == 1
+            && Usuario::where('perfil_id', 1)->count() <= 1
+        ){
+            return back()->with(
+                'error',
+                'No puedes eliminar el último administrador'
+            );
+        }
+
+        $usuario->forceDelete();
+
+        return back()->with(
+            'success',
+            'Usuario eliminado correctamente'
+        );
     }
-
-    $usuario = Usuario::findOrFail($id);
-
-    if ($usuario->perfil_id == 1 && Usuario::where('perfil_id', 1)->count() <= 1) {
-        return back()->with('error', 'No puedes eliminar el último administrador');
-    }
-
-    $usuario->forceDelete();
-    return back()->with('success', 'Usuario eliminado');
-}
 }

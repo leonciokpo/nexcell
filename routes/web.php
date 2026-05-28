@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\pruebaController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\ProductoController;
@@ -10,6 +11,11 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\UsuarioController;
 
+/*
+|--------------------------------------------------------------------------
+| PUBLICAS
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/', [ProductoController::class, 'principal'])->name('principal');
 
@@ -35,6 +41,16 @@ Route::get('/ofertas', [ProductoController::class, 'ofertas'])->name('ofertas');
 
 Route::get('/nuevos', [ProductoController::class, 'nuevos'])->name('nuevos');
 
+Route::get('/productos', [ProductoController::class, 'productos'])->name('productos');
+
+Route::get('/productos/filtro', [ProductoController::class, 'filtrar'])->name('filtrar');
+
+/*
+|--------------------------------------------------------------------------
+| AUTENTICACION
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/inicioSesion', [pruebaController::class, 'inicioSesion'])->name('inicioSesion');
 
 Route::post('/inicioSesion', [InicioSesionController::class, 'login'])->name('login.procesar');
@@ -42,18 +58,6 @@ Route::post('/inicioSesion', [InicioSesionController::class, 'login'])->name('lo
 Route::get('/registroSesion', [pruebaController::class, 'registroSesion'])->name('registroSesion');
 
 Route::post('/registroSesion', [RegistroSesionController::class, 'signup'])->name('signup.procesar');
-
-Route::post('/categorias', [CategoriaController::class, 'store']);
-
-Route::post('/marcas', [MarcaController::class, 'store']);
-
-Route::middleware('admin')->group(function () {
-
-    Route::get('/admin', function () {
-        return view('backend.admin.dashboard');
-    });
-
-});
 
 Route::post('/logout', function () {
 
@@ -63,16 +67,34 @@ Route::post('/logout', function () {
 
 })->name('logout');
 
-Route::get('/productos', [ProductoController::class, 'productos'])->name('productos');
+/*
+|--------------------------------------------------------------------------
+| ADMIN
+|--------------------------------------------------------------------------
+*/
 
-Route::get('/productos/filtro', [ProductoController::class, 'filtrar'])->name('filtrar');
+Route::middleware('admin')->prefix('admin')->group(function () {
 
-Route::get('/admin/usuarios', [UsuarioController::class, 'index']);
+    Route::get('/', function () {
+        return view('backend.admin.dashboard');
+    });
 
-Route::get('/admin/categorias', [CategoriaController::class, 'index']);
+    // Usuarios
+    Route::get('/usuarios', [UsuarioController::class, 'index']);
 
-Route::get('/admin/consultas', [ContactoController::class, 'index']);
+    Route::post('/usuarios/{id}/rol', [UsuarioController::class, 'cambiarRol']);
 
-Route::post('/admin/usuarios/{id}/rol', [UsuarioController::class, 'cambiarRol']);
+    Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy']);
 
-Route::delete('/admin/usuarios/{id}', [UsuarioController::class, 'destroy']);
+    // Categorias
+    Route::get('/categorias', [CategoriaController::class, 'index']);
+
+    Route::post('/categorias', [CategoriaController::class, 'store']);
+
+    // Marcas
+    Route::post('/marcas', [MarcaController::class, 'store']);
+
+    // Consultas
+    Route::get('/consultas', [ContactoController::class, 'index']);
+
+});

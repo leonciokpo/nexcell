@@ -18,10 +18,10 @@ class InicioSesionController extends Controller
             session([
                 'usuario_id' => $usuario->id,
                 'usuario_nombre' => $usuario->nombre,
-                'usuario_rol' => $usuario->rol,
+                'perfil_id' => $usuario->perfil_id,
             ]);
 
-            if($usuario->rol === 'admin') {
+            if($usuario->perfil_id == 1) {
                 return redirect('/admin');
             }
 
