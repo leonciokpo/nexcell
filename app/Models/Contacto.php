@@ -11,5 +11,6 @@ class Contacto extends Model
         'email',
         'motivo',
         'consulta',
+        'leido',
     ];
 }

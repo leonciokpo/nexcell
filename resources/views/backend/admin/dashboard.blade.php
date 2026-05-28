@@ -1,119 +1,113 @@
 <x-layout title="Panel administrador">
 
-    <div class="container py-5">
+<div class="admin-dashboard-container">
 
-        <div class="text-center mb-5">
+    {{-- HEADER --}}
+    <div class="admin-dashboard-header">
 
-            <h1 class="fw-bold">
-                Panel de Administración
-            </h1>
+        <h1 class="admin-dashboard-title">
+            Panel de Administración
+        </h1>
 
-            <p class="text-muted fs-5">
-                Hola {{ session('usuario_nombre') }}
+        <p class="admin-dashboard-subtitle">
+            Hola {{ session('usuario_nombre') }}, bienvenido nuevamente
+        </p>
+
+    </div>
+
+    {{-- GRID --}}
+    <div class="admin-dashboard-grid">
+
+        {{-- PRODUCTOS --}}
+        <div class="dashboard-card">
+
+            <div class="dashboard-icon productos">
+                <i class="bi bi-box-seam"></i>
+            </div>
+
+            <h4>
+                Productos
+            </h4>
+
+            <p>
+                Gestionar productos del catálogo
             </p>
+
+            <a href="/admin/productos"
+               class="dashboard-btn productos-btn">
+                Ver panel
+            </a>
 
         </div>
 
-        <div class="row g-4">
+        {{-- USUARIOS --}}
+        <div class="dashboard-card">
 
-            {{-- Productos --}}
-            <div class="col-md-3">
-                <div class="card shadow border-0 h-100">
-
-                    <div class="card-body text-center">
-
-                        <h5 class="card-title">
-                            Productos
-                        </h5>
-
-                        <p class="text-muted">
-                            Gestionar productos
-                        </p>
-
-                        <a href="/admin/productos"
-                           class="btn btn-primary">
-                            Ver
-                        </a>
-
-                    </div>
-
-                </div>
+            <div class="dashboard-icon usuarios">
+                <i class="bi bi-people"></i>
             </div>
 
-            {{-- Usuarios --}}
-            <div class="col-md-3">
-                <div class="card shadow border-0 h-100">
+            <h4>
+                Usuarios
+            </h4>
 
-                    <div class="card-body text-center">
+            <p>
+                Administrar clientes y administradores
+            </p>
 
-                        <h5 class="card-title">
-                            Usuarios
-                        </h5>
+            <a href="/admin/usuarios"
+               class="dashboard-btn usuarios-btn">
+                Ver panel
+            </a>
 
-                        <p class="text-muted">
-                            Administrar usuarios
-                        </p>
+        </div>
 
-                        <a href="/admin/usuarios"
-                           class="btn btn-dark">
-                            Ver
-                        </a>
+        {{-- CATEGORÍAS --}}
+        <div class="dashboard-card">
 
-                    </div>
-
-                </div>
+            <div class="dashboard-icon categorias">
+                <i class="bi bi-grid"></i>
             </div>
 
-            {{-- Categorías --}}
-            <div class="col-md-3">
-                <div class="card shadow border-0 h-100">
+            <h4>
+                Categorías
+            </h4>
 
-                    <div class="card-body text-center">
+            <p>
+                Organizar categorías del sistema
+            </p>
 
-                        <h5 class="card-title">
-                            Categorías
-                        </h5>
+            <a href="/admin/categorias"
+               class="dashboard-btn categorias-btn">
+                Ver panel
+            </a>
 
-                        <p class="text-muted">
-                            Gestionar categorías
-                        </p>
+        </div>
 
-                        <a href="/admin/categorias"
-                           class="btn btn-success">
-                            Ver
-                        </a>
+        {{-- CONSULTAS --}}
+        <div class="dashboard-card">
 
-                    </div>
-
-                </div>
+            <div class="dashboard-icon consultas">
+                <i class="bi bi-chat-dots"></i>
             </div>
 
-            {{-- Consultas --}}
-            <div class="col-md-3">
-                <div class="card shadow border-0 h-100">
+            <h4>
+                Consultas
+            </h4>
 
-                    <div class="card-body text-center">
+            <p>
+                Revisar mensajes y consultas recibidas
+            </p>
 
-                        <h5 class="card-title">
-                            Consultas
-                        </h5>
-
-                        <p class="text-muted">
-                            Mensajes de contacto
-                        </p>
-
-                        <a href="/admin/consultas"
-                           class="btn btn-warning">
-                            Ver
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
+            <a href="/admin/consultas"
+               class="dashboard-btn consultas-btn">
+                Ver panel
+            </a>
 
         </div>
 
     </div>
+
+</div>
 
 </x-layout>

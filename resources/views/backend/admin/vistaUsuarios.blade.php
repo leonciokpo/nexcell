@@ -1,184 +1,227 @@
 <x-layout title="Panel de usuarios">
 
-<div class="container py-5">
+<div class="admin-users-container">
 
-    <h1 class="mb-5 text-center fw-bold">
-        Gestión de Usuarios
-    </h1>
+    {{-- HEADER --}}
+    <div class="admin-users-header">
+
+        <h1 class="admin-users-title">
+            Gestión de Usuarios
+        </h1>
+
+        <p class="admin-users-subtitle">
+            Administra clientes y administradores del sistema
+        </p>
+
+    </div>
 
     {{-- BUSCADOR --}}
-    <form method="GET" action="/admin/usuarios" class="mb-4">
+    <div class="admin-search-box">
 
-        <div class="input-group">
-            <span class="input-group-text">
+        <form method="GET" action="/admin/usuarios">
+
+            <div class="admin-search-group">
+
                 <i class="bi bi-search"></i>
-            </span>
 
-            <input type="text"
-                   name="buscar"
-                   class="form-control"
-                   placeholder="Buscar usuario..."
-                   value="{{ request('buscar') }}">
+                <input type="text"
+                       name="buscar"
+                       placeholder="Buscar usuario..."
+                       value="{{ request('buscar') }}">
 
-            <button class="btn btn-dark">Buscar</button>
-        </div>
+                <button type="submit">
+                    Buscar
+                </button>
 
-    </form>
+            </div>
 
-    <div class="row g-4">
+        </form>
+
+    </div>
+
+    {{-- GRID --}}
+    <div class="admin-users-grid">
 
         {{-- ADMINISTRADORES --}}
-        <div class="col-md-6">
+        <div class="admin-users-card">
 
-            <div class="card shadow border-0 h-100">
+            <div class="admin-users-card-header dark">
 
-                <div class="card-header bg-dark text-white">
-                    <h4 class="mb-0">Administradores</h4>
-                </div>
+                <h4>
+                    Administradores
+                </h4>
 
-                <div class="card-body">
+                <span>
+                    {{ count($administradores) }} usuarios
+                </span>
 
-                    <table class="table align-middle">
+            </div>
 
-                        <thead>
+            <div class="table-responsive">
+
+                <table class="admin-users-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Acciones</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        @foreach($administradores as $usuario)
+
                             <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Email</th>
-                                <th>Acciones</th>
-                                <th>Estado</th>
+
+                                <td>
+                                    #{{ $usuario->id }}
+                                </td>
+
+                                <td>
+                                    {{ $usuario->nombre }}
+                                </td>
+
+                                <td>
+                                    {{ $usuario->email }}
+                                </td>
+
+                                <td>
+
+                                    <form method="POST"
+                                          action="/admin/usuarios/{{ $usuario->id }}"
+                                          onsubmit="return confirm('¿Seguro que quieres eliminar este usuario?')">
+
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button class="btn-user-action danger">
+                                            Eliminar
+                                        </button>
+
+                                    </form>
+
+                                </td>
+
                             </tr>
-                        </thead>
 
-                        <tbody>
+                        @endforeach
 
-                            @foreach($administradores as $usuario)
+                    </tbody>
 
-                                <tr>
-                                    <td>{{ $usuario->id }}</td>
-                                    <td>{{ $usuario->nombre }}</td>
-                                    <td>{{ $usuario->email }}</td>
-
-                                    <td>
-                                    
-                                        {{-- ELIMINAR --}}
-                                        <form method="POST"
-                                              action="/admin/usuarios/{{ $usuario->id }}"
-                                              onsubmit="return confirm('¿Seguro que quieres eliminar este usuario?')">
-
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <button class="btn btn-sm btn-danger mt-1">
-                                                Eliminar
-                                            </button>
-
-                                        </form>
-
-                                    </td>
-
-                                    
-
-                        </tbody>
-
-                    </table>
-
-                </div>
+                </table>
 
             </div>
 
         </div>
 
         {{-- CLIENTES --}}
-        <div class="col-md-6">
+        <div class="admin-users-card">
 
-            <div class="card shadow border-0 h-100">
+            <div class="admin-users-card-header primary">
 
-                <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0">Clientes Registrados</h4>
-                </div>
+                <h4>
+                    Clientes Registrados
+                </h4>
 
-                <div class="card-body">
+                <span>
+                    {{ count($clientes) }} usuarios
+                </span>
 
-                    <table class="table align-middle">
+            </div>
 
-                        <thead>
+            <div class="table-responsive">
+
+                <table class="admin-users-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        @foreach($clientes as $usuario)
+
                             <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Email</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
 
-                        <tbody>
+                                <td>
+                                    #{{ $usuario->id }}
+                                </td>
 
-                            @foreach($clientes as $usuario)
+                                <td>
+                                    {{ $usuario->nombre }}
+                                </td>
 
-                                <tr>
-                                    <td>{{ $usuario->id }}</td>
-                                    <td>{{ $usuario->nombre }}</td>
-                                    <td>{{ $usuario->email }}</td>
+                                <td>
+                                    {{ $usuario->email }}
+                                </td>
 
-                                    <td>
-
-                                        
-
-                                        {{-- ELIMINAR --}}
-                                        <form method="POST"
-                                              action="/admin/usuarios/{{ $usuario->id }}"
-                                              onsubmit="return confirm('¿Seguro que quieres eliminar este usuario?')">
-
-                                            @csrf
-                                            @method('DELETE')
-
-                                            @if($usuario->trashed())
-
-                                                <button class="btn btn-sm btn-success mt-1">
-                                                    Activar
-                                                </button>
-
-                                            @else
-
-                                                <button class="btn btn-sm btn-danger mt-1">
-                                                    Desactivar
-                                                </button>
-
-                                            @endif
-
-                                        </form>
-
-                                    </td>
-
-                                    <td>
+                                {{-- ESTADO --}}
+                                <td>
 
                                     @if($usuario->trashed())
 
-                                        <span class="badge bg-danger">
+                                        <span class="user-status inactive">
                                             Inactivo
                                         </span>
 
                                     @else
 
-                                        <span class="badge bg-success">
+                                        <span class="user-status active">
                                             Activo
                                         </span>
 
                                     @endif
 
                                 </td>
-                                </tr>
 
-                            @endforeach
-                                </tr>
+                                {{-- ACCIONES --}}
+                                <td>
 
-                            @endforeach
+                                    <form method="POST"
+                                          action="/admin/usuarios/{{ $usuario->id }}"
+                                          onsubmit="return confirm('¿Seguro que quieres cambiar el estado de este usuario?')">
 
-                        </tbody>
+                                        @csrf
+                                        @method('DELETE')
 
-                    </table>
+                                        @if($usuario->trashed())
 
-                </div>
+                                            <button class="btn-user-action success">
+                                                Activar
+                                            </button>
+
+                                        @else
+
+                                            <button class="btn-user-action warning">
+                                                Desactivar
+                                            </button>
+
+                                        @endif
+
+                                    </form>
+
+                                </td>
+
+                            </tr>
+
+                        @endforeach
+
+                    </tbody>
+
+                </table>
 
             </div>
 

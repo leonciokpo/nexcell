@@ -79,6 +79,14 @@ Route::middleware('admin')->prefix('admin')->group(function () {
         return view('backend.admin.dashboard');
     });
 
+    // Consultas
+    Route::get('/consultas', [ContactoController::class, 'index']);
+
+    Route::patch(
+        '/consultas/{id}/estado',
+        [ContactoController::class, 'toggleLeido']
+    );
+    
     // Usuarios
     Route::get('/usuarios', [UsuarioController::class, 'index']);
 
@@ -93,8 +101,5 @@ Route::middleware('admin')->prefix('admin')->group(function () {
 
     // Marcas
     Route::post('/marcas', [MarcaController::class, 'store']);
-
-    // Consultas
-    Route::get('/consultas', [ContactoController::class, 'index']);
 
 });

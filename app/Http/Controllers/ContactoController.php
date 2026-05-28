@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contacto;
 use App\Http\Requests\ContactoRequest;
+use Illuminate\Http\Request;
 
 class ContactoController extends Controller
 {
@@ -22,5 +23,29 @@ class ContactoController extends Controller
             'success_message',
             'Tu consulta ha sido enviada correctamente.'
         );
+    }
+
+    // Ver consultas
+    public function index()
+    {
+        $consultas = Contacto::latest()->get();
+
+        return view(
+            'backend.admin.vistaConsultas',
+            compact('consultas')
+        );
+    }
+
+    public function toggleLeido($id){
+    $consulta = Contacto::findOrFail($id);
+
+    $consulta->leido = !$consulta->leido;
+
+    $consulta->save();
+
+    return back()->with(
+        'success',
+        'Estado actualizado correctamente'
+    );
     }
 }
