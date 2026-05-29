@@ -19,8 +19,7 @@ class Usuario extends Authenticatable
         'email',
         'telefono',
         'password',
-        'perfil_id',
-        'estado'
+        'perfil_id'
     ];
 
     protected $hidden = [
@@ -32,7 +31,6 @@ class Usuario extends Authenticatable
     {
         return [
             'password' => 'hashed',
-            'estado' => 'boolean',
         ];
     }
 

@@ -22,7 +22,6 @@ return new class extends Migration
                    ->nullable()
                   ->constrained('perfiles')
                   ->onDelete('cascade');
-            $table->boolean('estado')->default(true);
             $table->timestamps();
             $table->softDeletes()->nullable();
         });
