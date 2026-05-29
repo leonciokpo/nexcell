@@ -87,6 +87,19 @@ Route::middleware('admin')->prefix('admin')->group(function () {
         [ContactoController::class, 'toggleLeido']
     );
     
+    // Productos
+    Route::get('/productos', [ProductoController::class, 'adminIndex']);
+    
+    Route::get('/productos/agregar',[ProductoController::class, 'adminAgregarProducto']);
+
+    Route::post('/productos', [ProductoController::class, 'adminStore']);
+    
+    Route::get('/productos/{id}/editar',[ProductoController::class, 'adminEditar']);
+
+    Route::put('/productos/{id}',[ProductoController::class, 'adminUpdate']);
+
+    Route::patch('/productos/{id}/estado',[ProductoController::class, 'adminDesactivarProducto']);
+
     // Usuarios
     Route::get('/usuarios', [UsuarioController::class, 'index']);
 

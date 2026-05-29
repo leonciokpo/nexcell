@@ -3118,3 +3118,36 @@ aside .card-custom {
         padding: 30px 22px;
     }
 }
+
+/* ACCIONES PRODUCTOS */
+
+.acciones-producto {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.acciones-producto form {
+    margin: 0;
+}
+
+.acciones-producto .btn-user-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 70px;
+    height: 40px;
+}
+
+/* COLUMNAS TABLA PRODUCTOS */
+
+.precio-col,
+.stock-col {
+    white-space: nowrap;
+}
+
+/* OPCIONAL */
+.precio-col {
+    font-weight: 600;
+}
