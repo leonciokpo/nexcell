@@ -135,8 +135,7 @@
         @foreach ($ofertas->chunk(4) as $chunk)
 
             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                <div class="d-flex justify-content-between">
-
+                <div class="d-flex gap-4 justify-content-center flex-wrap">
                     @foreach ($chunk as $producto)
 
                         <a href="{{ route('producto.show', $producto->id) }}" class="oferta-card">
@@ -199,8 +198,7 @@
 
             @foreach ($masVendidos->chunk(4) as $chunk)
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                    <div class="d-flex justify-content-between">
-
+                    <div class="d-flex gap-4 justify-content-center flex-wrap">
                         @foreach ($chunk as $producto)
                             <a href="{{ route('producto.show', $producto->id) }}" class="productosMasVendidos-card card-link">
 

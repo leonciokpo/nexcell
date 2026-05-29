@@ -1,3 +1,11 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    overflow-x: hidden;
+    max-width: 100%;
+}
 /* FONDO */
 body {
     background: #031726;
@@ -124,17 +132,17 @@ body {
     background: #000;
 }
 
-.carousel-item {
-    overflow:hidden;
-    border-radius:10px;
+#carouselNexcell .carousel-item {
+    overflow: hidden;
+    border-radius: 10px;
     transition: transform 0.5s ease-in-out;
 }
 
-.carousel-item img {
+#carouselNexcell .carousel-item img {
     transition: transform 4s ease;
 }
 
-.carousel-item.active img {
+#carouselNexcell .carousel-item.active img {
     transform: scale(1.03);
 }
 
@@ -280,7 +288,8 @@ aside .card-custom {
     }
 
     .logo-navbar {
-        transform: scale(3); 
+    transform: scale(1.4);
+    margin-left: 0;
     }
 
     .navbar-brand {
@@ -433,6 +442,7 @@ aside .card-custom {
 
 .navbar-collapse {
     width: 100%;
+    overflow-x: hidden;
 }
 
 .container-fluid {
@@ -493,18 +503,7 @@ aside .card-custom {
     font-size: 16px;
 }
 
-.seccion-naranja {
-    position: relative;
 
-    width: 100vw;
-    left: 50%;
-    transform: translateX(-50%);
-
-    background: linear-gradient(135deg, #ff7a18, #ff9a3c);
-
-    padding: 70px 40px;
-    margin-top: 80px;
-}
 
 .seccion-naranja h2 {
     color: #ffffff;
@@ -654,15 +653,11 @@ aside .card-custom {
     margin-top: 5px;
 }
 
+.seccion-naranja,
 .banner-nexcell {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    
-    display: flex;
-    justify-content: center; 
-    margin-top: 50px;
+    width: 100%;
+    left: 0;
+    transform: none;
 }
 
 .banner-nexcell img {
@@ -2279,10 +2274,9 @@ aside .card-custom {
 
 /* GRID */
 .productos-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 24px;
-    justify-content: center;
 
     margin-top: 40px;
 }
@@ -2291,7 +2285,8 @@ aside .card-custom {
 .producto-card {
     position: relative;
 
-    width: 260px;
+    width: 100%;
+    min-width: 0;
 
     background: linear-gradient(
         180deg,
@@ -2309,6 +2304,14 @@ aside .card-custom {
         0 10px 30px rgba(0,0,0,0.35);
 
     transition: all 0.35s ease;
+    
+}
+
+.producto-card {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
 }
 
 /* HOVER */
@@ -2352,25 +2355,30 @@ aside .card-custom {
 
 /* CONTENEDOR IMAGEN */
 .producto-img-container {
-    background: #ffffff;
+    background: #fff;
 
-    padding: 28px;
-
-    height: 240px;
+    width: 100%;
+    height: 260px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-}
 
+    padding: 20px;
+
+    overflow: hidden;
+}
 /* IMAGEN */
 .producto-img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+
+    width: auto;
+    height: auto;
 
     object-fit: contain;
 
-    transition: transform 0.4s ease;
+    transition: transform 0.35s ease;
 }
 
 /* EFECTO */
@@ -2417,10 +2425,13 @@ aside .card-custom {
 .producto-precio {
     color: #ff7a18;
 
-    font-size: 42px;
+    font-size: clamp(26px, 3vw, 42px);
+
     font-weight: 700;
 
-    line-height: 1;
+    line-height: 1.1;
+
+    word-break: break-word;
 }
 
 /* CUOTAS */
@@ -2508,9 +2519,6 @@ aside .card-custom {
         gap: 16px;
     }
 
-    .producto-card {
-        width: 47%;
-    }
 
     .producto-img-container {
         height: 180px;
@@ -2527,11 +2535,23 @@ aside .card-custom {
     }
 }
 
-@media(max-width: 576px){
+.producto-info {
+    padding: 18px;
+}
+.producto-info {
+    flex: 1;
 
-    .producto-card {
-        width: 100%;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.producto-titulo {
+    font-size: 17px;
+    line-height: 1.4;
+
+    min-height: 48px;
+
+    overflow: hidden;
 }
 
 /* =========================
