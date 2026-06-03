@@ -6,7 +6,10 @@
 
             {{-- INFO --}}
             <div class="login-info">
-                <h1 class="login-title">Bienvenido a Nexcell</h1>
+
+                <h1 class="login-title">
+                    Bienvenido a Nexcell
+                </h1>
 
                 <p class="login-texto">
                     Iniciá sesión para acceder a tu cuenta, revisar tus pedidos,
@@ -28,16 +31,35 @@
                     <i class="bi bi-phone-fill"></i>
                     Gestioná tus compras
                 </div>
+
             </div>
 
             {{-- FORM --}}
-            <form action="{{ route('login.procesar') }}"
-                  method="POST"
-                  class="login-form">
+            <form
+                action="{{ route('login.procesar') }}"
+                method="POST"
+                class="login-form">
 
                 @csrf
 
-                <h2 class="mb-4 text-center">Iniciar Sesión</h2>
+                <h2 class="mb-4 text-center">
+                    Iniciar Sesión
+                </h2>
+
+                {{-- GOOGLE LOGIN --}}
+                <a href="{{ route('google.login') }}"
+                   class="btn-google-login">
+
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg"
+                         width="22">
+
+                    Continuar con Google
+
+                </a>
+
+                <div class="separator">
+                    <span>o</span>
+                </div>
 
                 {{-- EMAIL --}}
                 <div class="form-group">
@@ -55,6 +77,7 @@
                             {{ $message }}
                         </small>
                     @enderror
+
                 </div>
 
                 {{-- PASSWORD --}}
@@ -72,10 +95,15 @@
                             {{ $message }}
                         </small>
                     @enderror
+
                 </div>
 
-                <button type="submit" class="btn-login-submit w-100">
+                <button
+                    type="submit"
+                    class="btn-login-submit w-100">
+
                     Ingresar
+
                 </button>
 
             </form>
@@ -85,3 +113,4 @@
     </div>
 
 </x-layout>
+

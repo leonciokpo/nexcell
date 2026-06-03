@@ -1,3 +1,4 @@
+
 <x-layout title="Registrar Sesión">
 
     <div class="registro-container">
@@ -12,7 +13,7 @@
                 </h1>
 
                 <p class="registro-texto">
-                    Registrate para comprar más rápido, guardar tus productos
+                    Registrate para comprar más rápido, guardar productos
                     favoritos y acceder a ofertas exclusivas.
                 </p>
 
@@ -33,7 +34,7 @@
 
             </div>
 
-            {{-- FORMULARIO --}}
+            {{-- FORM --}}
             <form
                 action="{{ route('signup.procesar') }}"
                 method="POST"
@@ -45,6 +46,21 @@
                     Registrarse
                 </h2>
 
+                {{-- GOOGLE --}}
+                <a href="{{ route('google.login') }}"
+                   class="btn-google-login">
+
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg"
+                         width="22">
+
+                    Registrarse con Google
+
+                </a>
+
+                <div class="separator">
+                    <span>o</span>
+                </div>
+
                 {{-- NOMBRE --}}
                 <div class="form-group">
 
@@ -55,12 +71,6 @@
                         name="nombre"
                         value="{{ old('nombre') }}"
                         placeholder="Ingresá tu nombre">
-
-                    @error('nombre')
-                        <small class="text-danger">
-                            {{ $message }}
-                        </small>
-                    @enderror
 
                 </div>
 
@@ -75,12 +85,6 @@
                         value="{{ old('apellido') }}"
                         placeholder="Ingresá tu apellido">
 
-                    @error('apellido')
-                        <small class="text-danger">
-                            {{ $message }}
-                        </small>
-                    @enderror
-
                 </div>
 
                 {{-- EMAIL --}}
@@ -94,30 +98,18 @@
                         value="{{ old('email') }}"
                         placeholder="Ingresá tu email">
 
-                    @error('email')
-                        <small class="text-danger">
-                            {{ $message }}
-                        </small>
-                    @enderror
-
                 </div>
 
                 {{-- TELEFONO --}}
                 <div class="form-group">
 
-                    <label>Número de teléfono (opcional)</label>
+                    <label>Número de teléfono</label>
 
                     <input
                         type="text"
                         name="telefono"
                         value="{{ old('telefono') }}"
                         placeholder="Ingresá tu número">
-
-                    @error('telefono')
-                        <small class="text-danger">
-                            {{ $message }}
-                        </small>
-                    @enderror
 
                 </div>
 
@@ -129,14 +121,7 @@
                     <input
                         type="password"
                         name="password"
-                        value="{{ old('password') }}"
                         placeholder="Ingresá tu contraseña">
-
-                    @error('password')
-                        <small class="text-danger">
-                            {{ $message }}
-                        </small>
-                    @enderror
 
                 </div>
 
@@ -148,7 +133,6 @@
                     <input
                         type="password"
                         name="password_confirmation"
-                        value="{{ old('password') }}"
                         placeholder="Repetí tu contraseña">
 
                 </div>
@@ -168,3 +152,4 @@
     </div>
 
 </x-layout>
+
