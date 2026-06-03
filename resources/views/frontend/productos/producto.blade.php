@@ -57,17 +57,23 @@
                         <span>(124 opiniones)</span>
                     </div>
 
-                    @if($producto->precio_viejo)
+                    @if($producto->descuento > 0)
 
                         <div class="precio-viejo-detalle">
-                            $ {{ number_format($producto->precio_viejo, 0, ',', '.') }}
+                            $ {{ number_format($producto->precio, 0, ',', '.') }}
+                        </div>
+
+                        <div class="precio-actual">
+                            $ {{ number_format($producto->precio_final, 0, ',', '.') }}
+                        </div>
+
+                    @else
+
+                        <div class="precio-actual">
+                            $ {{ number_format($producto->precio, 0, ',', '.') }}
                         </div>
 
                     @endif
-
-                    <div class="precio-actual">
-                        $ {{ number_format($producto->precio, 0, ',', '.') }}
-                    </div>
 
                     @if($producto->descuento > 0)
 

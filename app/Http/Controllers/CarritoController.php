@@ -60,14 +60,17 @@ class CarritoController extends Controller
         return back()->with('success', 'Producto agregado al carrito'); 
     }
 
-    public function eliminar($id){ 
+    public function eliminar($id)
+    { 
         $carrito = $this->obtenerCarrito(); 
         // where('id',$id) evita eliminar ítems de otro carrito 
         $carrito->detalles()->where('id', $id)->delete(); 
         $this->recalcularTotal($carrito); 
-        return back()->with('success', 'Producto eliminado');} 
+        return back()->with('success', 'Producto eliminado');
+    } 
 
-         public function confirmar(){ 
+    public function confirmar()
+    { 
         $carrito = $this->obtenerCarrito(); 
         if ($carrito->detalles()->count() === 0) { 
             return back()->with('error', 'Tu carrito está vacío'); 
@@ -85,7 +88,8 @@ class CarritoController extends Controller
                          ->with('total', $total); 
     }
 
-    private function recalcularTotal(VentaCabecera $carrito){ 
+    private function recalcularTotal(VentaCabecera $carrito)
+    { 
         // sum() suma todos los subtotales de los ítems del carrito 
         $total = $carrito->detalles()->sum('subtotal'); 
         $carrito->update(['total' => $total]); 

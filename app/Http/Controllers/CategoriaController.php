@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;
+use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
 {
@@ -17,5 +18,15 @@ class CategoriaController extends Controller
         ]);
 
         return redirect()->back();
+    }
+
+    public function index()
+    {
+        $categorias = Categoria::withCount('productos')->get();
+
+        return view(
+            'backend.admin.vistaCategorias',
+            compact('categorias')
+        );
     }
 }

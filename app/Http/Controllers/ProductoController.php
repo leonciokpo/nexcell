@@ -26,7 +26,11 @@ class ProductoController extends Controller
 
     public function productos(Request $request)
     {
-        $query = Producto::with(['marca', 'categoria', 'imagenes']);
+        $query = Producto::with([
+            'marca',
+            'categoria',
+            'imagenes'
+        ])->where('destacado', 1);
 
         // FILTRO CATEGORÍAS
         if ($request->filled('categorias')) {
@@ -116,10 +120,12 @@ class ProductoController extends Controller
         }
 
         // ORDENAMIENTO
-        if ($request->sort == 'asc') {
+        if ($request->sort == 'default') {
+            $query->where('destacado', 1);
+        }
+        elseif ($request->sort == 'asc') {
             $query->orderBy('precio', 'asc');
         }
-
         elseif ($request->sort == 'desc') {
             $query->orderBy('precio', 'desc');
         }

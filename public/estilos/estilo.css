@@ -3222,3 +3222,32 @@ aside .card-custom {
     color:#aaa;
     z-index:2;
 }
+
+/*PANEL CATEGORIAS*/
+.admin-panel-card {
+    background: linear-gradient(
+        180deg,
+        rgba(8,32,46,.98),
+        rgba(3,18,28,.98)
+    );
+
+    border-radius: 22px;
+
+    border: 1px solid rgba(255,255,255,.06);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.35);
+}
+
+.table-dark {
+    background: transparent;
+}
+
+.table-dark td,
+.table-dark th {
+    border-color: rgba(255,255,255,.08);
+}
+
+.table-dark tbody tr:hover {
+    background: rgba(13,211,197,.05);
+}

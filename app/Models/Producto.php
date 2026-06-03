@@ -37,4 +37,17 @@ class Producto extends Model
     {
         return $this->hasMany(Imagen::class);
     }
+
+    public function getPrecioFinalAttribute()
+    {
+        $precioFinal = $this->precio - (
+            $this->precio * $this->descuento / 100
+        );
+
+        if ($precioFinal < 10000) {
+            return round($precioFinal);
+        }
+
+        return (floor($precioFinal / 10000) * 10000) - 1;
+    }
 }

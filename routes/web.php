@@ -117,7 +117,7 @@ Route::middleware('admin')->prefix('admin')->group(function () {
     // Categorias
     Route::get('/categorias', [CategoriaController::class, 'index']);
 
-    Route::post('/categorias', [CategoriaController::class, 'store']);
+    Route::post('/categorias', [CategoriaController::class, 'store'])->name('categorias.store');
 
     // Marcas
     Route::post('/marcas', [MarcaController::class, 'store']);

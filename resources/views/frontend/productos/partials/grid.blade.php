@@ -17,15 +17,23 @@
                 <div class="producto-info">
                     <h5 class="producto-nombre">{{ $producto->nombre }}</h5>
 
-                    @if($producto->precio_viejo)
-                        <div class="precio-viejo">
-                            $ {{ number_format($producto->precio_viejo,0,',','.') }}
-                        </div>
-                    @endif
+                        @if($producto->descuento > 0)
 
-                    <div class="precio-actual">
-                        $ {{ number_format($producto->precio,0,',','.') }}
-                    </div>
+                            <div class="precio-viejo">
+                                $ {{ number_format($producto->precio,0,',','.') }}
+                            </div>
+
+                            <div class="precio-actual">
+                                $ {{ number_format($producto->precio_final,0,',','.') }}
+                            </div>
+
+                        @else
+
+                            <div class="precio-actual">
+                                $ {{ number_format($producto->precio,0,',','.') }}
+                            </div>
+
+                        @endif
                 </div>
 
             </a>
