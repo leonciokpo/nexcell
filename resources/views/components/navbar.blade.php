@@ -25,7 +25,7 @@
 
                     @if(session('usuario_id'))
 
-                        <a href="#" class="btn btn-login">
+                        <a href="{{ route('mi-perfil') }}" class="btn btn-login">
                             {{ session('usuario_nombre') }}
                         </a>
 

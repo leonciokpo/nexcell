@@ -13,6 +13,7 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\CarritoController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\MiPerfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -145,4 +146,15 @@ Route::middleware(['rol:cliente'])->group(function (){
         } 
         return view('backend.usuarios.compra-confirmada'); 
     })->name('compra.confirmada'); 
+});
+
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('/mi-perfil', [MiPerfilController::class, 'index'])
+        ->name('mi-perfil');
+
+    Route::put('/mi-perfil', [MiPerfilController::class, 'update'])
+        ->name('mi-perfil.update');
+
 });
