@@ -10,22 +10,16 @@ use App\Models\VentaDetalle;
 class CarritoController extends Controller
 {
      // Busca el carrito activo o crea uno nuevo vacío 
-    private function obtenerCarrito() 
-    { 
-        return VentaCabecera::firstOrCreate( 
-            [ 
-                'user_id' => auth()->id(), 
-                'estado'  => 'carrito', 
-            ], 
-            // Si crea uno nuevo, arranca con total 0 
-            ['total' => 0] 
-        );
-    }
-    public function index(){ 
-        $carrito = $this->obtenerCarrito(); 
-        // with('producto') evita N+1: una sola consulta para todos los productos 
-        $items = $carrito->detalles()->with('producto')->get(); 
-        return view('backend.usuarios.carrito', compact('carrito', 'items')); 
+    private function obtenerCarrito(){
+    return VentaCabecera::firstOrCreate(
+        [
+            'usuario_id' => auth()->id(),
+            'estado'     => 'carrito',
+        ],
+        [
+            'total' => 0
+        ]
+    );
     }
 
     public function agregar(Request $request){ 
