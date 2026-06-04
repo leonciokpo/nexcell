@@ -106,15 +106,60 @@
 
                     <div class="d-grid gap-3 mt-4">
 
-                        <button class="btn-comprar-detalle">
-                            Comprar ahora
-                        </button>
+    {{-- COMPRAR --}}
+    <button class="btn-comprar-detalle">
+        Comprar ahora
+    </button>
 
-                        <button class="btn-carrito-detalle">
-                            Agregar al carrito
-                        </button>
+    {{-- AGREGAR AL CARRITO --}}
+    @if(session('usuario_id'))
 
-                    </div>
+        <form action="{{ route('carrito.agregar') }}"
+              method="POST">
+
+            @csrf
+
+            <input type="hidden"
+                   name="producto_id"
+                   value="{{ $producto->id }}">
+
+            <div class="mb-3">
+
+                <label class="form-label text-white">
+                    Cantidad
+                </label>
+
+                <input type="number"
+                       name="cantidad"
+                       value="1"
+                       min="1"
+                       max="{{ $producto->stock }}"
+                       class="form-control cantidad-input">
+
+            </div>
+
+            <button type="submit"
+                    class="btn-carrito-detalle">
+
+                <i class="bi bi-cart-plus"></i>
+                Agregar al carrito
+
+            </button>
+
+        </form>
+
+    @else
+
+        <a href="{{ route('login') }}"
+           class="btn-carrito-detalle text-center text-decoration-none">
+
+            Iniciá sesión para comprar
+
+        </a>
+
+    @endif
+
+</div>
 
                 </div>
 
