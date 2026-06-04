@@ -11,7 +11,7 @@ class RolMiddleware
     public function handle(Request $request, Closure $next, $rol): Response
     {
         if (!session('usuario_id')) {
-            return redirect()->route('login');
+            return redirect()->route('inicioSesion');
         }
 
         // ADMIN

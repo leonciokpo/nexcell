@@ -81,7 +81,7 @@
 
             @else
 
-                <a href="{{ route('login') }}"
+                <a href="{{ route('inicioSesion') }}"
                    class="btn-agregar-carrito text-center d-block">
 
                     <i class="bi bi-person"></i>

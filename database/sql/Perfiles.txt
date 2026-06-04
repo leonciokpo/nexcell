@@ -1,0 +1,4 @@
+use App\Models\Perfil;
+
+Perfil::create(['perfil_descripcion' => 'Administrador']);
+Perfil::create(['perfil_descripcion' => 'Cliente']);

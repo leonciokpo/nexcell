@@ -129,7 +129,7 @@ Route::get('/auth/google', [GoogleController::class, 'redirect'])
 
 Route::get('/auth/google/callback', [GoogleController::class, 'callback']);
 
-Route::middleware(['auth', 'rol:cliente'])->group(function (){ 
+Route::middleware(['rol:cliente'])->group(function (){
     // Agregar un producto 
     Route::post('/carrito/agregar', [CarritoController::class, 'agregar']) 
                                    ->name('carrito.agregar'); 
