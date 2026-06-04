@@ -8,7 +8,7 @@ class VentaCabecera extends Model
 { 
     protected $table = 'ventas_cabecera'; 
     protected $fillable = [ 
-        'user_id', 'estado', 'total', 'fecha_venta', 
+        'usuario_id', 'estado', 'total', 'fecha_venta', 
     ]; 
     protected $casts = [ 
         // convierte el campo a objeto Carbon para usar ->format() 
@@ -16,7 +16,7 @@ class VentaCabecera extends Model
     ]; 
     // Relación: una venta pertenece a un usuario 
     public function usuario(){ 
-        return $this->belongsTo(Usuario::class, 'user_id'); 
+        return $this->belongsTo(Usuario::class, 'usuario_id'); 
     } 
     // Relación: una venta tiene muchos items 
     public function detalles(){ 

@@ -115,28 +115,74 @@
         </div>
 
         <!-- PRODUCTOS -->
-        <div class="cart-body">
+<div class="cart-body">
 
-            <!-- ITEM -->
+    @php
+        $carrito = null;
+        $items = collect();
+
+        if(auth()->check()) {
+            $carrito = \App\Models\VentaCabecera::where('usuario_id', auth()->id())
+                        ->where('estado', 'carrito')
+                        ->first();
+
+            if($carrito) {
+                $items = $carrito->detalles()->with('producto.imagenes')->get();
+            }
+        }
+    @endphp
+
+    @if($items->count() > 0)
+
+        @foreach($items as $item)
+
             <div class="cart-item">
-                <img src="{{ asset('images/iphone15.jpg') }}" alt="">
+
+                <img
+                    src="{{ asset($item->producto->imagenes->first()->ruta ?? 'images/default.png') }}"
+                    alt="{{ $item->producto->nombre }}"
+                >
 
                 <div class="cart-item-info">
-                    <h6>iPhone 15 Pro</h6>
-                    <p>$1.250.000</p>
+
+                    <h6>{{ $item->producto->nombre }}</h6>
+
+                    <p>
+                        {{ $item->cantidad }} x
+                        ${{ number_format($item->precio_unitario, 0, ',', '.') }}
+                    </p>
+
+                    <strong>
+                        ${{ number_format($item->subtotal, 0, ',', '.') }}
+                    </strong>
+
                 </div>
+
+                <form method="POST"
+                      action="{{ route('carrito.eliminar', $item->id) }}">
+
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit" class="btn-delete-mini">
+                        <i class="bi bi-trash"></i>
+                    </button>
+
+                </form>
+
             </div>
 
-            <div class="cart-item">
-                <img src="{{ asset('images/airpods.jpg') }}" alt="">
+        @endforeach
 
-                <div class="cart-item-info">
-                    <h6>AirPods Pro</h6>
-                    <p>$350.000</p>
-                </div>
-            </div>
+    @else
 
+        <div class="cart-empty">
+            <p>Tu carrito está vacío</p>
         </div>
+
+    @endif
+
+</div>
 
         <!-- FOOTER -->
         <div class="cart-footer">
