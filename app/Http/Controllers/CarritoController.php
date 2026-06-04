@@ -21,12 +21,6 @@ class CarritoController extends Controller
         ]
     );
     }
-    public function index(){ 
-        $carrito = $this->obtenerCarrito(); 
-        // with('producto') evita N+1: una sola consulta para todos los productos 
-        $items = $carrito->detalles()->with('producto')->get(); 
-        return view('backend.usuarios.carrito', compact('carrito', 'items')); 
-    }
 
     public function agregar(Request $request){ 
         $request->validate([ 

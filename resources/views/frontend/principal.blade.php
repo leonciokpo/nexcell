@@ -93,7 +93,7 @@
 </div>
 </div>
 
-    <!-- 🔥 ASIDE ABAJO -->
+    <!--  ASIDE ABAJO -->
     <aside class="row mt-4">
 
         <div class="col-md-4">

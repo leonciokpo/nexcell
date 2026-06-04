@@ -24,7 +24,7 @@
     <div class="d-flex">
 
     {{-- SIDEBAR ADMIN --}}
-    @if(session('usuario_perfil') == 1 && request()->is('admin*'))
+    @if(session('perfil_id') == 1 && request()->is('admin*'))
 
         <div class="bg-dark text-white p-3"
              style="width: 260px; min-height: 100vh;">
@@ -185,18 +185,43 @@
 </div>
 
         <!-- FOOTER -->
-        <div class="cart-footer">
+<div class="cart-footer">
 
-            <div class="cart-total">
-                <span>Total</span>
-                <strong>$1.600.000</strong>
-            </div>
+    <div class="cart-total">
+        <span>Total</span>
 
-            <button class="btn-finalizar">
-                Finalizar compra
-            </button>
+        <strong>
+            ${{ number_format($carrito->total ?? 0, 0, ',', '.') }}
+        </strong>
+    </div>
 
-        </div>
+    @if($items->count() > 0)
+
+        <form method="POST"
+              action="{{ route('carrito.confirmar') }}">
+
+            @csrf
+
+            @if($items->count() > 0)
+
+    <form method="POST"
+          action="{{ route('carrito.confirmar') }}">
+
+        @csrf
+
+        <button type="submit" class="btn-finalizar">
+            Finalizar compra
+        </button>
+
+    </form>
+
+@endif
+
+        </form>
+
+    @endif
+
+</div>
 
     </div>
 
