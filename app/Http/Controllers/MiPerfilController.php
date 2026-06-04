@@ -19,34 +19,53 @@ class MiPerfilController extends Controller
     }
 
     public function update(Request $request)
-    {
-        $usuario = Usuario::find(session('usuario_id'));
+{
+    $usuario = Usuario::find(session('usuario_id'));
 
-        $request->validate([
-            'nombre' => 'required|max:255',
-            'email' => 'required|email',
-            'password' => 'nullable|min:6|confirmed'
-        ]);
+    $request->validate([
+        'nombre' => 'required|max:255',
+        'email' => 'required|email',
 
-        $usuario->nombre = $request->nombre;
-        $usuario->email = $request->email;
+        'password_actual' => 'nullable',
+        'password' => 'nullable|min:6|confirmed'
+    ]);
 
-        if($request->filled('password')) {
+    $usuario->nombre = $request->nombre;
+    $usuario->email = $request->email;
 
-            $usuario->password = Hash::make($request->password);
+    // SI quiere cambiar contraseña
+    if($request->filled('password')) {
+
+        // verificar contraseña actual
+        if(
+            !Hash::check(
+                $request->password_actual,
+                $usuario->password
+            )
+        ) {
+
+            return back()->with(
+                'error',
+                'La contraseña actual es incorrecta'
+            );
 
         }
 
-        $usuario->save();
-
-        // actualizar sesión
-        session([
-            'usuario_nombre' => $usuario->nombre
-        ]);
-
-        return back()->with(
-            'success',
-            'Perfil actualizado correctamente'
+        // guardar nueva contraseña
+        $usuario->password = Hash::make(
+            $request->password
         );
     }
+
+    $usuario->save();
+
+    session([
+        'usuario_nombre' => $usuario->nombre
+    ]);
+
+    return back()->with(
+        'success',
+        'Perfil actualizado correctamente'
+    );
+}
 }

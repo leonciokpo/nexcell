@@ -56,6 +56,15 @@
             <div class="perfil-section">
 
                 <h5>Cambiar contraseña</h5>
+                <div class="mb-3">
+
+                <label>Contraseña actual</label>
+
+                <input type="password"
+                    name="password_actual"
+                    class="form-control perfil-input">
+
+                </div>
 
                 <div class="mb-3">
 
