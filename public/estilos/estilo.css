@@ -3251,3 +3251,17 @@ aside .card-custom {
 .table-dark tbody tr:hover {
     background: rgba(13,211,197,.05);
 }
+
+.navbar-admin {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 10px 0 !important;
+}
+
+.navbar-admin .container-fluid {
+    padding-bottom: 0 !important;
+}
+
+.navbar-admin .top-navbar {
+    margin-bottom: 0 !important;
+}

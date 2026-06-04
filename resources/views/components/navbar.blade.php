@@ -1,14 +1,25 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top {{ session('perfil_id') == 1 ? 'navbar-admin' : '' }}">
 
         <div class="container-fluid">
 
             <div class="top-navbar">
 
-                <a class="navbar-brand" href="{{ route('principal') }}">
-                    <img src="{{ asset('images/logo.png') }}" class="logo-navbar">
-                    <span>Nexcell.</span>
-                </a>
+                @if(session('perfil_id') == 1)
+
+                    <span class="navbar-brand">
+                        <img src="{{ asset('images/logo.png') }}" class="logo-navbar">
+                        <span>Nexcell.</span>
+                    </span>
+
+                @else
+
+                    <a class="navbar-brand" href="{{ route('principal') }}">
+                        <img src="{{ asset('images/logo.png') }}" class="logo-navbar">
+                        <span>Nexcell.</span>
+                    </a>
+
+                @endif
 
                 <div class="auth-buttons d-none d-lg-flex">
 
@@ -34,9 +45,11 @@
                             </button>
                         </form>
 
-                        <button class="btn-cart" id="openCart">
-                            <i class="bi bi-cart3"></i>
-                        </button>
+                        @if(session('perfil_id') != 1)
+                            <button class="btn-cart" id="openCart">
+                                <i class="bi bi-cart3"></i>
+                            </button>
+                        @endif
 
                     @else
 
@@ -55,16 +68,19 @@
             </div>
 
             {{-- BOTÓN MOBILE --}}
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarContenido">
+            @if(!session('usuario_id') || session('perfil_id') != 1)
 
-                <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarContenido">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            </button>
+            @endif
 
             {{-- CONTENIDO NAVBAR --}}
+            @if(!session('usuario_id') || session('perfil_id') != 1)
             <div class="collapse navbar-collapse" id="navbarContenido">
 
                 {{-- MOBILE AUTH --}}
@@ -110,93 +126,79 @@
 
                     </div>
 
-                    <div class="cart-box">
+                   @if(session('perfil_id') != 1)
+                        <div class="cart-box">
 
-                        <button class="btn-cart" id="openCartMobile">
-                            <i class="bi bi-cart3"></i>
-                        </button>
+                            <button class="btn-cart" id="openCartMobile">
+                                <i class="bi bi-cart3"></i>
+                            </button>
 
-                    </div>
-
-                </div>
-
-                {{-- BUSCADOR --}}
-                <div class="search-container w-100 d-flex justify-content-start mb-2">
-
-                    <div class="search-box">
-
-                        <i class="bi bi-search search-icon"></i>
-
-                        <input type="text"
-                               class="search-input"
-                               placeholder="Buscar productos...">
-
-                    </div>
+                        </div>
+                    @endif
 
                 </div>
 
-                {{-- LINKS --}}
-                <ul class="navbar-nav w-100">
+               @if(!session('usuario_id') || session('perfil_id') != 1)
 
-                    <li class="nav-item">
+                    {{-- BUSCADOR --}}
+                    <div class="search-container w-100 d-flex justify-content-start mb-2">
 
-                        <a class="nav-link {{ request()->routeIs('principal') ? 'active' : '' }}"
-                           href="{{ route('principal') }}">
+                        <div class="search-box">
 
-                            Inicio
+                            <i class="bi bi-search search-icon"></i>
 
-                        </a>
+                            <input type="text"
+                                class="search-input"
+                                placeholder="Buscar productos...">
 
-                    </li>
+                        </div>
 
-                    <li class="nav-item">
+                    </div>
 
-                        <a class="nav-link {{ request()->routeIs('productos') ? 'active' : '' }}"
-                           href="{{ route('productos') }}">
+                    {{-- LINKS --}}
+                    <ul class="navbar-nav w-100">
 
-                            Productos
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('principal') ? 'active' : '' }}"
+                            href="{{ route('principal') }}">
+                                Inicio
+                            </a>
+                        </li>
 
-                        </a>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('productos') ? 'active' : '' }}"
+                            href="{{ route('productos') }}">
+                                Productos
+                            </a>
+                        </li>
 
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('contacto') ? 'active' : '' }}"
+                            href="{{ route('contacto') }}">
+                                Contacto
+                            </a>
+                        </li>
 
-                    <li class="nav-item">
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('comercializacion') ? 'active' : '' }}"
+                            href="{{ route('comercializacion') }}">
+                                Comercialización
+                            </a>
+                        </li>
 
-                        <a class="nav-link {{ request()->routeIs('contacto') ? 'active' : '' }}"
-                           href="{{ route('contacto') }}">
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('quienesSomos') ? 'active' : '' }}"
+                            href="{{ route('quienesSomos') }}">
+                                Quiénes Somos
+                            </a>
+                        </li>
 
-                            Contacto
+                    </ul>
 
-                        </a>
-
-                    </li>
-
-                    <li class="nav-item">
-
-                        <a class="nav-link {{ request()->routeIs('comercializacion') ? 'active' : '' }}"
-                           href="{{ route('comercializacion') }}">
-
-                            Comercialización
-
-                        </a>
-
-                    </li>
-
-                    <li class="nav-item">
-
-                        <a class="nav-link {{ request()->routeIs('quienesSomos') ? 'active' : '' }}"
-                           href="{{ route('quienesSomos') }}">
-
-                            Quiénes Somos
-
-                        </a>
-
-                    </li>
-
-                </ul>
+                @endif
 
             </div>
-
+            @endif
         </div>
 
     </nav>
