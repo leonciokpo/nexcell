@@ -24,46 +24,70 @@
     <div class="d-flex">
 
     {{-- SIDEBAR ADMIN --}}
-    @if(session('perfil_id') == 1 && request()->is('admin*'))
+    @if(session('perfil_id') == 1 && request()->is('admin*') && !request()->routeIs('admin.dashboard'))
 
-        <div class="bg-dark text-white p-3"
-             style="width: 260px; min-height: 100vh;">
+        <div class="admin-sidebar">
 
-            <h4 class="mb-4">
-                Panel Admin
-            </h4>
+    {{-- HEADER --}}
+    <div class="admin-sidebar-header">
 
-            <div class="list-group">
-
-                <a href="/admin"
-                   class="list-group-item list-group-item-action">
-                    Dashboard
-                </a>
-
-                <a href="/admin/usuarios"
-                   class="list-group-item list-group-item-action">
-                    Usuarios
-                </a>
-
-                <a href="/admin/productos"
-                   class="list-group-item list-group-item-action">
-                    Productos
-                </a>
-
-                <a href="/admin/categorias"
-                   class="list-group-item list-group-item-action">
-                    Categorías
-                </a>
-
-                <a href="/consultas"
-                   class="list-group-item list-group-item-action">
-                    Consultas
-                </a>
-
-            </div>
-
+        <div class="admin-sidebar-logo">
+            <i class="bi bi-shield-lock-fill"></i>
         </div>
 
+        <div>
+            <h4>Panel Admin</h4>
+            <span>Nexcell System</span>
+        </div>
+
+    </div>
+
+    {{-- MENU --}}
+    <div class="admin-sidebar-menu">
+
+        <a href="/admin"
+           class="admin-sidebar-link {{ request()->is('admin') ? 'active' : '' }}">
+
+            <i class="bi bi-grid-1x2-fill"></i>
+            Dashboard
+
+        </a>
+
+        <a href="/admin/usuarios"
+           class="admin-sidebar-link {{ request()->is('admin/usuarios*') ? 'active' : '' }}">
+
+            <i class="bi bi-people-fill"></i>
+            Usuarios
+
+        </a>
+
+        <a href="/admin/productos"
+           class="admin-sidebar-link {{ request()->is('admin/productos*') ? 'active' : '' }}">
+
+            <i class="bi bi-box-seam-fill"></i>
+            Productos
+
+        </a>
+
+        <a href="/admin/categorias"
+           class="admin-sidebar-link {{ request()->is('admin/categorias*') ? 'active' : '' }}">
+
+            <i class="bi bi-grid-fill"></i>
+            Categorías
+
+        </a>
+
+        <a href="/admin/consultas"
+           class="admin-sidebar-link {{ request()->is('admin/consultas*') ? 'active' : '' }}">
+
+            <i class="bi bi-chat-dots-fill"></i>
+            Consultas
+
+        </a>
+
+    </div>
+
+</div>
     @endif
 
     {{-- CONTENIDO --}}

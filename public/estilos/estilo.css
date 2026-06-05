@@ -3593,3 +3593,136 @@ aside .card-custom {
     }
 
 }
+
+/* =========================
+   SIDEBAR ADMIN
+========================= */
+
+.admin-sidebar {
+    width: 270px;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #111214,
+            #1a1b1f
+        );
+
+    border-right:
+        1px solid rgba(255,255,255,.06);
+
+    padding: 28px 18px;
+
+    position: sticky;
+    top: 0;
+}
+
+/* HEADER */
+
+.admin-sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 40px;
+
+    padding-bottom: 24px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.06);
+}
+
+.admin-sidebar-logo {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7a18,
+            #ffb347
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-sidebar-logo i {
+    color: white;
+    font-size: 28px;
+}
+
+.admin-sidebar-header h4 {
+    color: white;
+
+    margin: 0;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.admin-sidebar-header span {
+    color: #9d9d9d;
+    font-size: 13px;
+}
+
+/* MENU */
+
+.admin-sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.admin-sidebar-link {
+    height: 54px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 0 18px;
+
+    text-decoration: none;
+
+    color: #d6d6d6;
+
+    font-weight: 500;
+
+    transition: .25s;
+}
+
+.admin-sidebar-link i {
+    font-size: 18px;
+}
+
+.admin-sidebar-link:hover {
+    background:
+        rgba(255,122,24,.12);
+
+    color: white;
+
+    transform: translateX(4px);
+}
+
+/* ACTIVE */
+
+.admin-sidebar-link.active {
+    background:
+        linear-gradient(
+            135deg,
+            #ff7a18,
+            #ffb347
+        );
+
+    color: white;
+
+    box-shadow:
+        0 10px 24px rgba(255,122,24,.25);
+}

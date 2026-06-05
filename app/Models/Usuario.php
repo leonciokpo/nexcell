@@ -23,7 +23,8 @@ class Usuario extends Authenticatable
         'email',
         'telefono',
         'password',
-        'perfil_id'
+        'perfil_id',
+        'google_id'
     ];
 
     protected $hidden = [

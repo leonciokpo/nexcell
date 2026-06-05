@@ -84,8 +84,7 @@ Route::post('/logout', function () {
 Route::middleware('admin')->prefix('admin')->group(function () {
 
     Route::get('/', function () {
-        return view('backend.admin.dashboard');
-    });
+    return view('backend.admin.dashboard');})->name('admin.dashboard');
 
     // Consultas
     Route::get('/consultas', [ContactoController::class, 'index']);

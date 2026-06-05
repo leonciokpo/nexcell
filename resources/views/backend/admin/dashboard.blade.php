@@ -1,17 +1,31 @@
-<x-layout title="Panel administrador">
+<x-layout title="Panel administrador" bodyClass="admin-dashboard-body">
 
-<div class="admin-dashboard-container">
+<div class="admin-dashboard-wrapper">
 
-    {{-- HEADER --}}
-    <div class="admin-dashboard-header">
+    {{-- HERO --}}
+    <div class="admin-hero">
 
-        <h1 class="admin-dashboard-title">
-            Panel de Administración
-        </h1>
+        <div>
 
-        <p class="admin-dashboard-subtitle">
-            Hola {{ session('usuario_nombre') }}, bienvenido nuevamente
-        </p>
+            <span class="admin-badge">
+                PANEL ADMIN
+            </span>
+
+            <h1 class="admin-dashboard-title">
+                Bienvenido,
+                {{ session('usuario_nombre') }}
+            </h1>
+
+            <p class="admin-dashboard-subtitle">
+                Gestioná productos, usuarios y consultas
+                desde un único lugar.
+            </p>
+
+        </div>
+
+        <div class="admin-hero-icon">
+            <i class="bi bi-shield-lock"></i>
+        </div>
 
     </div>
 
@@ -21,21 +35,29 @@
         {{-- PRODUCTOS --}}
         <div class="dashboard-card">
 
-            <div class="dashboard-icon productos">
-                <i class="bi bi-box-seam"></i>
+            <div class="dashboard-top">
+                <div class="dashboard-icon productos">
+                    <i class="bi bi-box-seam"></i>
+                </div>
+
+                <span class="dashboard-tag">
+                    Catálogo
+                </span>
             </div>
 
-            <h4>
-                Productos
-            </h4>
+            <h4>Productos</h4>
 
             <p>
-                Gestionar productos del catálogo
+                Administrá el catálogo completo
+                de productos y stock.
             </p>
 
             <a href="/admin/productos"
                class="dashboard-btn productos-btn">
+
                 Ver panel
+                <i class="bi bi-arrow-right"></i>
+
             </a>
 
         </div>
@@ -43,21 +65,31 @@
         {{-- USUARIOS --}}
         <div class="dashboard-card">
 
-            <div class="dashboard-icon usuarios">
-                <i class="bi bi-people"></i>
+            <div class="dashboard-top">
+
+                <div class="dashboard-icon usuarios">
+                    <i class="bi bi-people"></i>
+                </div>
+
+                <span class="dashboard-tag">
+                    Sistema
+                </span>
+
             </div>
 
-            <h4>
-                Usuarios
-            </h4>
+            <h4>Usuarios</h4>
 
             <p>
-                Administrar clientes y administradores
+                Gestioná clientes, permisos
+                y administradores.
             </p>
 
             <a href="/admin/usuarios"
                class="dashboard-btn usuarios-btn">
+
                 Ver panel
+                <i class="bi bi-arrow-right"></i>
+
             </a>
 
         </div>
@@ -65,21 +97,31 @@
         {{-- CATEGORÍAS --}}
         <div class="dashboard-card">
 
-            <div class="dashboard-icon categorias">
-                <i class="bi bi-grid"></i>
+            <div class="dashboard-top">
+
+                <div class="dashboard-icon categorias">
+                    <i class="bi bi-grid"></i>
+                </div>
+
+                <span class="dashboard-tag">
+                    Organización
+                </span>
+
             </div>
 
-            <h4>
-                Categorías
-            </h4>
+            <h4>Categorías</h4>
 
             <p>
-                Organizar categorías del sistema
+                Organizá productos
+                y estructura del sistema.
             </p>
 
             <a href="/admin/categorias"
                class="dashboard-btn categorias-btn">
+
                 Ver panel
+                <i class="bi bi-arrow-right"></i>
+
             </a>
 
         </div>
@@ -87,21 +129,31 @@
         {{-- CONSULTAS --}}
         <div class="dashboard-card">
 
-            <div class="dashboard-icon consultas">
-                <i class="bi bi-chat-dots"></i>
+            <div class="dashboard-top">
+
+                <div class="dashboard-icon consultas">
+                    <i class="bi bi-chat-dots"></i>
+                </div>
+
+                <span class="dashboard-tag">
+                    Clientes
+                </span>
+
             </div>
 
-            <h4>
-                Consultas
-            </h4>
+            <h4>Consultas</h4>
 
             <p>
-                Revisar mensajes y consultas recibidas
+                Revisá mensajes y consultas
+                recibidas desde el sitio.
             </p>
 
             <a href="/admin/consultas"
                class="dashboard-btn consultas-btn">
+
                 Ver panel
+                <i class="bi bi-arrow-right"></i>
+
             </a>
 
         </div>
