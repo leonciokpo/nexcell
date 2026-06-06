@@ -189,36 +189,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-const openCart = document.getElementById('openCart');
-const openCartMobile = document.getElementById('openCartMobile');
-
-const closeCart = document.getElementById('closeCart');
-
-const cartSidebar = document.getElementById('cartSidebar');
-const cartOverlay = document.getElementById('cartOverlay');
-
-function abrirCarrito() {
-    cartSidebar.classList.add('active');
-    cartOverlay.classList.add('active');
-}
-
-function cerrarCarrito() {
-    cartSidebar.classList.remove('active');
-    cartOverlay.classList.remove('active');
-}
-
-if(openCart){
-    openCart.addEventListener('click', abrirCarrito);
-}
-
-if(openCartMobile){
-    openCartMobile.addEventListener('click', abrirCarrito);
-}
-
-if(closeCart){
-    closeCart.addEventListener('click', cerrarCarrito);
-}
-
-if(cartOverlay){
-    cartOverlay.addEventListener('click', cerrarCarrito);
-}

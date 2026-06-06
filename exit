@@ -1,0 +1,12 @@
+* [33m51b149c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Ahora anda el inicio de sesion con google
+* [33mc08dcf9[m Ahora el usuario tiene que verificar su contraseña para poder cambiarla desde la vista mi-perfil
+* [33ma3bc9f6[m Ahora el usuario puede modificar sus datos del perfil
+* [33m0e7fe3f[m Arreglado unas cuantas cosas mas anda la puta que roto que esta este codigo oh XDXD
+*   [33m8be8ace[m no c
+[32m|[m[33m\[m  
+[32m|[m * [33m89c17e4[m me olvide de este
+[32m|[m * [33m07aa2db[m Ahora se puede añadir productos desde el panel de productos y desde la pagina de producto de cada uno
+[32m|[m * [33m3400e4c[m Se quito la vista de carrito y se cambio el carrito del navbar
+[32m|[m * [33me90f173[m Se arreglaron cosas xd
+* [33m|[m [33ma0594f7[m Arreglado unas cosillas de admin
+[33m|[m[33m/[m  
