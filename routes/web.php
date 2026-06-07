@@ -122,6 +122,28 @@ Route::middleware('admin')->prefix('admin')->group(function () {
     // Marcas
     Route::post('/marcas', [MarcaController::class, 'store']);
 
+    //Ventas
+    Route::get('/ventas', function () {
+
+        $ventas = \App\Models\VentaCabecera::with('usuario')
+            ->where('estado', 'confirmado')
+            ->latest()
+            ->get();
+
+        return view('backend.admin.vistaVentas', compact('ventas'));
+
+    })->name('admin.ventas');
+
+    Route::get('/ventas/{id}', function ($id) {
+
+        $venta = \App\Models\VentaCabecera::with([
+            'usuario',
+            'detalles.producto'
+        ])->findOrFail($id);
+
+        return view('backend.admin.detalleVenta', compact('venta'));
+
+    })->name('admin.ventas.detalle');
 });
 
 Route::get('/auth/google', [GoogleController::class, 'redirect'])
@@ -136,15 +158,22 @@ Route::middleware(['rol:cliente'])->group(function (){
     // Eliminar un producto 
     Route::delete('/carrito/eliminar/{id}', [CarritoController::class, 'eliminar'])->name('carrito.eliminar'); 
     // Confirmar la compra 
-    Route::post('/carrito/confirmar', [CarritoController::class, 'confirmar']) 
-                                     ->name('carrito.confirmar');
+   Route::post('/carrito/confirmar', [CarritoController::class, 'confirmar'])
+    ->name('carrito.confirmar');
      // Vista de compra confirmada (protegida: redirige si no hay sesión) 
-    Route::get('/compra-confirmada', function () { 
-        if (!session('total')) { 
-            return redirect()->route('cliente.dashboard'); 
-        } 
-        return view('backend.usuarios.compra-confirmada'); 
-    })->name('compra.confirmada'); 
+    Route::get('/compra-confirmada', function () {
+
+        $carrito = \App\Models\VentaCabecera::where('usuario_id', auth()->id())
+            ->where('estado', 'carrito')
+            ->first();
+
+        if (!$carrito || $carrito->detalles()->count() === 0) {
+            return redirect()->route('principal');
+        }
+
+        return view('backend.usuarios.confirmarCompra', compact('carrito'));
+
+    })->name('compra.confirmada');
 });
 
 

@@ -43,4 +43,9 @@ class Usuario extends Authenticatable
     {
         return $this->belongsTo(Perfil::class);
     }
+
+    public function ventas()
+    {
+        return $this->hasMany(VentaCabecera::class, 'usuario_id');
+    }
 }

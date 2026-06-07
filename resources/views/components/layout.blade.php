@@ -209,43 +209,25 @@
 </div>
 
         <!-- FOOTER -->
-<div class="cart-footer">
+        <div class="cart-footer">
 
-    <div class="cart-total">
-        <span>Total</span>
+            <div class="cart-total">
+                <span>Total</span>
 
-        <strong>
-            ${{ number_format($carrito->total ?? 0, 0, ',', '.') }}
-        </strong>
-    </div>
-
-    @if($items->count() > 0)
-
-        <form method="POST"
-              action="{{ route('carrito.confirmar') }}">
-
-            @csrf
+                <strong>
+                    ${{ number_format($carrito->total ?? 0, 0, ',', '.') }}
+                </strong>
+            </div>
 
             @if($items->count() > 0)
 
-    <form method="POST"
-          action="{{ route('carrito.confirmar') }}">
+                <a href="{{ route('compra.confirmada') }}" class="btn-finalizar">
+                    Finalizar compra
+                </a>
 
-        @csrf
+            @endif
 
-        <button type="submit" class="btn-finalizar">
-            Finalizar compra
-        </button>
-
-    </form>
-
-@endif
-
-        </form>
-
-    @endif
-
-</div>
+        </div>
 
     </div>
 

@@ -189,3 +189,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+
+    const metodoPago = document.getElementById('metodoPago');
+    const datosTarjeta = document.getElementById('datosTarjeta');
+
+    if (metodoPago) {
+        metodoPago.addEventListener('change', () => {
+
+            if (metodoPago.value === 'tarjeta') {
+                datosTarjeta.classList.remove('oculto');
+            } else {
+                datosTarjeta.classList.add('oculto');
+            }
+
+        });
+    }
+
+});

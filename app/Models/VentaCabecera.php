@@ -7,9 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 class VentaCabecera extends Model 
 { 
     protected $table = 'ventas_cabecera'; 
-    protected $fillable = [ 
-        'usuario_id', 'estado', 'total', 'fecha_venta', 
-    ]; 
+    protected $fillable = [
+        'usuario_id',
+        'estado',
+        'total',
+        'fecha_venta',
+
+        'codigo_postal',
+        'calle',
+        'numero',
+        'barrio',
+        'ciudad',
+        'provincia',
+        'metodo_pago',
+    ];
     protected $casts = [ 
         // convierte el campo a objeto Carbon para usar ->format() 
         'fecha_venta' => 'datetime', 

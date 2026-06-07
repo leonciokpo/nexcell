@@ -158,6 +158,37 @@
 
         </div>
 
+        {{-- VENTAS --}}
+        <div class="dashboard-card">
+
+            <div class="dashboard-top">
+
+                <div class="dashboard-icon ventas">
+                    <i class="bi bi-receipt-cutoff"></i>
+                </div>
+
+                <span class="dashboard-tag">
+                    Reportes
+                </span>
+
+            </div>
+
+            <h4>Ventas</h4>
+
+            <p>
+                Consultá el historial de ventas,
+                órdenes confirmadas y estadísticas.
+            </p>
+
+            <a href="/admin/ventas"
+            class="dashboard-btn ventas-btn">
+
+                Ver panel
+                <i class="bi bi-arrow-right"></i>
+
+            </a>
+
+        </div>
     </div>
 
 </div>

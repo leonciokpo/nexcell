@@ -63,23 +63,43 @@ class CarritoController extends Controller
         return back()->with('success', 'Producto eliminado');
     } 
 
-    public function confirmar()
-    { 
-        $carrito = $this->obtenerCarrito(); 
-        if ($carrito->detalles()->count() === 0) { 
-            return back()->with('error', 'Tu carrito está vacío'); 
-        } 
-        $items = $carrito->detalles()->with('producto')->get(); 
-        $total = $carrito->total; 
-        // Cambia estado y guarda fecha exacta de la compra 
-        $carrito->update([ 
-            'estado'      => 'confirmado', 
-            'fecha_venta' => now(), 
-        ]); 
-        // Pasa los datos por sesión a la vista de confirmación 
-        return redirect()->route('compra.confirmada') 
-                         ->with('items', $items) 
-                         ->with('total', $total); 
+    public function confirmar(Request $request)
+    {
+        $request->validate([
+            'codigo_postal' => 'required',
+            'calle' => 'required',
+            'numero' => 'required',
+            'ciudad' => 'required',
+            'provincia' => 'required',
+            'metodo_pago' => 'required',
+        ]);
+
+        $carrito = $this->obtenerCarrito();
+
+        if ($carrito->detalles()->count() === 0) {
+            return back()->with('error', 'Tu carrito está vacío');
+        }
+
+        // Guardar venta con datos de checkout
+        $carrito->update([
+            'estado' => 'confirmado',
+            'fecha_venta' => now(),
+
+            'codigo_postal' => $request->codigo_postal,
+            'calle' => $request->calle,
+            'numero' => $request->numero,
+            'barrio' => $request->barrio,
+            'ciudad' => $request->ciudad,
+            'provincia' => $request->provincia,
+            'metodo_pago' => $request->metodo_pago,
+        ]);
+
+        $items = $carrito->detalles()->with('producto')->get();
+        $total = $carrito->total;
+
+        return redirect()->route('compra.confirmada')
+            ->with('items', $items)
+            ->with('total', $total);
     }
 
     private function recalcularTotal(VentaCabecera $carrito)
