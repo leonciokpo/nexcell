@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\VentaCabecera;
 use App\Models\Producto;
 use App\Models\VentaDetalle;
+use App\Http\Requests\ConfirmarCompraRequest;
 
 class CarritoController extends Controller
 {
@@ -63,16 +64,8 @@ class CarritoController extends Controller
         return back()->with('success', 'Producto eliminado');
     } 
 
-    public function confirmar(Request $request)
+    public function confirmar(ConfirmarCompraRequest $request)
     {
-        $request->validate([
-            'codigo_postal' => 'required',
-            'calle' => 'required',
-            'numero' => 'required',
-            'ciudad' => 'required',
-            'provincia' => 'required',
-            'metodo_pago' => 'required',
-        ]);
 
         $carrito = $this->obtenerCarrito();
 
@@ -107,5 +100,5 @@ class CarritoController extends Controller
         // sum() suma todos los subtotales de los ítems del carrito 
         $total = $carrito->detalles()->sum('subtotal'); 
         $carrito->update(['total' => $total]); 
-    } 
+    }
 }
