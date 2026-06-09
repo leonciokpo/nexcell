@@ -191,11 +191,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    console.log('Script de compra cargado');
+
     const metodoPago = document.getElementById('metodoPago');
     const datosTarjeta = document.getElementById('datosTarjeta');
 
     if (metodoPago) {
+
         metodoPago.addEventListener('change', () => {
+
+            console.log('Cambio:', metodoPago.value);
 
             if (metodoPago.value === 'tarjeta') {
                 datosTarjeta.classList.remove('oculto');
@@ -204,6 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
         });
+
     }
 
 });
+
+console.log('ESTILO.JS CARGADO');
