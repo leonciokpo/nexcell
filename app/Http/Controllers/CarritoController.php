@@ -14,7 +14,7 @@ class CarritoController extends Controller
     private function obtenerCarrito(){
     return VentaCabecera::firstOrCreate(
         [
-            'usuario_id' => auth()->id(),
+            'usuario_id' => session('usuario_id'),
             'estado'     => 'carrito',
         ],
         [
@@ -101,4 +101,24 @@ class CarritoController extends Controller
         $total = $carrito->detalles()->sum('subtotal'); 
         $carrito->update(['total' => $total]); 
     }
+    
+    public function historial(){
+    $compras = VentaCabecera::confirmadas()
+        ->where('usuario_id', session('usuario_id'))
+        ->latest('fecha_venta')
+        ->get();
+
+    return view('backend.usuarios.historial', compact('compras'));
+}
+
+    public function detalle($id)
+{
+    $compra = VentaCabecera::with('detalles.producto')
+        ->where('id', $id)
+        ->where('usuario_id', session('usuario_id'))
+        ->firstOrFail();
+
+    return view('backend.usuarios.detalles', compact('compra'));
+}
+
 }

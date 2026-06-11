@@ -23,45 +23,69 @@
 
                 <div class="auth-buttons d-none d-lg-flex">
 
-                    @if(session('usuario_id'))
+                @if(session('usuario_id'))
 
-                        <a href="{{ route('mi-perfil') }}" class="btn btn-login">
-                            {{ session('usuario_nombre') }}
-                        </a>
+    <div class="dropdown">
 
-                        @if(session('perfil_id') == 1)
+        <button class="btn btn-login dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+            {{ session('usuario_nombre') }}
+        </button>
 
-                            <a href="/admin" class="btn btn-register">
-                                Panel Admin
-                            </a>
+        <ul class="dropdown-menu dropdown-menu-end">
 
-                        @endif
+            <li>
+                <a class="dropdown-item" href="{{ route('mi-perfil') }}">
+                    Mi Perfil
+                </a>
+            </li>
 
-                        <form action="{{ route('logout') }}" method="POST" style="display:inline;">
-                            @csrf
+            <li>
+                <a class="dropdown-item" href="{{ route('compras.historial') }}">
+                    Historial de Compras
+                </a>
+            </li>
 
-                            <button type="submit" class="btn btn-login">
-                                Cerrar Sesión
-                            </button>
-                        </form>
+            @if(session('perfil_id') == 1)
+                <li>
+                    <a class="dropdown-item" href="/admin">
+                        Panel Admin
+                    </a>
+                </li>
+            @endif
 
-                        @if(session('perfil_id') != 1)
-                            <button class="btn-cart" id="openCart">
-                                <i class="bi bi-cart3"></i>
-                            </button>
-                        @endif
+        </ul>
 
-                    @else
+    </div>
 
-                        <a href="{{ route('inicioSesion') }}" class="btn btn-login">
-                            Iniciar Sesión
-                        </a>
+    <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+        @csrf
 
-                        <a href="{{ route('registroSesion') }}" class="btn btn-register">
-                            Registrarse
-                        </a>
+        <button type="submit" class="btn btn-login">
+            Cerrar Sesión
+        </button>
+    </form>
 
-                    @endif
+    @if(session('perfil_id') != 1)
+        <button class="btn-cart" id="openCart">
+            <i class="bi bi-cart3"></i>
+        </button>
+    @endif
+
+@else
+
+    <a href="{{ route('inicioSesion') }}" class="btn btn-login">
+        Iniciar Sesión
+    </a>
+
+    <a href="{{ route('registroSesion') }}" class="btn btn-register">
+        Registrarse
+    </a>
+
+@endif
+    </div>
 
                 </div>
 
@@ -105,7 +129,6 @@
                             <form action="{{ route('logout') }}" method="POST">
 
                                 @csrf
-
                                 <button type="submit" class="btn btn-login">
                                     Cerrar Sesión
                                 </button>
@@ -192,6 +215,8 @@
                                 Quiénes Somos
                             </a>
                         </li>
+
+                        
 
                     </ul>
 

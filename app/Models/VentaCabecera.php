@@ -33,4 +33,8 @@ class VentaCabecera extends Model
     public function detalles(){ 
         return $this->hasMany(VentaDetalle::class, 'venta_id'); 
     } 
+
+    public function scopeConfirmadas($query){
+        return $query->where('estado', 'confirmado');
+    }
 } 
