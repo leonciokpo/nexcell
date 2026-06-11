@@ -22,76 +22,80 @@
     <x-navbar />
 
     <div class="d-flex">
-
+    @php
+        $mostrarSidebar =
+            session('perfil_id') == 1 &&
+            request()->is('admin*') &&
+            !request()->routeIs('admin.dashboard');
+    @endphp
     {{-- SIDEBAR ADMIN --}}
-    @if(session('perfil_id') == 1 && request()->is('admin*') && !request()->routeIs('admin.dashboard'))
-
+    @if($mostrarSidebar)
         <div class="admin-sidebar">
 
-    {{-- HEADER --}}
-    <div class="admin-sidebar-header">
+            {{-- HEADER --}}
+            <div class="admin-sidebar-header">
 
-        <div class="admin-sidebar-logo">
-            <i class="bi bi-shield-lock-fill"></i>
+                <div class="admin-sidebar-logo">
+                    <i class="bi bi-shield-lock-fill"></i>
+                </div>
+
+                <div>
+                    <h4>Panel Admin</h4>
+                    <span>Nexcell System</span>
+                </div>
+
+            </div>
+
+            {{-- MENU --}}
+            <div class="admin-sidebar-menu">
+
+                <a href="/admin"
+                class="admin-sidebar-link {{ request()->is('admin') ? 'active' : '' }}">
+
+                    <i class="bi bi-grid-1x2-fill"></i>
+                    Dashboard
+
+                </a>
+
+                <a href="/admin/usuarios"
+                class="admin-sidebar-link {{ request()->is('admin/usuarios*') ? 'active' : '' }}">
+
+                    <i class="bi bi-people-fill"></i>
+                    Usuarios
+
+                </a>
+
+                <a href="/admin/productos"
+                class="admin-sidebar-link {{ request()->is('admin/productos*') ? 'active' : '' }}">
+
+                    <i class="bi bi-box-seam-fill"></i>
+                    Productos
+
+                </a>
+
+                <a href="/admin/categorias"
+                class="admin-sidebar-link {{ request()->is('admin/categorias*') ? 'active' : '' }}">
+
+                    <i class="bi bi-grid-fill"></i>
+                    Categorías
+
+                </a>
+
+                <a href="/admin/consultas"
+                class="admin-sidebar-link {{ request()->is('admin/consultas*') ? 'active' : '' }}">
+
+                    <i class="bi bi-chat-dots-fill"></i>
+                    Consultas
+
+                </a>
+
+            </div>
+
         </div>
-
-        <div>
-            <h4>Panel Admin</h4>
-            <span>Nexcell System</span>
-        </div>
-
-    </div>
-
-    {{-- MENU --}}
-    <div class="admin-sidebar-menu">
-
-        <a href="/admin"
-           class="admin-sidebar-link {{ request()->is('admin') ? 'active' : '' }}">
-
-            <i class="bi bi-grid-1x2-fill"></i>
-            Dashboard
-
-        </a>
-
-        <a href="/admin/usuarios"
-           class="admin-sidebar-link {{ request()->is('admin/usuarios*') ? 'active' : '' }}">
-
-            <i class="bi bi-people-fill"></i>
-            Usuarios
-
-        </a>
-
-        <a href="/admin/productos"
-           class="admin-sidebar-link {{ request()->is('admin/productos*') ? 'active' : '' }}">
-
-            <i class="bi bi-box-seam-fill"></i>
-            Productos
-
-        </a>
-
-        <a href="/admin/categorias"
-           class="admin-sidebar-link {{ request()->is('admin/categorias*') ? 'active' : '' }}">
-
-            <i class="bi bi-grid-fill"></i>
-            Categorías
-
-        </a>
-
-        <a href="/admin/consultas"
-           class="admin-sidebar-link {{ request()->is('admin/consultas*') ? 'active' : '' }}">
-
-            <i class="bi bi-chat-dots-fill"></i>
-            Consultas
-
-        </a>
-
-    </div>
-
-</div>
     @endif
 
     {{-- CONTENIDO --}}
-    <main class="flex-grow-1 p-4">
+    <main class="flex-grow-1 p-4 {{ $mostrarSidebar ? 'admin-main' : '' }}">
         {{ $slot }}
     </main>
 

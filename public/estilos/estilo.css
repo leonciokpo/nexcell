@@ -3,7 +3,7 @@
 }
 
 html, body{
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     max-width: 100%;
 }
 /* FONDO */
@@ -2765,11 +2765,11 @@ aside .card-custom {
 
 .admin-table td,
 .admin-users-table td {
-    padding: 16px 18px;
+    padding: 10px 8px;
 
     color: #dce5eb;
 
-    font-size: 14px;
+    font-size: 12px;
 
     border-bottom: 1px solid rgba(255,255,255,0.04);
 
@@ -3154,7 +3154,7 @@ aside .card-custom {
 .acciones-producto {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 .acciones-producto form {
@@ -3166,8 +3166,9 @@ aside .card-custom {
     align-items: center;
     justify-content: center;
 
-    min-width: 70px;
+    min-width: 55px;
     height: 40px;
+    padding: 6px 10px;
 }
 
 /* COLUMNAS TABLA PRODUCTOS */
@@ -3609,23 +3610,27 @@ aside .card-custom {
 ========================= */
 
 .admin-sidebar {
+    position: fixed;
+
+    top: 80px;
+    left: 0;
+
     width: 270px;
-    min-height: 100vh;
+    height: calc(100vh - 80px);
 
-    background:
-        linear-gradient(
-            180deg,
-            #111214,
-            #1a1b1f
-        );
+    overflow-y: auto;
 
-    border-right:
-        1px solid rgba(255,255,255,.06);
+    background: linear-gradient(
+        180deg,
+        #111214,
+        #1a1b1f
+    );
+
+    border-right: 1px solid rgba(255,255,255,.06);
 
     padding: 28px 18px;
 
-    position: sticky;
-    top: 0;
+    z-index: 1000;
 }
 
 /* HEADER */
@@ -3737,6 +3742,17 @@ aside .card-custom {
         0 10px 24px rgba(255,122,24,.25);
 }
 
+main.flex-grow-1 {
+    min-width: 0;
+}
+
+.admin-main {
+    margin-left: 270px;
+}
+
+.d-flex {
+    align-items: flex-start;
+}
 /* =========================
    COMPRA
 ========================= */
@@ -3872,4 +3888,3 @@ aside .card-custom {
 .oculto {
     display: none;
 }
-
