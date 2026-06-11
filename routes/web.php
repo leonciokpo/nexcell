@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MiPerfilController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\VentaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -200,3 +201,9 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showRese
 
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])
     ->name('password.update');
+
+Route::get('/mis-compras', [CarritoController::class, 'historial'])
+    ->name('compras.historial');
+
+Route::get('/mis-compras/{id}', [CarritoController::class, 'detalle'])
+    ->name('compras.detalle');
