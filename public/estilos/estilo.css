@@ -2702,7 +2702,8 @@ aside .card-custom {
 
 .admin-panel-card {
     border-radius: 22px;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: visible;
 }
 
 .admin-panel-top {
