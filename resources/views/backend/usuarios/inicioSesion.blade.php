@@ -105,6 +105,13 @@
                     Ingresar
 
                 </button>
+                <div class="text-center mt-3">
+
+            <a href="{{ route('password.request') }}"
+             class="forgot-link"> ¿Olvidaste tu contraseña?
+            </a>
+
+                </div>
 
             </form>
 
