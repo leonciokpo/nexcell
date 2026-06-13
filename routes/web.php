@@ -177,6 +177,12 @@ Route::middleware(['rol:cliente'])->group(function (){
         return view('backend.usuarios.confirmarCompra', compact('carrito'));
 
     })->name('compra.confirmada');
+
+    Route::get('/mis-compras', [CarritoController::class, 'historial'])
+    ->name('compras.historial');
+
+    Route::get('/mis-compras/{id}', [CarritoController::class, 'detalle'])
+    ->name('compras.detalle');
 });
 
 
@@ -202,8 +208,3 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showRese
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])
     ->name('password.update');
 
-Route::get('/mis-compras', [CarritoController::class, 'historial'])
-    ->name('compras.historial');
-
-Route::get('/mis-compras/{id}', [CarritoController::class, 'detalle'])
-    ->name('compras.detalle');

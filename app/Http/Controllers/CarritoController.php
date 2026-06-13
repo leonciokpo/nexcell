@@ -36,7 +36,19 @@ class CarritoController extends Controller
         $carrito = $this->obtenerCarrito(); 
         // ¿El producto ya está en el carrito? 
         $item = $carrito->detalles() 
-                        ->where('producto_id', $producto->id)->first(); 
+                        ->where('producto_id', $producto->id)->first();
+        
+            $cantidadActual = $item ? $item->cantidad : 0;
+
+            $nuevaCantidad = $cantidadActual + $request->cantidad;
+        
+            if($nuevaCantidad > $producto->stock){
+                return back()->with(
+                    'error',
+                    "Solo hay {$producto->stock} unidades disponibles."
+                );
+            }
+
         if ($item) { 
             // Si ya existe: suma la cantidad 
             $item->cantidad += $request->cantidad; 
@@ -65,35 +77,64 @@ class CarritoController extends Controller
     } 
 
     public function confirmar(ConfirmarCompraRequest $request)
-    {
+{
+    $carrito = $this->obtenerCarrito();
 
-        $carrito = $this->obtenerCarrito();
+    if ($carrito->detalles()->count() === 0) {
+        return back()->with('error', 'Tu carrito está vacío');
+    }
 
-        if ($carrito->detalles()->count() === 0) {
-            return back()->with('error', 'Tu carrito está vacío');
+    // VALIDAR STOCK NUEVAMENTE
+    foreach ($carrito->detalles as $detalle) {
+
+        $producto = Producto::find($detalle->producto_id);
+
+        if (!$producto) {
+            return back()->with(
+                'error',
+                'Uno de los productos ya no existe.'
+            );
         }
 
-        // Guardar venta con datos de checkout
-        $carrito->update([
-            'estado' => 'confirmado',
-            'fecha_venta' => now(),
-
-            'codigo_postal' => $request->codigo_postal,
-            'calle' => $request->calle,
-            'numero' => $request->numero,
-            'barrio' => $request->barrio,
-            'ciudad' => $request->ciudad,
-            'provincia' => $request->provincia,
-            'metodo_pago' => $request->metodo_pago,
-        ]);
-
-        $items = $carrito->detalles()->with('producto')->get();
-        $total = $carrito->total;
-
-        return redirect()->route('compra.confirmada')
-            ->with('items', $items)
-            ->with('total', $total);
+        if ($producto->stock < $detalle->cantidad) {
+            return back()->with(
+                'error',
+                "Stock insuficiente para {$producto->nombre}. Disponible: {$producto->stock}"
+            );
+        }
     }
+
+    // DESCONTAR STOCK
+    foreach ($carrito->detalles as $detalle) {
+
+        $producto = Producto::find($detalle->producto_id);
+
+        $producto->stock -= $detalle->cantidad;
+
+        $producto->save();
+    }
+
+    // GUARDAR VENTA
+    $carrito->update([
+        'estado' => 'confirmado',
+        'fecha_venta' => now(),
+
+        'codigo_postal' => $request->codigo_postal,
+        'calle' => $request->calle,
+        'numero' => $request->numero,
+        'barrio' => $request->barrio,
+        'ciudad' => $request->ciudad,
+        'provincia' => $request->provincia,
+        'metodo_pago' => $request->metodo_pago,
+    ]);
+
+    $items = $carrito->detalles()->with('producto')->get();
+    $total = $carrito->total;
+
+    return redirect()->route('compra.confirmada')
+        ->with('items', $items)
+        ->with('total', $total);
+}
 
     private function recalcularTotal(VentaCabecera $carrito)
     { 

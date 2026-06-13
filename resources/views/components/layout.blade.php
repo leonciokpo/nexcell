@@ -105,7 +105,9 @@
         <i class="bi bi-whatsapp"></i>
     </a>
 
-    @if(session('success'))
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if(session('success'))
     <script>
         Swal.fire({
             icon: 'success',
@@ -237,6 +239,5 @@
 
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('estilos/estilo.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

@@ -36,27 +36,29 @@
 
         <ul class="dropdown-menu dropdown-menu-end">
 
-            <li>
-                <a class="dropdown-item" href="{{ route('mi-perfil') }}">
-                    Mi Perfil
-                </a>
-            </li>
+    <li>
+        <a class="dropdown-item" href="{{ route('mi-perfil') }}">
+            Mi Perfil
+        </a>
+    </li>
 
-            <li>
-                <a class="dropdown-item" href="{{ route('compras.historial') }}">
-                    Historial de Compras
-                </a>
-            </li>
+    @if(session('perfil_id') != 1)
+        <li>
+            <a class="dropdown-item" href="{{ route('compras.historial') }}">
+                Historial de Compras
+            </a>
+        </li>
+    @endif
 
-            @if(session('perfil_id') == 1)
-                <li>
-                    <a class="dropdown-item" href="/admin">
-                        Panel Admin
-                    </a>
-                </li>
-            @endif
+    @if(session('perfil_id') == 1)
+        <li>
+            <a class="dropdown-item" href="/admin">
+                Panel Admin
+            </a>
+        </li>
+    @endif
 
-        </ul>
+</ul>
 
     </div>
 
