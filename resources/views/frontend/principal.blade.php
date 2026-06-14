@@ -49,7 +49,7 @@
     <!-- SMARTPHONES -->
     <div class="col-md-6 col-lg-3">
         <a href="{{ route('smartphones') }}" class="acceso-card">
-            <img src="{{ asset('images/Celulares/Apple/Gama_Alta/iphone16proMaxWhite.jpg') }}">
+            <img src="{{ asset('images/Inicio/iphoneMockUp.png') }}">
             <div class="overlay">
                 <h3>Smartphones</h3>
                 <p>Últimos modelos</p>
@@ -60,7 +60,7 @@
     <!-- ACCESORIOS -->
     <div class="col-md-6 col-lg-3">
         <a href="{{ route('accesorios') }}" class="acceso-card">
-            <img src="{{ asset('images/Celulares/Accesorios/flat-lay.jpg') }}">
+            <img src="{{ asset('images/Inicio/accesorios.jfif') }}">
             <div class="overlay">
                 <h3>Accesorios</h3>
                 <p>Todo lo que necesitás</p>
@@ -71,7 +71,7 @@
     <!-- OFERTAS -->
     <div class="col-md-6 col-lg-3">
         <a href="{{ route('ofertas') }}" class="acceso-card">
-            <img src="{{ asset('images/Celulares/descuento.jpg') }}">
+            <img src="{{ asset('images/Inicio/hotSale.png') }}">
             <div class="overlay">
                 <h3>Ofertas</h3>
                 <p>Descuentos reales</p>
@@ -82,7 +82,7 @@
     <!-- NUEVOS -->
     <div class="col-md-6 col-lg-3">
         <a href="{{ route('nuevos') }}" class="acceso-card">
-            <img src="{{ asset('images/Celulares/cajaAbierta.jpg') }}">
+            <img src="{{ asset('images/Inicio/nuevo.png') }}">
             <div class="overlay">
                 <h3>Nuevos</h3>
                 <p>Recién llegados</p>
@@ -233,7 +233,7 @@
 
 <!-- BANNER -->
 <div class="banner-nexcell">
-    <img src="{{ asset('images/banner.jpg') }}" alt="Banner Nexcell">
+    <img src="{{ asset('images/Banner.jpg') }}" alt="Banner Nexcell">
 </div>
 
 <!-- MARCAS -->

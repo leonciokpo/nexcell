@@ -4163,3 +4163,16 @@ h2.purchase-title i{
     margin-top: 5px;
     margin-left: 48px;
 }
+
+.forgot-link {
+    color: #0dd3c5;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+
+.forgot-link:hover {
+    color: #ff7a18;
+}
+

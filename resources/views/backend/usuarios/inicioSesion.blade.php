@@ -106,11 +106,11 @@
 
                 </button>
                 <div class="text-center mt-3">
-
-            <a href="{{ route('password.request') }}"
-             class="forgot-link"> ¿Olvidaste tu contraseña?
-            </a>
-
+                    <a href="{{ route('password.request') }}"
+                    class="forgot-link">
+                        <i class="bi bi-key-fill me-1"></i>
+                        ¿Olvidaste tu contraseña?
+                    </a>
                 </div>
 
             </form>
