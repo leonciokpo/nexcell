@@ -128,7 +128,7 @@ body {
 .slider-img {  
     width:100%;
     height:626px;
-    object-fit:contain;
+    object-fit:cover;
     background: #000;
 }
 
@@ -4176,3 +4176,143 @@ h2.purchase-title i{
     color: #ff7a18;
 }
 
+.compra-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #ff7a18;
+    border-radius: 14px;
+    background: #1f1f1f;
+    color: #fff;
+    outline: none;
+}
+
+.compra-input option {
+    background: #1f1f1f;
+    color: #fff;
+}
+
+.producto-card{
+    position: relative;
+}
+
+.badge-sin-stock{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #dc3545;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.producto-agotado{
+    opacity: 0.7;
+    filter: grayscale(60%);
+}
+
+.producto-sin-stock{
+    opacity: 0.65;
+    filter: grayscale(70%);
+    transition: .3s;
+}
+
+.producto-sin-stock:hover{
+    transform: none !important;
+}
+
+.producto-sin-stock .badge{
+    font-size: 13px;
+    padding: 8px 12px;
+}
+
+.producto-sin-stock{
+    opacity: 0.65;
+    filter: grayscale(70%);
+    transition: .3s;
+}
+
+.producto-sin-stock:hover{
+    transform: none !important;
+}
+
+.producto-sin-stock .badge{
+    font-size: 13px;
+    padding: 8px 12px;
+}
+
+
+.producto-card h5{
+    color: #212529 !important;
+    font-weight: 600;
+}
+
+/* =========================
+   NOMBRE PRODUCTOS
+========================= */
+
+.producto-card h5,
+.producto-titulo {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.producto-card img{
+    width: 100%;
+    display: block;
+}
+
+
+.sin-stock {
+    opacity: .65;
+    filter: grayscale(100%);
+}
+
+.producto-img-container {
+    position: relative;
+}
+
+.badge-sin-stock {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+
+    background: #dc3545;
+    color: white;
+
+    padding: 6px 12px;
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.btn-sin-stock {
+    background: #6c757d !important;
+    cursor: not-allowed;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn-comprobante {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.btn-comprobante:hover {
+    background: #333;
+}

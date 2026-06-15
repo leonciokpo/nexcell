@@ -10,10 +10,11 @@ use App\Models\Usuario;
 
 class ResetPasswordController extends Controller
 {
-    public function showResetForm($token)
+    public function showResetForm(Request $request, $token)
     {
         return view('backend.usuarios.reset-password', [
-            'token' => $token
+            'token' => $token,
+            'email' => $request->email // <--- Capturamos el correo de la URL
         ]);
     }
 

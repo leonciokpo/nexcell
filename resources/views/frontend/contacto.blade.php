@@ -52,16 +52,24 @@
                 @enderror
             </div>
 
+            @if(!session('usuario_id'))
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" name="email" placeholder="tuemail@email.com" value="{{ old('email') }}">
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="tuemail@email.com"
+                    value="{{ old('email') }}">
+
                 @error('email')
                     <small class="text-danger">{{ $message }}</small>
                 @enderror
             </div>
+            @endif
 
             <div class="form-group">
-    <label>Motivo</label>
+                <label>Motivo</label>
 
             <input 
                 type="text" name="motivo" placeholder="Motivo de la consulta" value="{{ old('motivo') }}">

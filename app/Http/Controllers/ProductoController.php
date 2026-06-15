@@ -30,14 +30,18 @@ class ProductoController extends Controller
             'marca',
             'categoria',
             'imagenes'
-        ])->where('destacado', 1);
+        ]);
 
         // FILTRO CATEGORÍAS
         if ($request->filled('categorias')) {
-            $query->whereHas('categoria', function ($q) use ($request) {
-                $q->whereIn('nombre', $request->categorias);
-            });
-        }
+
+    $query->whereHas('categoria', function ($q) use ($request) {
+
+        $q->whereIn(
+            'nombre',
+            (array) $request->categorias);
+        });
+    }
 
         // FILTRO MARCAS
         if ($request->filled('marcas')) {
@@ -56,45 +60,88 @@ class ProductoController extends Controller
             $query->where('precio', '<=', $request->max);
         }
 
-        $productos = $query->get();
-
-        return view('frontend.productos.productos', compact('productos'));
+        $productos = $query
+            ->orderByRaw('stock = 0 ASC')
+            ->orderBy('stock', 'DESC')
+            ->get();
+        
+            return view('frontend.productos.productos', compact('productos'));
     }
 
     public function principal()
+{
+    $productos = Producto::with([
+        'marca',
+        'categoria',
+        'imagenes'
+    ])
+    ->orderByRaw('CASE WHEN stock > 0 THEN 0 ELSE 1 END')
+    ->get();
+
+    // Productos más vendidos
+    $masVendidosIds = [1, 2, 3, 4, 5, 8, 18, 20];
+
+    $masVendidos = Producto::with([
+        'marca',
+        'categoria',
+        'imagenes'
+    ])
+    ->whereIn('id', $masVendidosIds)
+    ->orderByRaw('CASE WHEN stock > 0 THEN 0 ELSE 1 END')
+    ->get();
+
+    // Productos con descuento
+    $ofertas = Producto::with([
+        'marca',
+        'categoria',
+        'imagenes'
+    ])
+    ->where('descuento', '>', 0)
+    ->orderByRaw('CASE WHEN stock > 0 THEN 0 ELSE 1 END')
+    ->get();
+
+    return view('frontend.principal', compact(
+        'productos',
+        'masVendidos',
+        'ofertas'
+    ));
+}
+
+ public function ofertas()
     {
         $productos = Producto::with([
             'marca',
             'categoria',
             'imagenes'
-        ])->get();
-
-        // Productos más vendidos
-        $masVendidosIds = [1, 2, 3, 4, 5, 8, 18, 20];
-
-        $masVendidos = Producto::with([
-            'marca',
-            'categoria',
-            'imagenes'
-        ])
-        ->whereIn('id', $masVendidosIds)
-        ->get();
-
-        // Productos con descuento
-        $ofertas = Producto::with([
-            'marca',
-            'categoria',
-            'imagenes'
         ])
         ->where('descuento', '>', 0)
+        ->orderByRaw('stock = 0 ASC')
+        ->orderBy('stock', 'DESC')
         ->get();
 
-        return view('frontend.principal', compact(
-            'productos',
-            'masVendidos',
-            'ofertas'
-        ));
+        return view(
+            'frontend.productos.productos',
+            compact('productos')
+        );
     }
+
+    public function nuevos(){
+    $productos = Producto::with([
+        'marca',
+        'categoria',
+        'imagenes'
+    ])
+    ->where('nuevo', 1)
+    ->orderByRaw('stock = 0 ASC')
+    ->orderBy('stock', 'DESC')
+    ->get();
+
+    return view(
+        'frontend.productos.productos',
+        compact('productos')
+    );
+}
+
     public function filtrar(Request $request)
     {
         $query = Producto::with(['marca', 'categoria', 'imagenes']);
@@ -130,8 +177,11 @@ class ProductoController extends Controller
             $query->orderBy('precio', 'desc');
         }
 
-        $productos = $query->get();
-
+        $productos = $query
+            ->orderByRaw('stock = 0 ASC')
+            ->orderBy('stock', 'DESC')
+            ->get();
+        
         return view('frontend.productos.partials.grid', compact('productos'));
     }
 

@@ -1,3 +1,4 @@
+@if(session('perfil_id') != 1)
 <footer class="footer-nexcell">
 
     <div class="footer-container">
@@ -47,3 +48,4 @@
     </div>
 
 </footer>
+    @endif

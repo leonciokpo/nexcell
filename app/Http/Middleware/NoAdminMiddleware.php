@@ -6,10 +6,14 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class RolMiddleware
+class NoAdminMiddleware
 {
-    public function handle(Request $request, Closure $next, $rol): Response
-{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  Closure(Request): (Response)  $next
+     */
+    public function handle(Request $request, Closure $next, $rol): Response{
 // Rutas que requieren sesión
 if (!session('usuario_id') && $rol != 'noadmin') {
 return redirect()->route('inicioSesion');
@@ -25,17 +29,13 @@ if ($rol == 'cliente' && session('perfil_id') != 2) {
     abort(403, 'Acceso no autorizado');
 }
 
-// NO ADMIN
-if ($rol == 'noadmin' && session('perfil_id') == 1) {
-    return redirect()->route('admin.dashboard');
-}
-
 // BLOQUEAR ADMINS EN LA TIENDA
 if ($rol == 'noadmin' && session('perfil_id') == 1) {
     return redirect()->route('admin.dashboard');
 }
 
 return $next($request);
+
 
 }
 

@@ -2,12 +2,18 @@
 
     <div class="col-md-6 col-xl-4">
 
-        <div class="producto-card">
+        <div class="producto-card {{ $producto->stock == 0 ? 'sin-stock' : '' }}">
 
             <a href="{{ route('producto.show', $producto->id) }}"
                class="text-decoration-none text-dark">
 
                 <div class="producto-img-container">
+
+                    @if($producto->stock == 0)
+                        <span class="badge-sin-stock">
+                         Sin stock
+                        </span>
+                    @endif
 
                     <img
                         src="{{ asset($producto->imagenes->first()->ruta ?? 'images/no-image.png') }}"
@@ -53,43 +59,57 @@
             </a>
 
             {{-- BOTON CARRITO --}}
-            @if(session('usuario_id'))
+            {{-- BOTON CARRITO --}}
+@if($producto->stock > 0)
 
-                <form action="{{ route('carrito.agregar') }}"
-                      method="POST"
-                      class="mt-3">
+    @if(session('usuario_id'))
 
-                    @csrf
+        <form action="{{ route('carrito.agregar') }}"
+              method="POST"
+              class="mt-3">
 
-                    <input type="hidden"
-                           name="producto_id"
-                           value="{{ $producto->id }}">
+            @csrf
 
-                    <input type="hidden"
-                           name="cantidad"
-                           value="1">
+            <input type="hidden"
+                   name="producto_id"
+                   value="{{ $producto->id }}">
 
-                    <button type="submit"
-                            class="btn-agregar-carrito">
+            <input type="hidden"
+                   name="cantidad"
+                   value="1">
 
-                        <i class="bi bi-cart-plus"></i>
-                        Agregar al carrito
+            <button type="submit"
+                    class="btn-agregar-carrito">
 
-                    </button>
+                <i class="bi bi-cart-plus"></i>
+                Agregar al carrito
 
-                </form>
+            </button>
 
-            @else
+        </form>
 
-                <a href="{{ route('inicioSesion') }}"
-                   class="btn-agregar-carrito text-center d-block">
+    @else
 
-                    <i class="bi bi-person"></i>
-                    Iniciá sesión
+        <a href="{{ route('inicioSesion') }}"
+           class="btn-agregar-carrito text-center d-block">
 
-                </a>
+            <i class="bi bi-person"></i>
+            Iniciá sesión
 
-            @endif
+        </a>
+
+    @endif
+
+@else
+
+    <button class="btn-agregar-carrito btn-sin-stock" disabled>
+
+        <i class="bi bi-x-circle"></i>
+        Producto agotado
+
+    </button>
+
+@endif
 
         </div>
 

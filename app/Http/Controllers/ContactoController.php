@@ -5,25 +5,36 @@ namespace App\Http\Controllers;
 use App\Models\Contacto;
 use App\Http\Requests\ContactoRequest;
 use Illuminate\Http\Request;
+use App\Models\Usuario;
 
-class ContactoController extends Controller
-{
-    public function procesar(ContactoRequest $request)
-    {
-        $datos = $request->validated();
+class ContactoController extends Controller{
+    public function procesar(ContactoRequest $request){
+    $datos = $request->validated();
 
-        Contacto::create([
-            'nombre' => $datos['nombre'],
-            'email' => $datos['email'],
-            'motivo' => $datos['motivo'],
-            'consulta' => $datos['consulta'],
-        ]);
+    if (session('usuario_id')) {
 
-        return redirect()->back()->with(
-            'success_message',
-            'Tu consulta ha sido enviada correctamente.'
-        );
+        $usuario = Usuario::findOrFail(session('usuario_id'));
+
+        $email = $usuario->email;
+
+    } else {
+
+        $email = $datos['email'];
+
     }
+
+    Contacto::create([
+        'nombre'   => $datos['nombre'],
+        'email'    => $email,
+        'motivo'   => $datos['motivo'],
+        'consulta' => $datos['consulta'],
+    ]);
+
+    return redirect()->back()->with(
+        'success_message',
+        'Tu consulta ha sido enviada correctamente.'
+    );
+}
 
     // Ver consultas
     public function index()

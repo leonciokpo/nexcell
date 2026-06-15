@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class ConfirmarCompraRequest extends FormRequest
 {
@@ -34,42 +33,12 @@ class ConfirmarCompraRequest extends FormRequest
             'metodo_pago'   => 'required|in:efectivo,tarjeta',
 
             // Tarjeta (obligatorios si se elige tarjeta)
-            'numero_tarjeta' => [
-                Rule::requiredIf($this->metodo_pago === 'tarjeta'),
-                'nullable',
-                'digits_between:13,19'
-            ],
-
-            'titular' => [
-                Rule::requiredIf($this->metodo_pago === 'tarjeta'),
-                'nullable',
-                'max:100'
-            ],
-
-            'cvv' => [
-                Rule::requiredIf($this->metodo_pago === 'tarjeta'),
-                'nullable',
-                'digits_between:3,4'
-            ],
-
-            'dni' => [
-                Rule::requiredIf($this->metodo_pago === 'tarjeta'),
-                'nullable',
-                'digits_between:7,8'
-            ],
-
-            'telefono' => [
-                Rule::requiredIf($this->metodo_pago === 'tarjeta'),
-                'nullable',
-                'min:8',
-                'max:20'
-            ],
-
-            'vencimiento' => [
-                Rule::requiredIf($this->metodo_pago === 'tarjeta'),
-                'nullable',
-                'regex:/^(0[1-9]|1[0-2])\/[0-9]{2}$/'
-            ],
+            'numero_tarjeta' => 'required_if:metodo_pago,tarjeta|nullable|digits_between:13,19',
+                'titular'        => 'required_if:metodo_pago,tarjeta|nullable|max:100',
+                'cvv'            => 'required_if:metodo_pago,tarjeta|nullable|digits_between:3,4',
+                'dni'            => 'required_if:metodo_pago,tarjeta|nullable|digits_between:7,8',
+                'telefono'       => 'required_if:metodo_pago,tarjeta|nullable|min:8|max:20',
+                'vencimiento'    => 'required_if:metodo_pago,tarjeta|nullable|regex:/^(0[1-9]|1[0-2])\/[0-9]{2}$/',
         ];
     }
 

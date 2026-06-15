@@ -20,32 +20,35 @@ class ContactoRequest extends FormRequest
      *
      * @return array<string, ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
-    {
-        return [
-            'nombre'=>'required|string|max:100',
-            'email'=>'required|email|max:150',
-            'motivo' => 'required|string|max:200',
-            'consulta'=>'required|string|min:10|max:500',
-        ];
+    public function rules(): array{
+    $rules = [
+        'nombre'   => 'required|string|max:100',
+        'motivo'   => 'required|string|max:200',
+        'consulta' => 'required|string|min:10|max:500',
+    ];
+
+    if (!session('usuario_id')) {
+        $rules['email'] = 'required|email|max:150';
     }
 
-    public function messages(): array
-    {
-        return[
-            'nombre.required'=>'El nombre es obligatorio.',
-            'nombre.max'=>'El nombre no debe sobrepasar los 100 caracteres.',
+    return $rules;
+}
 
-            'email.required'=>'El email es obligatorio.',
-            'email.max'=>'El email no debe sobrepasar los 100 caracteres.',
-            'email.email'=>'Formato de email inválido.',
+    public function messages(): array{
+    return [
+        'nombre.required' => 'El nombre es obligatorio.',
+        'nombre.max' => 'El nombre no debe sobrepasar los 100 caracteres.',
 
-            'consulta.required'=>'El mensaje es obligatorio.',
-            'consulta.min'=>'Debe tener al menos 10 caracteres.',
-            'consulta.max'=>'El mensaje no debe sobrepasar los 500 caracteres.',
+        'email.required' => 'El email es obligatorio.',
+        'email.max' => 'El email no debe sobrepasar los 150 caracteres.',
+        'email.email' => 'Formato de email inválido.',
 
-            'motivo.required' => 'El motivo es obligatorio.',
-            'motivo.max' => 'El motivo no debe sobrepasar los 200 caracteres.',
+        'consulta.required' => 'El mensaje es obligatorio.',
+        'consulta.min' => 'Debe tener al menos 10 caracteres.',
+        'consulta.max' => 'El mensaje no debe sobrepasar los 500 caracteres.',
+
+        'motivo.required' => 'El motivo es obligatorio.',
+        'motivo.max' => 'El motivo no debe sobrepasar los 200 caracteres.',
         ];
     }
 }

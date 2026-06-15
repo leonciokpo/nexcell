@@ -21,21 +21,27 @@
 
                     <p class="precio">
 
-                        <span class="precio-viejo">
-                            $ {{ number_format($producto['precio_viejo'], 0, ',', '.') }}
-                        </span>
+    <span class="precio-viejo">
+        $ {{ number_format($producto['precio_viejo'], 0, ',', '.') }}
+    </span>
 
-                        <span class="descuento">
-                            -{{ $producto['descuento'] }}%
-                        </span>
+    <span class="descuento">
+        -{{ $producto['descuento'] }}%
+    </span>
 
-                        <br>
+    <br>
 
-                        <span class="precio-nuevo">
-                            $ {{ number_format($producto['precio'], 0, ',', '.') }}
-                        </span>
+    <span class="precio-nuevo">
+        $ {{ number_format($producto['precio'], 0, ',', '.') }}
+    </span>
 
-                    </p>
+</p>
+
+@if($producto['stock'] <= 0)
+    <div class="badge bg-danger mt-2">
+        Sin stock
+    </div>
+@endif
 
                 </div>
 

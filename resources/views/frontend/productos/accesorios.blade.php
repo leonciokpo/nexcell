@@ -10,7 +10,12 @@
         <div class="col-lg-3 col-md-6">
             <a href="{{ route('producto.show', $producto['id']) }}" class="card-link">
         
-                <div class="producto-card">
+                <div class="producto-card {{ $producto['stock'] <= 0 ? 'producto-agotado' : '' }}">
+                    @if($producto['stock'] <= 0)
+                        <span class="badge-sin-stock">
+                            Sin Stock
+                        </span>
+                    @endif
 
                     <img src="{{ asset($producto['imagen']) }}" alt="producto">
 

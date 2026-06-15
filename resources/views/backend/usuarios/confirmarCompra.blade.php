@@ -24,78 +24,76 @@
 
                     <h5>Dirección de envío</h5>
 
-                    <label>Código postal</label>
-                    <input
-                        type="text"
-                        name="codigo_postal"
-                        class="compra-input"
-                        value="{{ old('codigo_postal') }}">
+<label>Calle</label>
+<input
+    type="text"
+    name="calle"
+    class="compra-input"
+    value="{{ old('calle') }}">
 
-                    @error('codigo_postal')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
-
-
-                    <label>Calle</label>
-                    <input
-                        type="text"
-                        name="calle"
-                        class="compra-input"
-                        value="{{ old('calle') }}">
-
-                    @error('calle')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
+@error('calle')
+    <small class="text-danger">{{ $message }}</small>
+@enderror
 
 
-                    <label>Número</label>
-                    <input
-                        type="text"
-                        name="numero"
-                        class="compra-input"
-                        value="{{ old('numero') }}">
+<label>Número</label>
+<input
+    type="text"
+    name="numero"
+    class="compra-input"
+    value="{{ old('numero') }}">
 
-                    @error('numero')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
-
-
-                    <label>Barrio (opcional)</label>
-                    <input
-                        type="text"
-                        name="barrio"
-                        class="compra-input"
-                        value="{{ old('barrio') }}">
-
-                    @error('barrio')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
+@error('numero')
+    <small class="text-danger">{{ $message }}</small>
+@enderror
 
 
-                    <label>Ciudad</label>
-                    <input
-                        type="text"
-                        name="ciudad"
-                        class="compra-input"
-                        value="{{ old('ciudad') }}">
+<label>Barrio (opcional)</label>
+<input
+    type="text"
+    name="barrio"
+    class="compra-input"
+    value="{{ old('barrio') }}">
 
-                    @error('ciudad')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
+@error('barrio')
+    <small class="text-danger">{{ $message }}</small>
+@enderror
 
 
-                    <label>Provincia</label>
-                    <input
-                        type="text"
-                        name="provincia"
-                        class="compra-input"
-                        value="{{ old('provincia') }}">
+<label>Ciudad</label>
+<input
+    type="text"
+    name="ciudad"
+    class="compra-input"
+    value="{{ old('ciudad') }}">
 
-                    @error('provincia')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
+@error('ciudad')
+    <small class="text-danger">{{ $message }}</small>
+@enderror
 
-                </div>
+
+<label>Provincia</label>
+<input
+    type="text"
+    name="provincia"
+    class="compra-input"
+    value="{{ old('provincia') }}">
+
+@error('provincia')
+    <small class="text-danger">{{ $message }}</small>
+@enderror
+
+
+<label>Código Postal</label>
+<input
+    type="text"
+    name="codigo_postal"
+    class="compra-input"
+    value="{{ old('codigo_postal') }}">
+
+@error('codigo_postal')
+    <small class="text-danger">{{ $message }}</small>
+@enderror
 
                 {{-- PAGO --}}
                 <div class="compra-section">

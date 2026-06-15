@@ -21,32 +21,45 @@
                     </h5>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="categorias[]" value="Smartphones">
-                        {{ in_array('Smartphones', request('categorias', [])) ? 'checked' : '' }}>
-                        <label class="form-check-label" for="Smartphones">
+                        <input class="form-check-input"
+                            type="checkbox"
+                            name="categorias[]"
+                            value="Smartphones"
+                            {{ in_array('Smartphones', (array) request('categorias', [])) ? 'checked' : '' }}>
+
+                        <label class="form-check-label">
                             Smartphones
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="categorias[]" value="Auriculares">
-                        {{ in_array('Auriculares', request('categorias', [])) ? 'checked' : '' }}>
+                        <input class="form-check-input"
+                        type="checkbox"
+                        name="categorias[]"
+                        value="Auriculares"
+                        {{ in_array('Auriculares', (array) request('categorias', [])) ? 'checked' : '' }}>                     
                         <label class="form-check-label" for="Auriculares">
                             Auriculares
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="categorias[]" value="Parlantes">
-                        {{ in_array('Parlantes', request('categorias', [])) ? 'checked' : '' }}>
+                        <input class="form-check-input"
+                            type="checkbox"
+                            name="categorias[]"
+                            value="Parlantes"
+                            {{ in_array('Parlantes', (array) request('categorias', [])) ? 'checked' : '' }}>
                         <label class="form-check-label" for="Parlantes">
                             Parlantes
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="categorias[]" value="Smartwatch">
-                        {{ in_array('Smartwatch', request('categorias', [])) ? 'checked' : '' }}>
+                        <input class="form-check-input"
+                            type="checkbox"
+                            name="categorias[]"
+                            value="Smartwatch"
+                            {{ in_array('Smartwatch', (array) request('categorias', [])) ? 'checked' : '' }}>
                         <label class="form-check-label" for="Smartwatch">
                             Smartwatch
                         </label>
@@ -62,40 +75,55 @@
                     </h5>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="marcas[]" value="Apple">
-                        {{ in_array('Apple', request('marcas', [])) ? 'checked' : '' }}>
+                        <input class="form-check-input"
+                            type="checkbox"
+                            name="marcas[]"
+                            value="Apple"
+                            {{ in_array('Apple', (array) request('marcas', [])) ? 'checked' : '' }}>
                         <label class="form-check-label" for="Apple">
                             Apple
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="marcas[]" value="Samsung">
-                        {{ in_array('Samsung', request('marcas', [])) ? 'checked' : '' }}>
+                        <input class="form-check-input"
+                            type="checkbox"
+                            name="marcas[]"
+                            value="Samsung"
+                            {{ in_array('Samsung', (array) request('marcas', [])) ? 'checked' : '' }}>
                         <label class="form-check-label" for="Samsung">
                             Samsung
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="marcas[]" value="Motorola">
-                        {{ in_array('Motorola', request('marcas', [])) ? 'checked' : '' }}>
+                        <input class="form-check-input"
+                            type="checkbox"
+                            name="marcas[]"
+                            value="Motorola"
+                            {{ in_array('Motorola', (array) request('marcas', [])) ? 'checked' : '' }}>
                         <label class="form-check-label" for="Motorola">
                             Motorola
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="marcas[]" value="Xiaomi">
-                        {{ in_array('Xiaomi', request('marcas', [])) ? 'checked' : '' }}>
+                        <input class="form-check-input"
+                            type="checkbox"
+                            name="marcas[]"
+                            value="Xiaomi"
+                            {{ in_array('Xiaomi', (array) request('marcas', [])) ? 'checked' : '' }}>
                         <label class="form-check-label" for="Xiaomi">
                             Xiaomi
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="marcas[]" value="JBL">
-                        {{ in_array('JBL', request('marcas', [])) ? 'checked' : '' }}>
+                        <input class="form-check-input"
+                            type="checkbox"
+                            name="marcas[]"
+                            value="JBL"
+                            {{ in_array('JBL', (array) request('marcas', [])) ? 'checked' : '' }}>
                         <label class="form-check-label" for="JBL">
                             JBL
                         </label>
@@ -115,7 +143,7 @@
                             Mínimo
                         </label>
 
-                        <input type="number" name="min" class="form-control" value="{{ request('min') }}" placeholder="$ 0">
+                        <input type="number" name="min" class="form-control" value="{{ request('min') }}" placeholder="$ Mínimo">
                     </div>
 
                     <div>
@@ -123,7 +151,7 @@
                             Máximo
                         </label>
 
-                        <input type="number" name="max" class="form-control" value="{{ request('max') }}" placeholder="$ 9999999">
+                        <input type="number" name="max" class="form-control" value="{{ request('max') }}" placeholder="$ Máximo">
                     </div>
 
                 </div>

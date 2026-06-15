@@ -8,22 +8,12 @@
 
             @csrf
 
-            <input type="hidden"
-                   name="token"
-                   value="{{ $token }}">
-
-            <div class="form-group">
-                <label>Email</label>
-
-                <input type="email"
-                       name="email">
-            </div>
+            <input type="hidden" name="token" value="{{ $token }}">
+            <input type="hidden" name="email" value="{{ $email }}">
 
             <div class="form-group">
                 <label>Nueva contraseña</label>
-
-                <input type="password"
-                       name="password">
+                <input type="password" name="password" required>
             </div>
 
             <div class="form-group">

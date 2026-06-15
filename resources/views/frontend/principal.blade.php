@@ -48,7 +48,7 @@
 
     <!-- SMARTPHONES -->
     <div class="col-md-6 col-lg-3">
-        <a href="{{ route('smartphones') }}" class="acceso-card">
+        <a href="{{ route('productos', ['categorias' => ['Smartphones']]) }}" class="acceso-card">
             <img src="{{ asset('images/Inicio/iphoneMockUp.png') }}">
             <div class="overlay">
                 <h3>Smartphones</h3>
@@ -59,8 +59,14 @@
 
     <!-- ACCESORIOS -->
     <div class="col-md-6 col-lg-3">
-        <a href="{{ route('accesorios') }}" class="acceso-card">
-            <img src="{{ asset('images/Inicio/accesorios.jfif') }}">
+        <a href="{{ route('productos', [
+            'categorias' => [
+            'Auriculares',
+            'Parlantes',
+            'Smartwatch'
+        ]
+    ]) }}" class="acceso-card">
+            <img src="{{ asset('images/Inicio/Accesorios.jpg') }}">
             <div class="overlay">
                 <h3>Accesorios</h3>
                 <p>Todo lo que necesitás</p>
@@ -71,7 +77,7 @@
     <!-- OFERTAS -->
     <div class="col-md-6 col-lg-3">
         <a href="{{ route('ofertas') }}" class="acceso-card">
-            <img src="{{ asset('images/Inicio/hotSale.png') }}">
+            <img src="{{ asset('images/Inicio/hotSale.jpg') }}">
             <div class="overlay">
                 <h3>Ofertas</h3>
                 <p>Descuentos reales</p>

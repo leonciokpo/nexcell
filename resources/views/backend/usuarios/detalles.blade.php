@@ -134,8 +134,15 @@
                         </p>
 
                     @endif
-
+                    
+                    <a href="{{ route('backend.usuarios.comprobante', $compra->id) }}"
+                    class="btn btn-dark w-100 mt-3">
+    
+                        <i class="bi bi-file-earmark-pdf me-2"></i>
+                        Descargar comprobante
+                    </a>
                 </div>
+                <hr>
 
             </div>
 

@@ -130,11 +130,11 @@
                 </label>
 
                 <input type="number"
-                       name="cantidad"
-                       value="1"
-                       min="1"
-                       max="{{ $producto->stock }}"
-                       class="form-control cantidad-input">
+                    name="cantidad"
+                    value="1"
+                    min="1"
+                    step="1"
+                    class="form-control cantidad-input">
 
             </div>
 

@@ -17,41 +17,45 @@ use App\Http\Controllers\MiPerfilController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\VentaController;
+use App\Http\Controllers\ComprobanteController;
 
 /*
 |--------------------------------------------------------------------------
-| PUBLICAS
+| RUTAS SOLO PARA LOS CLIENTES
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', [ProductoController::class, 'principal'])->name('principal');
+Route::middleware('rol:noadmin')->group(function () {
 
-Route::get('/quienes-somos', [pruebaController::class, 'quienesSomos'])->name('quienesSomos');
+    Route::get('/', [ProductoController::class, 'principal'])->name('principal');
 
-Route::get('/comercializacion', [pruebaController::class, 'comercializacion'])->name('comercializacion');
+    Route::get('/quienes-somos', [pruebaController::class, 'quienesSomos'])->name('quienesSomos');
 
-Route::get('/terminos-y-usos', [pruebaController::class, 'terminosYUsos'])->name('terminosYUsos');
+    Route::get('/comercializacion', [pruebaController::class, 'comercializacion'])->name('comercializacion');
 
-Route::get('/contacto', [pruebaController::class, 'contacto'])->name('contacto');
+    Route::get('/terminos-y-usos', [pruebaController::class, 'terminosYUsos'])->name('terminosYUsos');
 
-Route::post('/contacto', [ContactoController::class, 'procesar']);
+    Route::get('/contacto', [pruebaController::class, 'contacto'])->name('contacto');
 
-Route::get('/exito', [pruebaController::class, 'exito'])->name('exito');
+    Route::post('/contacto', [ContactoController::class, 'procesar']);
 
-Route::get('/smartphones', [ProductoController::class, 'smartphones'])->name('smartphones');
+    Route::get('/exito', [pruebaController::class, 'exito'])->name('exito');
 
-Route::get('/producto/{id}', [ProductoController::class, 'show'])->name('producto.show');
+    Route::get('/smartphones', [ProductoController::class, 'smartphones'])->name('smartphones');
 
-Route::get('/accesorios', [ProductoController::class, 'accesorios'])->name('accesorios');
+    Route::get('/producto/{id}', [ProductoController::class, 'show'])->name('producto.show');
 
-Route::get('/ofertas', [ProductoController::class, 'ofertas'])->name('ofertas');
+    Route::get('/accesorios', [ProductoController::class, 'accesorios'])->name('accesorios');
 
-Route::get('/nuevos', [ProductoController::class, 'nuevos'])->name('nuevos');
+    Route::get('/ofertas', [ProductoController::class, 'ofertas'])->name('ofertas');
 
-Route::get('/productos', [ProductoController::class, 'productos'])->name('productos');
+    Route::get('/nuevos', [ProductoController::class, 'nuevos'])->name('nuevos');
 
-Route::get('/productos/filtro', [ProductoController::class, 'filtrar'])->name('filtrar');
+    Route::get('/productos', [ProductoController::class, 'productos'])->name('productos');
 
+    Route::get('/productos/filtro', [ProductoController::class, 'filtrar'])->name('filtrar');
+
+});
 /*
 |--------------------------------------------------------------------------
 | AUTENTICACION
@@ -183,6 +187,8 @@ Route::middleware(['rol:cliente'])->group(function (){
 
     Route::get('/mis-compras/{id}', [CarritoController::class, 'detalle'])
     ->name('compras.detalle');
+
+    
 });
 
 
@@ -208,3 +214,5 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showRese
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])
     ->name('password.update');
 
+Route::get('/compra/{id}/comprobante', [ComprobanteController::class, 'comprobante'])
+    ->name('backend.usuarios.comprobante');
