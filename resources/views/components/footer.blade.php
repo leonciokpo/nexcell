@@ -7,7 +7,7 @@
         <div class="footer-col">
             <h4>Navegación</h4>
             <a href="{{ route('principal') }}">Inicio</a>
-            <a href="#productos">Productos</a>
+            <a href="{{ route('productos') }}">Productos</a>
             <a href="{{ route('contacto') }}">Contacto</a>
             <a href="{{ route('comercializacion') }}">Comercializacion</a>
             <a href="{{ route('quienesSomos') }}">Quiénes Somos</a>

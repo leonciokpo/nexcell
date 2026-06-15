@@ -503,7 +503,11 @@ aside .card-custom {
     font-size: 16px;
 }
 
-
+.seccion-naranja {
+    background: #ff7a18;
+    padding: 60px 0;
+    margin-top: 60px;
+}
 
 .seccion-naranja h2 {
     color: #ffffff;
@@ -2331,6 +2335,12 @@ aside .card-custom {
     color: inherit;
 }
 
+.producto-card > a {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 /* DESCUENTO */
 .producto-badge {
     position: absolute;
@@ -2538,9 +2548,10 @@ aside .card-custom {
 .producto-info {
     padding: 18px;
 }
+
 .producto-info {
     flex: 1;
-
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -2552,6 +2563,11 @@ aside .card-custom {
     min-height: 48px;
 
     overflow: hidden;
+}
+
+.producto-nombre{
+    line-height: 1.4;
+    min-height: calc(1.4em * 3);
 }
 
 /* =========================
@@ -3410,9 +3426,16 @@ aside .card-custom {
     padding: 12px;
     border-radius: 12px;
     font-weight: 600;
-    margin-top: 12px;
+    margin-top: auto;
     transition: .3s ease;
     text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    box-sizing: border-box;
 }
 
 .btn-agregar-carrito:hover{
@@ -4193,6 +4216,18 @@ h2.purchase-title i{
 
 .producto-card{
     position: relative;
+}
+
+.producto-card form,
+.producto-card > a.btn-agregar-carrito,
+.producto-card > button.btn-agregar-carrito{
+    margin-top: auto;
+}
+
+.producto-card > a:first-child{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .badge-sin-stock{

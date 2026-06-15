@@ -67,7 +67,6 @@
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Email</th>
-                            <th>Acciones</th>
                         </tr>
 
                     </thead>
@@ -88,23 +87,6 @@
 
                                 <td>
                                     {{ $usuario->email }}
-                                </td>
-
-                                <td>
-
-                                    <form method="POST"
-                                          action="/admin/usuarios/{{ $usuario->id }}"
-                                          onsubmit="return confirm('¿Seguro que quieres eliminar este usuario?')">
-
-                                        @csrf
-                                        @method('DELETE')
-
-                                        <button class="btn-user-action danger">
-                                            Eliminar
-                                        </button>
-
-                                    </form>
-
                                 </td>
 
                             </tr>

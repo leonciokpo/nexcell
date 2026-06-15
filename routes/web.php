@@ -64,6 +64,8 @@ Route::middleware('rol:noadmin')->group(function () {
 
 Route::get('/inicioSesion', [pruebaController::class, 'inicioSesion'])->name('inicioSesion');
 
+Route::get('/login', function () {return redirect()->route('inicioSesion');})->name('login');
+
 Route::post('/inicioSesion', [InicioSesionController::class, 'login'])->name('login.procesar');
 
 Route::get('/registroSesion', [pruebaController::class, 'registroSesion'])->name('registroSesion');

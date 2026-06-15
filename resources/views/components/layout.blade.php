@@ -95,7 +95,7 @@
     @endif
 
     {{-- CONTENIDO --}}
-    <main class="flex-grow-1 p-4 {{ $mostrarSidebar ? 'admin-main' : '' }}">
+    <main class="flex-grow-1 {{ $mostrarSidebar ? 'admin-main' : '' }}">
         {{ $slot }}
     </main>
 

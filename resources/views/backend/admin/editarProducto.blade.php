@@ -33,9 +33,9 @@
                     </label>
 
                     <input type="text"
-                        name="nombre"
-                        class="form-control"
-                        value="{{ old('nombre', $producto->nombre) }}">
+                    name="nombre"
+                    class="form-control"
+                    value="{{ $errors->has('nombre') ? $producto->nombre : old('nombre', $producto->nombre) }}">
 
                     @error('nombre')
                         <small class="text-danger">
@@ -53,10 +53,10 @@
                     </label>
 
                     <input type="number"
-                        step="0.01"
-                        name="precio"
-                        class="form-control"
-                        value="{{ old('precio', $producto->precio) }}">
+                    step="0.01"
+                    name="precio"
+                    class="form-control"
+                    value="{{ $errors->has('precio') ? $producto->precio : old('precio', $producto->precio) }}">
 
                     @error('precio')
                         <small class="text-danger">
@@ -74,9 +74,9 @@
                     </label>
 
                     <input type="number"
-                        name="descuento"
-                        class="form-control"
-                        value="{{ old('descuento', $producto->descuento) }}">
+                    name="descuento"
+                    class="form-control"
+                    value="{{ $errors->has('descuento') ? $producto->descuento : old('descuento', $producto->descuento) }}">
 
                     @error('descuento')
                         <small class="text-danger">
@@ -94,9 +94,9 @@
                     </label>
 
                     <input type="number"
-                        name="stock"
-                        class="form-control"
-                        value="{{ old('stock', $producto->stock) }}">
+                    name="stock"
+                    class="form-control"
+                    value="{{ $errors->has('stock') ? $producto->stock : old('stock', $producto->stock) }}">
 
                     @error('stock')
                         <small class="text-danger">
@@ -113,20 +113,27 @@
                         Destacado
                     </label>
 
-                    <select name="destacado"
-                            class="form-select">
+                    <select name="destacado" class="form-select">
 
                         <option value="1"
-                            {{ old('destacado', $producto->destacado) == 1 ? 'selected' : '' }}>
+                            {{
+                                $errors->has('destacado')
+                                    ? ($producto->destacado == 1 ? 'selected' : '')
+                                    : (old('destacado', $producto->destacado) == 1 ? 'selected' : '')
+                            }}>
                             Sí
                         </option>
 
                         <option value="0"
-                            {{ old('destacado', $producto->destacado) == 0 ? 'selected' : '' }}>
+                            {{
+                                $errors->has('destacado')
+                                    ? ($producto->destacado == 0 ? 'selected' : '')
+                                    : (old('destacado', $producto->destacado) == 0 ? 'selected' : '')
+                            }}>
                             No
                         </option>
 
-                    </select>
+                </select>
 
                     @error('destacado')
                         <small class="text-danger">
@@ -143,21 +150,24 @@
                         Marca
                     </label>
 
-                    <select name="marca_id"
-                            class="form-select">
+                    <select name="marca_id" class="form-select">
 
-                        @foreach($marcas as $marca)
+                    @foreach($marcas as $marca)
 
-                            <option value="{{ $marca->id }}"
-                                {{ old('marca_id', $producto->marca_id) == $marca->id ? 'selected' : '' }}>
+                        <option value="{{ $marca->id }}"
+                            {{
+                                $errors->has('marca_id')
+                                    ? ($producto->marca_id == $marca->id ? 'selected' : '')
+                                    : (old('marca_id', $producto->marca_id) == $marca->id ? 'selected' : '')
+                            }}>
 
-                                {{ $marca->nombre }}
+                            {{ $marca->nombre }}
 
-                            </option>
+                        </option>
 
-                        @endforeach
+                    @endforeach
 
-                    </select>
+                </select>
 
                     @error('marca_id')
                         <small class="text-danger">
@@ -174,21 +184,24 @@
                         Categoría
                     </label>
 
-                    <select name="categoria_id"
-                            class="form-select">
+                    <select name="categoria_id" class="form-select">
 
-                        @foreach($categorias as $categoria)
+                    @foreach($categorias as $categoria)
 
-                            <option value="{{ $categoria->id }}"
-                                {{ old('categoria_id', $producto->categoria_id) == $categoria->id ? 'selected' : '' }}>
+                        <option value="{{ $categoria->id }}"
+                            {{
+                                $errors->has('categoria_id')
+                                    ? ($producto->categoria_id == $categoria->id ? 'selected' : '')
+                                    : (old('categoria_id', $producto->categoria_id) == $categoria->id ? 'selected' : '')
+                            }}>
 
-                                {{ $categoria->nombre }}
+                            {{ $categoria->nombre }}
 
-                            </option>
+                        </option>
 
-                        @endforeach
+                    @endforeach
 
-                    </select>
+                </select>
 
                     @error('categoria_id')
                         <small class="text-danger">
@@ -206,8 +219,10 @@
                     </label>
 
                     <textarea name="descripcion"
-                            rows="6"
-                            class="form-control">{{ old('descripcion', $producto->descripcion) }}</textarea>
+                    rows="6"
+                    class="form-control">{{ $errors->has('descripcion')
+                        ? $producto->descripcion
+                        : old('descripcion', $producto->descripcion) }}</textarea>
 
                     @error('descripcion')
                         <small class="text-danger">
