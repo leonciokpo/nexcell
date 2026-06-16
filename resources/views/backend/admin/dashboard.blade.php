@@ -94,38 +94,6 @@
 
             </div>
 
-            {{-- CATEGORÍAS --}}
-            <div class="dashboard-card">
-
-                <div class="dashboard-top">
-
-                    <div class="dashboard-icon categorias">
-                        <i class="bi bi-grid"></i>
-                    </div>
-
-                    <span class="dashboard-tag">
-                        Organización
-                    </span>
-
-                </div>
-
-                <h4>Categorías</h4>
-
-                <p>
-                    Organizá productos
-                    y estructura del sistema.
-                </p>
-
-                <a href="/admin/categorias"
-                class="dashboard-btn categorias-btn">
-
-                    Ver panel
-                    <i class="bi bi-arrow-right"></i>
-
-                </a>
-
-            </div>
-
             {{-- CONSULTAS --}}
             <div class="dashboard-card">
 

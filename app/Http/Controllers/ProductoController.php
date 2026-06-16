@@ -31,7 +31,12 @@ class ProductoController extends Controller
             'categoria',
             'imagenes'
         ]);
-
+        
+        // FILTRO BUSQUEDA
+        if ($request->filled('buscar')) {
+            $query->where('nombre', 'like', '%' . $request->buscar . '%');
+        }
+        
         // FILTRO CATEGORÍAS
         if ($request->filled('categorias')) {
 

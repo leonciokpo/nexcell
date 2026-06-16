@@ -231,3 +231,28 @@ function cambiarCantidad(valor){
 
     input.value = cantidad;
 }
+
+const buscadorNavbar = document.getElementById('buscadorNavbar');
+
+if (buscadorNavbar) {
+
+    buscadorNavbar.addEventListener('keypress', function(e) {
+
+        if (e.key === 'Enter') {
+
+            e.preventDefault();
+
+            const termino = this.value.trim();
+
+            if (termino !== '') {
+
+                window.location.href =
+                    `/productos?buscar=${encodeURIComponent(termino)}`;
+
+            }
+
+        }
+
+    });
+
+}

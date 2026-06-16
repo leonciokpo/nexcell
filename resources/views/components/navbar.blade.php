@@ -170,11 +170,17 @@
 
                         <div class="search-box">
 
-                            <i class="bi bi-search search-icon"></i>
+                            <form action="{{ route('productos') }}" method="GET" class="search-box">
 
-                            <input type="text"
-                                class="search-input"
-                                placeholder="Buscar productos...">
+                                <i class="bi bi-search search-icon"></i>
+
+                                <input
+                                    type="text"
+                                    name="buscar"
+                                    class="search-input"
+                                    placeholder="Buscar productos...">
+
+                            </form>
 
                         </div>
 

@@ -31,28 +31,24 @@
 
                 <div class="mb-3">
 
-                    <label>Nombre</label>
-
-                    <input type="text"
-                           name="nombre"
-                           class="form-control perfil-input"
-                           value="{{ $usuario->nombre }}">
-
+                <label>Nombre</label>
+                            
+                <div class="perfil-dato">
+                    {{ $usuario->nombre }}
                 </div>
-
-                <div class="mb-4">
-
-                    <label>Email</label>
-
-                    <input type="email"
-                           name="email"
-                           class="form-control perfil-input"
-                           value="{{ $usuario->email }}">
-
-                </div>
-
+            
             </div>
-
+            
+            <div class="mb-4">
+            
+                <label>Email</label>
+            
+                <div class="perfil-dato">
+                    {{ $usuario->email }}
+                </div>
+            
+            </div>
+        </div>
             <div class="perfil-section">
 
                 <h5>Cambiar contraseña</h5>
@@ -63,7 +59,10 @@
                 <input type="password"
                     name="password_actual"
                     class="form-control perfil-input">
-
+                
+                    @error('password_actual')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
                 <div class="mb-3">
@@ -73,7 +72,9 @@
                     <input type="password"
                            name="password"
                            class="form-control perfil-input">
-
+                    @error('password')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
                 <div class="mb-4">
@@ -83,7 +84,9 @@
                     <input type="password"
                            name="password_confirmation"
                            class="form-control perfil-input">
-
+                    @error('password_confirmation')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
 
             </div>

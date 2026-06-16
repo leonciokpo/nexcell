@@ -44,14 +44,20 @@
         <form action="/contacto" method="POST" class="contacto-form">
             @csrf
 
-            <div class="form-group">
-                <label>Nombre</label>
-                <input type="text" name="nombre" placeholder="Tu nombre completo" value="{{ old('nombre') }}">
-                @error('nombre')
-                    <small class="text-danger">{{ $message }}</small>
-                @enderror
-            </div>
+            @if(!session('usuario_id'))
+<div class="form-group">
+    <label>Nombre</label>
+    <input
+        type="text"
+        name="nombre"
+        placeholder="Tu nombre completo"
+        value="{{ old('nombre') }}">
 
+    @error('nombre')
+        <small class="text-danger">{{ $message }}</small>
+    @enderror
+</div>
+@endif
             @if(!session('usuario_id'))
             <div class="form-group">
                 <label>Email</label>

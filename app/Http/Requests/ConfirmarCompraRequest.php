@@ -38,7 +38,7 @@ class ConfirmarCompraRequest extends FormRequest
                 'cvv'            => 'required_if:metodo_pago,tarjeta|nullable|digits_between:3,4',
                 'dni'            => 'required_if:metodo_pago,tarjeta|nullable|digits_between:7,8',
                 'telefono'       => 'required_if:metodo_pago,tarjeta|nullable|min:8|max:20',
-                'vencimiento'    => 'required_if:metodo_pago,tarjeta|nullable|regex:/^(0[1-9]|1[0-2])\/[0-9]{2}$/',
+                'vencimiento' => 'required_if:metodo_pago,tarjeta|nullable|date_format:m/y',
         ];
     }
 

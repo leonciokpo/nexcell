@@ -13,22 +13,25 @@ class ContactoController extends Controller{
 
     if (session('usuario_id')) {
 
-        $usuario = Usuario::findOrFail(session('usuario_id'));
+    $usuario = Usuario::findOrFail(session('usuario_id'));
 
-        $email = $usuario->email;
+    
 
-    } else {
+    $nombre = $usuario->nombre;
+    $email = $usuario->email;
 
-        $email = $datos['email'];
+} else {
 
-    }
+    $nombre = $datos['nombre'];
+    $email = $datos['email'];
+}
 
     Contacto::create([
-        'nombre'   => $datos['nombre'],
-        'email'    => $email,
-        'motivo'   => $datos['motivo'],
-        'consulta' => $datos['consulta'],
-    ]);
+    'nombre'   => $nombre,
+    'email'    => $email,
+    'motivo'   => $datos['motivo'],
+    'consulta' => $datos['consulta'],
+]);
 
     return redirect()->back()->with(
         'success_message',

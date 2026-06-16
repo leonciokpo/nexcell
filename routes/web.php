@@ -7,7 +7,6 @@ use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\InicioSesionController;
 use App\Http\Controllers\RegistroSesionController;
-use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\GoogleController;
@@ -122,11 +121,6 @@ Route::middleware('admin')->prefix('admin')->group(function () {
     Route::post('/usuarios/{id}/rol', [UsuarioController::class, 'cambiarRol']);
 
     Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy']);
-
-    // Categorias
-    Route::get('/categorias', [CategoriaController::class, 'index']);
-
-    Route::post('/categorias', [CategoriaController::class, 'store'])->name('categorias.store');
 
     // Marcas
     Route::post('/marcas', [MarcaController::class, 'store']);

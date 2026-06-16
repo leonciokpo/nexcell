@@ -73,14 +73,6 @@
 
                 </a>
 
-                <a href="/admin/categorias"
-                class="admin-sidebar-link {{ request()->is('admin/categorias*') ? 'active' : '' }}">
-
-                    <i class="bi bi-grid-fill"></i>
-                    Categorías
-
-                </a>
-
                 <a href="/admin/consultas"
                 class="admin-sidebar-link {{ request()->is('admin/consultas*') ? 'active' : '' }}">
 
@@ -89,6 +81,13 @@
 
                 </a>
 
+                <a href="/admin/ventas"
+                class="admin-sidebar-link {{ request()->is('admin/ventas*') ? 'active' : '' }}">
+
+                    <i class="bi bi-receipt"></i>
+                    Ventas
+
+                </a>
             </div>
 
         </div>
@@ -101,9 +100,11 @@
 
 </div>
     <x-footer />
-    <a href="#" class="whatsapp-float">
+    @if (session('perfil_id') != 1)
+        <a href="#" class="whatsapp-float">
         <i class="bi bi-whatsapp"></i>
-    </a>
+        </a>
+    @endif
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

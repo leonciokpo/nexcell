@@ -46,21 +46,6 @@
                     Registrarse
                 </h2>
 
-                {{-- GOOGLE --}}
-                <a href="{{ route('google.login') }}"
-                   class="btn-google-login">
-
-                    <img src="https://www.svgrepo.com/show/475656/google-color.svg"
-                         width="22">
-
-                    Registrarse con Google
-
-                </a>
-
-                <div class="separator">
-                    <span>o</span>
-                </div>
-
                 {{-- NOMBRE --}}
                 <div class="form-group">
 

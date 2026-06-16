@@ -20,14 +20,15 @@ class ContactoRequest extends FormRequest
      *
      * @return array<string, ValidationRule|array<mixed>|string>
      */
-    public function rules(): array{
+    public function rules(): array
+{
     $rules = [
-        'nombre'   => 'required|string|max:100',
         'motivo'   => 'required|string|max:200',
         'consulta' => 'required|string|min:10|max:500',
     ];
 
     if (!session('usuario_id')) {
+        $rules['nombre'] = 'required|max:100';
         $rules['email'] = 'required|email|max:150';
     }
 

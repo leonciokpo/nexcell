@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Usuario;
+use App\Http\Requests\MiPerfilRequest;
 
 class MiPerfilController extends Controller
 {
@@ -18,54 +19,28 @@ class MiPerfilController extends Controller
         );
     }
 
-    public function update(Request $request)
+    public function update(MiPerfilRequest $request)
 {
-    $usuario = Usuario::find(session('usuario_id'));
+    $usuario = Usuario::findOrFail(session('usuario_id'));
 
-    $request->validate([
-        'nombre' => 'required|max:255',
-        'email' => 'required|email',
-
-        'password_actual' => 'nullable',
-        'password' => 'nullable|min:6|confirmed'
-    ]);
-
-    $usuario->nombre = $request->nombre;
-    $usuario->email = $request->email;
-
-    // SI quiere cambiar contraseña
-    if($request->filled('password')) {
-
-        // verificar contraseña actual
-        if(
-            !Hash::check(
-                $request->password_actual,
-                $usuario->password
-            )
-        ) {
-
-            return back()->with(
-                'error',
-                'La contraseña actual es incorrecta'
-            );
-
-        }
-
-        // guardar nueva contraseña
-        $usuario->password = Hash::make(
-            $request->password
-        );
+    if (
+        !Hash::check(
+            $request->password_actual,
+            $usuario->password
+        )
+    ) {
+        return back()->withErrors([
+            'password_actual' => 'La contraseña actual es incorrecta.'
+        ]);
     }
 
-    $usuario->save();
-
-    session([
-        'usuario_nombre' => $usuario->nombre
+    $usuario->update([
+        'password' => Hash::make($request->password)
     ]);
 
     return back()->with(
         'success',
-        'Perfil actualizado correctamente'
+        'Contraseña actualizada correctamente.'
     );
 }
 }

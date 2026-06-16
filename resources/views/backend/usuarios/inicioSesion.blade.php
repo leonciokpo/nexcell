@@ -46,21 +46,6 @@
                     Iniciar Sesión
                 </h2>
 
-                {{-- GOOGLE LOGIN --}}
-                <a href="{{ route('google.login') }}"
-                   class="btn-google-login">
-
-                    <img src="https://www.svgrepo.com/show/475656/google-color.svg"
-                         width="22">
-
-                    Continuar con Google
-
-                </a>
-
-                <div class="separator">
-                    <span>o</span>
-                </div>
-
                 {{-- EMAIL --}}
                 <div class="form-group">
 
