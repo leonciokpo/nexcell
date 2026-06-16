@@ -215,3 +215,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('ESTILO.JS CARGADO');
+
+
+function cambiarCantidad(valor){
+
+    const input = document.getElementById('cantidad');
+
+    let cantidad = parseInt(input.value) || 1;
+
+    cantidad += valor;
+
+    if(cantidad < 1){
+        cantidad = 1;
+    }
+
+    input.value = cantidad;
+}

@@ -1371,6 +1371,10 @@ aside .card-custom {
     margin-bottom: 60px;
 }
 
+.producto-detalle-container .producto-titulo {
+    color: #212529 !important;
+}
+
 /* CARD PRINCIPAL */
 .producto-detalle-card {
     background: #fff;
@@ -4288,8 +4292,7 @@ h2.purchase-title i{
    NOMBRE PRODUCTOS
 ========================= */
 
-.producto-card h5,
-.producto-titulo {
+.producto-card h5 {
     color: #ffffff !important;
     font-weight: 600;
 }
@@ -4350,4 +4353,87 @@ input[type=number]::-webkit-inner-spin-button {
 
 .btn-comprobante:hover {
     background: #333;
+}
+
+.cantidad-label{
+    color: #d5dde5;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.cantidad-selector{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+
+    background: rgba(255,255,255,.04);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+.cantidad-btn{
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #ff7a18;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    transition: .25s;
+}
+
+.cantidad-btn:hover{
+    background: rgba(255,122,24,.15);
+}
+
+.cantidad-input{
+    width: 70px;
+
+    border: none !important;
+
+    background: transparent !important;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    box-shadow: none !important;
+}
+
+.cantidad-input:focus{
+    outline: none;
+}
+
+.cantidad-input::-webkit-outer-spin-button,
+.cantidad-input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.cantidad-input{
+    width: 70px;
+
+    border: none !important;
+    background: transparent !important;
+
+    color: #ff7a18 !important;
+
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    box-shadow: none !important;
 }

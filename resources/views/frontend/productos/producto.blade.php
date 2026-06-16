@@ -106,11 +106,6 @@
 
                     <div class="d-grid gap-3 mt-4">
 
-    {{-- COMPRAR --}}
-    <button class="btn-comprar-detalle">
-        Comprar ahora
-    </button>
-
     {{-- AGREGAR AL CARRITO --}}
     @if(session('usuario_id'))
 
@@ -123,18 +118,34 @@
                    name="producto_id"
                    value="{{ $producto->id }}">
 
-            <div class="mb-3">
+            <div class="mb-4">
 
-                <label class="form-label text-white">
+                <label class="form-label cantidad-label">
                     Cantidad
                 </label>
 
-                <input type="number"
-                    name="cantidad"
-                    value="1"
-                    min="1"
-                    step="1"
-                    class="form-control cantidad-input">
+                <div class="cantidad-selector">
+
+                    <button type="button"
+                            class="cantidad-btn"
+                            onclick="cambiarCantidad(-1)">
+                        −
+                    </button>
+
+                    <input type="number"
+                        id="cantidad"
+                        name="cantidad"
+                        value="1"
+                        min="1"
+                        class="cantidad-input">
+
+                    <button type="button"
+                            class="cantidad-btn"
+                            onclick="cambiarCantidad(1)">
+                        +
+                    </button>
+
+                </div>
 
             </div>
 
