@@ -151,6 +151,14 @@ https://nexcell.test
 Email:JoseLop123@gmail.com
 Contraseña:123123123
 
+## Usuario Cliente
+
+Email: leofonteina00@gmail.com 
+Contraseña:123123123
+
+Email: agustin552689@gmail.com
+Contraseña:123123123
+
 # Funcionalidades
 
 ## Cliente
